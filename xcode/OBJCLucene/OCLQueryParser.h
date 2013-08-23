@@ -17,6 +17,7 @@
 @property (nonatomic, assign) float     fuzzyMinSim;
 @property (nonatomic, assign) int       fuzzyPrefixLength;
 @property (nonatomic, assign) int       phraseSlop;
+@property (nonatomic, assign) BOOL      allowLeadingWildcard;
 
 - (id)initWithQueryString:(NSString *)inString forFieldName:(NSString *)inField;
 

@@ -18,6 +18,7 @@
 @synthesize fuzzyMinSim = _fuzzyMinSim;
 @synthesize fuzzyPrefixLength = _fuzzyPrefixLength;
 @synthesize phraseSlop = _phraseSlop;
+@synthesize allowLeadingWildcard = _allowLeadingWildcard;
 
 - (id)initWithQueryString:(NSString *)inString forFieldName:(NSString *)inField
 {
@@ -64,6 +65,12 @@
 {
     _queryParser->setPhraseSlop(phraseSlop);
     _phraseSlop = phraseSlop;
+}
+
+- (void)setAllowLeadingWildcard:(BOOL)allowLeadingWildcard
+{
+    _queryParser->setAllowLeadingWildcard(allowLeadingWildcard);
+    _allowLeadingWildcard = allowLeadingWildcard;
 }
 
 

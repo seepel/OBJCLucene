@@ -46,7 +46,7 @@
         index++;
     }
     
-    //[writer removeDocumentsWithFieldName:@"index" matchingValue:@"0"];
+    [writer removeDocumentsWithFieldName:@"index" matchingValue:@"0"];
     
     writer.useCompoundFile = YES;
     [writer optimize:YES];
@@ -118,13 +118,14 @@
             }
         
             NSString *escaped = [OCLQueryParser escapeString:string];
-            term = [term stringByAppendingFormat:@"%@* OR %@~", escaped, escaped];
+            term = [term stringByAppendingFormat:@"*%@* OR %@~", escaped, escaped];
         }
     }
     
     
     OCLQueryParser *queryParser = [[OCLQueryParser alloc] initWithQueryString:term forFieldName:@"name"];
-    queryParser.fuzzyMinSim = 0.2;
+    queryParser.fuzzyMinSim = 0.4;
+    queryParser.allowLeadingWildcard = YES;
     OCLQuery *query = [queryParser query];
     
     self.searchResults = [query executeWithIndex:self.indexReader];
