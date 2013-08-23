@@ -11,6 +11,7 @@
 @interface NSString (OCL)
 
 - (const TCHAR *)toTCHAR;
+- (const TCHAR *)copyToTCHAR;
 + (NSString *)stringFromTCHAR:(const TCHAR *)inTCHAR;
 - (NSString *)escapeForQuery;
 

@@ -26,7 +26,7 @@
 - (void)dealloc
 {
     _indexReader->close();
-    delete _indexReader;
+    _CLVDELETE(_indexReader);
 }
 
 - (IndexReader *)cppIndexReader

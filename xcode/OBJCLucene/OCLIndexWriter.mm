@@ -39,7 +39,7 @@
 - (void)dealloc
 {
     _indexWriter->close();
-    delete _indexWriter;
+    _CLVDELETE(_indexWriter);
 }
 
 - (void)setMaxFieldLength:(int32_t)maxFieldLength
@@ -62,12 +62,28 @@
 
 - (void)removeDocumentsWithFieldName:(NSString *)inFieldName matchingValue:(NSString *)inValue
 {
-    _indexWriter->deleteDocuments(_CLNEW Term([inFieldName toTCHAR], [inValue toTCHAR]));
+    const TCHAR *fieldName = [inFieldName copyToTCHAR];
+    const TCHAR *value = [inValue copyToTCHAR];
+    
+    Term *term = _CLNEW Term(fieldName, value);
+    _indexWriter->deleteDocuments(term);
+    _CLDECDELETE(term);
+    
+    free((void *)fieldName);
+    free((void *)value);
 }
 
 - (void)replaceDocumentsWithFieldName:(NSString *)inFieldName matchingValue:(NSString *)inValue withDocument:(OCLDocument *)inDocument
 {
-    _indexWriter->updateDocument(_CLNEW Term([inFieldName toTCHAR], [inValue toTCHAR]), [inDocument cppDocument]);
+    const TCHAR *fieldName = [inFieldName copyToTCHAR];
+    const TCHAR *value = [inValue copyToTCHAR];
+    
+    Term *term = _CLNEW Term(fieldName, value);
+    _indexWriter->updateDocument(term, [inDocument cppDocument]);
+    _CLDECDELETE(term);
+    
+    free((void *)fieldName);
+    free((void *)value);
 }
 
 - (void)optimize:(BOOL)inWaitUntilDone

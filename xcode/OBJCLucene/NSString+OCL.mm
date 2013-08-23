@@ -17,6 +17,16 @@
     return (const TCHAR*)[self cStringUsingEncoding:NSUTF32LittleEndianStringEncoding];
 }
 
+- (const TCHAR *)copyToTCHAR
+{
+    const TCHAR *tchar = (const TCHAR*)[self cStringUsingEncoding:NSUTF32LittleEndianStringEncoding];
+    size_t len = wcslen(tchar);
+	TCHAR* ret = (TCHAR*)malloc((len + 1) * sizeof(TCHAR));
+	wcscpy(ret, tchar);
+
+    return (const TCHAR *)ret;
+}
+
 + (NSString *)stringFromTCHAR:(const TCHAR *)inTCHAR
 {
     return [[NSString alloc] initWithBytes:inTCHAR length:wcslen(inTCHAR) * sizeof(TCHAR) encoding:NSUTF32LittleEndianStringEncoding];

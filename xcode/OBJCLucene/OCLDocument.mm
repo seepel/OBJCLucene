@@ -17,7 +17,7 @@
 - (id)init
 {
     if((self = [super init])) {
-        _document = new Document();
+        _document = _CLNEW Document();
         _document->clear();
     }
     
@@ -26,7 +26,7 @@
 
 - (void)dealloc
 {
-    delete _document;
+    _CLVDELETE(_document);
 }
 
 - (void)setCPPDocument:(Document *)inDocument

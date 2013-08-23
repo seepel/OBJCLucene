@@ -17,13 +17,13 @@
 
 - (void)dealloc
 {
-    delete _query;
+    _CLVDELETE(_query);
 }
 
 - (void)setCPPQuery:(Query *)inQuery
 {
-    if(_query) {
-        delete _query;
+    if(_query != NULL) {
+        _CLVDELETE(_query);
     }
     
     _query = inQuery;
@@ -43,7 +43,7 @@
         [array addObject:newDoc];
     }
     
-    delete h;
+    _CLVDELETE(h);
     
     return array;
 }

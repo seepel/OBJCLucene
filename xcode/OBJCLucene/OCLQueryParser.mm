@@ -31,7 +31,7 @@
 
 - (void)dealloc
 {
-    delete _queryParser;
+    _CLVDELETE(_queryParser);
 }
 
 - (OCLQuery *)query
