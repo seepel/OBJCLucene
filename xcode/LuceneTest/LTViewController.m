@@ -46,6 +46,8 @@
         index++;
     }
     
+    //[writer removeDocumentsWithFieldName:@"index" matchingValue:@"0"];
+    
     writer.useCompoundFile = YES;
     [writer optimize:YES];
     
@@ -122,6 +124,7 @@
     
     
     OCLQueryParser *queryParser = [[OCLQueryParser alloc] initWithQueryString:term forFieldName:@"name"];
+    queryParser.fuzzyMinSim = 0.2;
     OCLQuery *query = [queryParser query];
     
     self.searchResults = [query executeWithIndex:self.indexReader];

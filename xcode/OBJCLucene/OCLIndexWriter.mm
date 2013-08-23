@@ -8,6 +8,7 @@
 
 #import "OCLIndexWriter.h"
 #import "OCLDocumentPrivate.h"
+#import "NSString+OCL.h"
 
 @interface OCLIndexWriter ()
 
@@ -57,6 +58,16 @@
 {
     Document *doc = [inDocument cppDocument];
     _indexWriter->addDocument(doc);
+}
+
+- (void)removeDocumentsWithFieldName:(NSString *)inFieldName matchingValue:(NSString *)inValue
+{
+    _indexWriter->deleteDocuments(_CLNEW Term([inFieldName toTCHAR], [inValue toTCHAR]));
+}
+
+- (void)replaceDocumentsWithFieldName:(NSString *)inFieldName matchingValue:(NSString *)inValue withDocument:(OCLDocument *)inDocument
+{
+    _indexWriter->updateDocument(_CLNEW Term([inFieldName toTCHAR], [inValue toTCHAR]), [inDocument cppDocument]);
 }
 
 - (void)optimize:(BOOL)inWaitUntilDone

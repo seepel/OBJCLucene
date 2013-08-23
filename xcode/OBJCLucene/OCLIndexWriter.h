@@ -20,6 +20,9 @@
 @property (readonly) NSString *path;
 
 - (void)addDocument:(OCLDocument *)inDocument;
+- (void)removeDocumentsWithFieldName:(NSString *)inFieldName matchingValue:(NSString *)inValue;
+- (void)replaceDocumentsWithFieldName:(NSString *)inFieldName matchingValue:(NSString *)inValue withDocument:(OCLDocument *)inDocument;
+
 
 - (void)flush;
 - (void)optimize:(BOOL)inWaitUntilDone;
