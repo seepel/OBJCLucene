@@ -12,6 +12,7 @@
 
 @interface OCLQuery : NSObject
 
-- (NSArray *)executeWithIndex:(OCLIndexReader *)inReader;
+- (NSArray *)findDocumentsWithIndex:(OCLIndexReader *)inReader;
+- (NSArray *)findFieldValuesForName:(NSString *)inName withIndex:(OCLIndexReader *)inReader;
 
 @end

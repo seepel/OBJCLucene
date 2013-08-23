@@ -9,6 +9,8 @@
 #import "LTViewController.h"
 #import "OBJCLucene.h"
 
+#define USE_FIELD_SEARCH 1
+
 @interface LTViewController ()
 
 @end
@@ -78,14 +80,18 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    OCLDocument *doc;
-    if(self.searchResults)
-        doc = [self.searchResults objectAtIndex:indexPath.row];
-    else
-        doc = [self.indexReader documentAtIndex:indexPath.row];
-    
-    OCLField *field = [doc fieldForName:@"name"];
-    cell.textLabel.text = field.value;
+    if(self.searchResults && USE_FIELD_SEARCH) {
+        cell.textLabel.text = [self.searchResults objectAtIndex:indexPath.row];
+    } else {
+        OCLDocument *doc;
+        if(self.searchResults)
+            doc = [self.searchResults objectAtIndex:indexPath.row];
+        else
+            doc = [self.indexReader documentAtIndex:indexPath.row];
+        
+        OCLField *field = [doc fieldForName:@"name"];
+        cell.textLabel.text = field.value;
+    }
         
     return cell;
 }
@@ -128,7 +134,11 @@
     queryParser.allowLeadingWildcard = YES;
     OCLQuery *query = [queryParser query];
     
-    self.searchResults = [query executeWithIndex:self.indexReader];
+#if USE_FIELD_SEARCH
+    self.searchResults = [query findFieldValuesForName:@"name" withIndex:self.indexReader];
+#else
+    self.searchResults = [query findDocumentsWithIndex:self.indexReader];
+#endif
     
     return YES;
 }
