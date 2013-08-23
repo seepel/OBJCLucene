@@ -1,0 +1,18 @@
+//
+//  CLucene-Prefix.pch
+//  clucene
+//
+//  Created by Bob Van Osten on 8/22/13.
+//
+//
+
+#ifndef clucene_CLucene_Prefix_pch
+#define clucene_CLucene_Prefix_pch
+
+#import "TargetConditionals.h"
+
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
+#include "pthread.h"
+#endif
+
+#endif
