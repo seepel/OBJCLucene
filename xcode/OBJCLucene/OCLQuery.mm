@@ -34,7 +34,7 @@ class FieldByNameCollector : public HitCollector {
 public:
     IndexReader *indexReader;
     LoadFieldByName *fieldSelector;
-	vector<NSString *> list;
+	vector< std::pair<NSString *, float_t> > list;
 
 	FieldByNameCollector(const TCHAR *name, IndexReader *reader) {
         fieldSelector = new LoadFieldByName(name);
@@ -45,15 +45,21 @@ public:
         delete fieldSelector;
     }
     
-	void collect(const int32_t doc, const float_t /*score*/) {
+	void collect(const int32_t doc, const float_t score) {
         Document document;
         indexReader->document(doc, document, fieldSelector);
         
         Field *field = document.getField(fieldSelector->name);
-        list.push_back([NSString stringFromTCHAR:field->stringValue()]);
+        list.push_back(std::make_pair([NSString stringFromTCHAR:field->stringValue()], score));
 	}
 };
 
+template<template <typename> class P = std::less >
+struct compareScore {
+    template<class T1, class T2> bool operator()(const std::pair<T1, T2>& left, const std::pair<T1, T2>& right) {
+        return P<T2>()(right.second, left.second);
+    }
+};
 
 @implementation OCLQuery {
     Query* _query;
@@ -82,9 +88,11 @@ public:
     FieldByNameCollector fieldCollector([inName toTCHAR], reader);
     s._search(_query, NULL, &fieldCollector);
     
-    vector<NSString *> strings = fieldCollector.list;
-    for(NSString *str : strings) {
-        [array addObject:str];
+    vector< std::pair<NSString *, float_t> > v = fieldCollector.list;
+    std::sort(v.begin(), v.end(), compareScore<>());
+    
+    for(auto pair : v) {
+        [array addObject:pair.first];
     }
     
     return array;
