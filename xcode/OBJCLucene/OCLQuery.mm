@@ -34,7 +34,7 @@ class FieldByNameCollector : public HitCollector {
 public:
     IndexReader *indexReader;
     LoadFieldByName *fieldSelector;
-	vector< std::pair<NSString *, float_t> > list;
+	vector< pair<NSString *, float_t> > list;
 
 	FieldByNameCollector(const TCHAR *name, IndexReader *reader) {
         fieldSelector = new LoadFieldByName(name);
@@ -50,14 +50,14 @@ public:
         indexReader->document(doc, document, fieldSelector);
         
         Field *field = document.getField(fieldSelector->name);
-        list.push_back(std::make_pair([NSString stringFromTCHAR:field->stringValue()], score));
+        list.push_back(make_pair([NSString stringFromTCHAR:field->stringValue()], score));
 	}
 };
 
-template<template <typename> class P = std::less >
+template<template <typename> class P = greater >
 struct compareScore {
-    template<class T1, class T2> bool operator()(const std::pair<T1, T2>& left, const std::pair<T1, T2>& right) {
-        return P<T2>()(right.second, left.second);
+    template<class T1, class T2> bool operator()(const pair<T1, T2>& left, const pair<T1, T2>& right) {
+        return P<T2>()(left.second, right.second);
     }
 };
 
@@ -88,8 +88,8 @@ struct compareScore {
     FieldByNameCollector fieldCollector([inName toTCHAR], reader);
     s._search(_query, NULL, &fieldCollector);
     
-    vector< std::pair<NSString *, float_t> > v = fieldCollector.list;
-    std::sort(v.begin(), v.end(), compareScore<>());
+    vector< pair<NSString *, float_t> > v = fieldCollector.list;
+    sort(v.begin(), v.end(), compareScore<>());
     
     for(auto pair : v) {
         [array addObject:pair.first];
