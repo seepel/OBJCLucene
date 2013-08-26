@@ -24,7 +24,7 @@ public:
     
 	FieldSelectorResult accept(const TCHAR* fieldName) const {
         if(wcscmp(fieldName, name) == 0) {
-            return LOAD;
+            return LOAD_AND_BREAK;
         }
         return NO_LOAD;
     }
@@ -79,13 +79,13 @@ struct compareScore {
     _query = inQuery;
 }
 
-- (NSArray *)findFieldValuesForName:(NSString *)inName withIndex:(OCLIndexReader *)inReader
+- (NSArray *)findFieldValuesForKey:(NSString *)inKey withIndex:(OCLIndexReader *)inReader
 {
     IndexReader *reader = [inReader cppIndexReader];
     IndexSearcher s(reader);
     
     NSMutableArray *array = [NSMutableArray array];
-    FieldByNameCollector fieldCollector([inName toTCHAR], reader);
+    FieldByNameCollector fieldCollector([inKey toTCHAR], reader);
     s._search(_query, NULL, &fieldCollector);
     
     vector< pair<NSString *, float_t> > v = fieldCollector.list;

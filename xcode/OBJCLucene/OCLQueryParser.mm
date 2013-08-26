@@ -20,7 +20,7 @@
 @synthesize phraseSlop = _phraseSlop;
 @synthesize allowLeadingWildcard = _allowLeadingWildcard;
 
-- (id)initWithQueryString:(NSString *)inString forFieldName:(NSString *)inField
+- (id)initWithQueryString:(NSString *)inString forFieldKey:(NSString *)inField
 {
     if((self = [super init])) {
         _queryParser = _CLNEW QueryParser([inField toTCHAR], &_analyzer);

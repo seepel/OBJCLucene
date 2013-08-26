@@ -47,24 +47,24 @@
     return _document;
 }
 
-- (void)addFieldForName:(NSString *)inName value:(NSString *)inValue tokenized:(BOOL)inTokenized
+- (void)addFieldForKey:(NSString *)inKey value:(NSString *)inValue tokenized:(BOOL)inTokenized
 {
     int config = (inTokenized) ? (Field::STORE_YES | Field::INDEX_TOKENIZED) : (Field::STORE_YES | Field::INDEX_UNTOKENIZED);
-    _document->add(*_CLNEW Field([inName toTCHAR], [inValue toTCHAR], config));
+    _document->add(*_CLNEW Field([inKey toTCHAR], [inValue toTCHAR], config));
 }
 
-- (void)removeFieldForName:(NSString *)inKey
+- (void)removeFieldForKey:(NSString *)inKey
 {
     _document->removeField([inKey toTCHAR]);
 }
 
-- (OCLField *)fieldForName:(NSString *)inKey
+- (OCLField *)fieldForKey:(NSString *)inKey
 {
     Field *field = _document->getField([inKey toTCHAR]);
     if(field == NULL)
         return nil;
     
-    return [OCLField fieldWithName:[NSString stringFromTCHAR:field->name()] value:[NSString stringFromTCHAR:field->stringValue()] tokenized:field->isTokenized()];
+    return [OCLField fieldWithKey:[NSString stringFromTCHAR:field->name()] value:[NSString stringFromTCHAR:field->stringValue()] tokenized:field->isTokenized()];
 }
 
 - (void)clear

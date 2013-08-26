@@ -10,6 +10,6 @@
 
 @interface OCLField (Private)
 
-+ (OCLField *)fieldWithName:(NSString *)inKey value:(NSString *)inValue tokenized:(BOOL)inTokenized;
++ (OCLField *)fieldWithKey:(NSString *)inKey value:(NSString *)inValue tokenized:(BOOL)inTokenized;
 
 @end

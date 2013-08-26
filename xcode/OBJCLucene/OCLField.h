@@ -10,7 +10,7 @@
 
 @interface OCLField : NSObject
 
-@property (readonly) NSString *name;
+@property (readonly) NSString *key;
 @property (readonly) NSString *value;
 @property (readonly) BOOL tokenized;
 

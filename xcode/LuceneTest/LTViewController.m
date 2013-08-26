@@ -41,14 +41,14 @@
 
     for(NSString *city in allCities) {
         [document clear];
-        [document addFieldForName:@"index" value:[NSString stringWithFormat:@"%d", index] tokenized:NO];
-        [document addFieldForName:@"name" value:city tokenized:YES];
+        [document addFieldForKey:@"index" value:[NSString stringWithFormat:@"%d", index] tokenized:NO];
+        [document addFieldForKey:@"name" value:city tokenized:YES];
         [writer addDocument:document];
         
         index++;
     }
     
-    [writer removeDocumentsWithFieldName:@"index" matchingValue:@"0"];
+    [writer removeDocumentsWithFieldForKey:@"index" matchingValue:@"0"];
     
     writer.useCompoundFile = YES;
     [writer optimize:YES];
@@ -89,7 +89,7 @@
         else
             doc = [self.indexReader documentAtIndex:indexPath.row];
         
-        OCLField *field = [doc fieldForName:@"name"];
+        OCLField *field = [doc fieldForKey:@"name"];
         cell.textLabel.text = field.value;
     }
         
@@ -129,13 +129,13 @@
     }
     
     
-    OCLQueryParser *queryParser = [[OCLQueryParser alloc] initWithQueryString:term forFieldName:@"name"];
+    OCLQueryParser *queryParser = [[OCLQueryParser alloc] initWithQueryString:term forFieldKey:@"name"];
     queryParser.fuzzyMinSim = 0.4;
     queryParser.allowLeadingWildcard = YES;
     OCLQuery *query = [queryParser query];
     
 #if USE_FIELD_SEARCH
-    self.searchResults = [query findFieldValuesForName:@"name" withIndex:self.indexReader];
+    self.searchResults = [query findFieldValuesForKey:@"name" withIndex:self.indexReader];
 #else
     self.searchResults = [query findDocumentsWithIndex:self.indexReader];
 #endif

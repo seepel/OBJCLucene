@@ -10,7 +10,7 @@
 
 @interface OCLField ()
 
-@property (strong) NSString *name;
+@property (strong) NSString *key;
 @property (strong) NSString *value;
 @property (assign) BOOL tokenized;
 
@@ -18,10 +18,10 @@
 
 @implementation OCLField
 
-+ (OCLField *)fieldWithName:(NSString *)inName value:(NSString *)inValue tokenized:(BOOL)inTokenized
++ (OCLField *)fieldWithKey:(NSString *)inKey value:(NSString *)inValue tokenized:(BOOL)inTokenized
 {
     OCLField *field = [[OCLField alloc] init];
-    field.name = inName;
+    field.key = inKey;
     field.value = inValue;
     field.tokenized = inTokenized;
     

@@ -60,9 +60,9 @@
     _indexWriter->addDocument(doc);
 }
 
-- (void)removeDocumentsWithFieldName:(NSString *)inFieldName matchingValue:(NSString *)inValue
+- (void)removeDocumentsWithFieldForKey:(NSString *)inFieldKey matchingValue:(NSString *)inValue
 {
-    const TCHAR *fieldName = [inFieldName copyToTCHAR];
+    const TCHAR *fieldName = [inFieldKey copyToTCHAR];
     const TCHAR *value = [inValue copyToTCHAR];
     
     Term *term = _CLNEW Term(fieldName, value);
@@ -73,9 +73,9 @@
     free((void *)value);
 }
 
-- (void)replaceDocumentsWithFieldName:(NSString *)inFieldName matchingValue:(NSString *)inValue withDocument:(OCLDocument *)inDocument
+- (void)replaceDocumentsWithFieldForKey:(NSString *)inFieldKey matchingValue:(NSString *)inValue withDocument:(OCLDocument *)inDocument
 {
-    const TCHAR *fieldName = [inFieldName copyToTCHAR];
+    const TCHAR *fieldName = [inFieldKey copyToTCHAR];
     const TCHAR *value = [inValue copyToTCHAR];
     
     Term *term = _CLNEW Term(fieldName, value);
