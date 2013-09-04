@@ -29,7 +29,16 @@
     if((self = [super init])) {
         self.path = inPath;
         
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        BOOL exists = [fileManager fileExistsAtPath:inPath];
+        if(!exists && !inOverwrite) {
+            inOverwrite = true;
+        }
+        
         _indexWriter = new IndexWriter([inPath cStringUsingEncoding:NSASCIIStringEncoding], &_analyzer, inOverwrite);
+        if(_indexWriter == NULL)
+            return nil;
+        
         _indexWriter->setMaxFieldLength(0x7FFFFFFFL);
     }
     
@@ -38,8 +47,10 @@
 
 - (void)dealloc
 {
-    _indexWriter->close();
-    _CLVDELETE(_indexWriter);
+    if(_indexWriter != NULL) {
+        _indexWriter->close();
+        _CLVDELETE(_indexWriter);
+    }
 }
 
 - (void)setMaxFieldLength:(int32_t)maxFieldLength
