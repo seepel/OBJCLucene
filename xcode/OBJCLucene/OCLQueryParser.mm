@@ -39,7 +39,12 @@
 {
     OCLQuery *query = [[OCLQuery alloc] init];
     
-    [query setCPPQuery:_queryParser->parse([self.queryString toTCHAR])];
+    try {
+        [query setCPPQuery:_queryParser->parse([self.queryString toTCHAR])];
+    } catch (CLuceneError& t) {
+        NSLog(@"Exception: %@", [NSString stringWithCString:t.what() encoding:[NSString defaultCStringEncoding]]);
+        query = nil;
+    }
     
     return query;
 }

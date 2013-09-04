@@ -34,7 +34,7 @@
         if(!exists && !inOverwrite) {
             inOverwrite = true;
         }
-                
+        
         try {
             _indexWriter = new IndexWriter([inPath cStringUsingEncoding:NSASCIIStringEncoding], &_analyzer, inOverwrite);
         } catch (CLuceneError& t) {
@@ -67,7 +67,7 @@
     _CLVDELETE(_indexWriter);
 }
 
-- (void)open
+- (BOOL)open
 {
     if(_indexWriter == NULL) {
         BOOL overwrite = ![[NSFileManager defaultManager] fileExistsAtPath:self.path];
@@ -82,7 +82,11 @@
         if(_indexWriter != NULL) {
             _indexWriter->setMaxFieldLength(0x7FFFFFFFL);
         }
+        
+        return (_indexWriter != NULL);
     }
+    
+    return NO;
 }
 
 - (void)setMaxFieldLength:(int32_t)maxFieldLength

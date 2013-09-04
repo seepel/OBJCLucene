@@ -17,7 +17,15 @@
 - (id)initWithPath:(NSString *)inPath
 {
     if((self = [super init])) {
-        _indexReader = IndexReader::open([inPath cStringUsingEncoding:NSASCIIStringEncoding]);
+        try {
+            _indexReader = IndexReader::open([inPath cStringUsingEncoding:NSASCIIStringEncoding]);
+        } catch (CLuceneError& t) {
+            NSLog(@"Exception: %@", [NSString stringWithCString:t.what() encoding:[NSString defaultCStringEncoding]]);
+            _indexReader = NULL;
+        }
+        
+        if(_indexReader == NULL)
+            return nil;
     }
     
     return self;
@@ -51,6 +59,16 @@
     }
     
     return nil;
+}
+
++ (void)unlockIndexAtPath:(NSString *)inPath
+{
+    IndexReader::unlock([inPath cStringUsingEncoding:NSASCIIStringEncoding]);
+}
+
++ (BOOL)indexAtPathIsLocked:(NSString *)inPath
+{
+    return IndexReader::isLocked([inPath cStringUsingEncoding:NSASCIIStringEncoding]);
 }
 
 @end

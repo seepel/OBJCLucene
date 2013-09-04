@@ -42,4 +42,20 @@
  */
 - (OCLDocument *)documentAtIndex:(NSInteger)inIndex;
 
+/**
+ @method unlockIndexAtPath
+ @abstract Unlocks an index with a given path
+ @discussion If there was a crash and the index lock was not removed, call this to force deletion of the lock
+ @param inPath The path of the index directory
+ */
++ (void)unlockIndexAtPath:(NSString *)inPath;
+
+/**
+ @method indexAtPathIsLocked:
+ @abstract Determines if an index at path is locked
+ @discussion If the index at the given path is in use or the app crashed during use, will return YES
+ @param inPath The path of the index directory
+ */
++ (BOOL)indexAtPathIsLocked:(NSString *)inPath;
+
 @end

@@ -80,6 +80,6 @@
  @abstract Opens the index to be read
  @discussion Opens the index so documents can be added to the index
  */
-- (void)open;
+- (BOOL)open;
 
 @end
