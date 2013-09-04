@@ -68,4 +68,18 @@
  */
 - (void)optimize:(BOOL)inWaitUntilDone;
 
+/**
+ @method close
+ @abstract Closes the index to be read by another reader/writer
+ @discussion Once closed documents can not be added to the index
+ */
+- (void)close;
+
+/**
+ @method open
+ @abstract Opens the index to be read
+ @discussion Opens the index so documents can be added to the index
+ */
+- (void)open;
+
 @end

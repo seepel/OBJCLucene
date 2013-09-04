@@ -34,12 +34,20 @@
         if(!exists && !inOverwrite) {
             inOverwrite = true;
         }
+                
+        try {
+            _indexWriter = new IndexWriter([inPath cStringUsingEncoding:NSASCIIStringEncoding], &_analyzer, inOverwrite);
+        } catch (CLuceneError& t) {
+            NSLog(@"Exception: %@", [NSString stringWithCString:t.what() encoding:[NSString defaultCStringEncoding]]);
+            _indexWriter = NULL;
+        }
         
-        _indexWriter = new IndexWriter([inPath cStringUsingEncoding:NSASCIIStringEncoding], &_analyzer, inOverwrite);
         if(_indexWriter == NULL)
             return nil;
         
-        _indexWriter->setMaxFieldLength(0x7FFFFFFFL);
+        if(_indexWriter != NULL) {
+            _indexWriter->setMaxFieldLength(0x7FFFFFFFL);
+        }
     }
     
     return self;
@@ -50,6 +58,30 @@
     if(_indexWriter != NULL) {
         _indexWriter->close();
         _CLVDELETE(_indexWriter);
+    }
+}
+
+- (void)close
+{
+    _indexWriter->close();
+    _CLVDELETE(_indexWriter);
+}
+
+- (void)open
+{
+    if(_indexWriter == NULL) {
+        BOOL overwrite = ![[NSFileManager defaultManager] fileExistsAtPath:self.path];
+        
+        try {
+            _indexWriter = new IndexWriter([self.path cStringUsingEncoding:NSASCIIStringEncoding], &_analyzer, overwrite);
+        } catch (CLuceneError& t) {
+            NSLog(@"Exception: %@", [NSString stringWithCString:t.what() encoding:[NSString defaultCStringEncoding]]);
+            _indexWriter = NULL;
+        }
+        
+        if(_indexWriter != NULL) {
+            _indexWriter->setMaxFieldLength(0x7FFFFFFFL);
+        }
     }
 }
 
