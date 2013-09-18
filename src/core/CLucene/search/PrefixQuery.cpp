@@ -121,6 +121,10 @@ CL_NS_DEF(search)
           TermQuery* tq = _CLNEW TermQuery(lastTerm);	  // found a match
           tq->setBoost(getBoost());                // set the boost
           query->add(tq,true,false, false);		  // add to query
+            
+            if(query->getMaxClauseCount() <= query->getClauseCount() + 1) {
+                break;
+            }
         } else
           break;
 		_CLDECDELETE(lastTerm);

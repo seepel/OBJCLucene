@@ -414,6 +414,9 @@ CL_NS_DEF(search)
 		  TermQuery* tq = _CLNEW TermQuery(st->term);      // found a match
 		  tq->setBoost(getBoost() * st->score); // set the boost
 		  query->add(tq, true, BooleanClause::SHOULD);          // add to query
+          if(query->getMaxClauseCount() <= query->getClauseCount() + 1) {
+              break;
+          }
           _CLLDELETE(st);
 	  }
 	  _CLLDELETE(stQueue);
