@@ -35,16 +35,24 @@
             inOverwrite = true;
         }
         
+        if(inOverwrite && exists) {
+            if([[NSFileManager defaultManager] contentsOfDirectoryAtPath:inPath error:nil].count == 0) {
+                [[NSFileManager defaultManager] removeItemAtPath:inPath error:nil];
+            }
+        } else if(inOverwrite) {
+            NSString *subpath = [inPath stringByDeletingLastPathComponent];
+            if(![[NSFileManager defaultManager] fileExistsAtPath:subpath]) {
+                [[NSFileManager defaultManager] createDirectoryAtPath:subpath withIntermediateDirectories:NO attributes:nil error:nil];
+            }
+        }
+        
         try {
             _indexWriter = new IndexWriter([inPath cStringUsingEncoding:NSASCIIStringEncoding], &_analyzer, inOverwrite);
         } catch (CLuceneError& t) {
             NSLog(@"Exception: %@", [NSString stringWithCString:t.what() encoding:[NSString defaultCStringEncoding]]);
             _indexWriter = NULL;
         }
-        
-        if(_indexWriter == NULL)
-            return nil;
-        
+                
         if(_indexWriter != NULL) {
             _indexWriter->setMaxFieldLength(0x7FFFFFFFL);
         }
@@ -63,8 +71,10 @@
 
 - (void)close
 {
-    _indexWriter->close();
-    _CLVDELETE(_indexWriter);
+    if(_indexWriter != NULL) {
+        _indexWriter->close();
+        _CLVDELETE(_indexWriter);
+    }
 }
 
 - (BOOL)open

@@ -19,6 +19,8 @@
  */
 @interface OCLIndexReader : NSObject
 
+@property (readonly) NSString *path;
+
 /**
  @method initWithPath:
  @abstract Initialize an index reader
@@ -43,6 +45,26 @@
 - (OCLDocument *)documentAtIndex:(NSInteger)inIndex;
 
 /**
+ @method removeDocumentsWithFieldForKey:matchingValue:
+ @abstract Removes all the documents given a field key and value
+ @discussion Given a field key and a matching value, the index writer will remove all the related documents.
+ @param inFieldKey The key of a field to lookup
+ @param inValue The value of the field to check against
+ @result The number of documents deleted
+ */
+- (NSInteger)removeDocumentsWithFieldForKey:(NSString *)inFieldKey matchingValue:(NSString *)inValue;
+
+/**
+ @method removeDocumentsWithFieldForKey:matchingValue:
+ @abstract Removes all the documents given a field key and value
+ @discussion Given a field key and a matching value, the index writer will remove all the related documents.
+ @param inFieldKey The key of a field to lookup
+ @param inValue An array of value of the field to check against
+ @result The number of documents deleted
+ */
+- (NSInteger)removeDocumentsWithFieldForKey:(NSString *)inFieldKey matchingValues:(NSArray *)inValues;
+
+/**
  @method unlockIndexAtPath
  @abstract Unlocks an index with a given path
  @discussion If there was a crash and the index lock was not removed, call this to force deletion of the lock
@@ -57,5 +79,19 @@
  @param inPath The path of the index directory
  */
 + (BOOL)indexAtPathIsLocked:(NSString *)inPath;
+
+/**
+ @method close
+ @abstract Closes the index to be read by another reader/writer
+ @discussion Once closed documents can not be added to the index
+ */
+- (void)close;
+
+/**
+ @method open
+ @abstract Opens the index to be read
+ @discussion Opens the index so documents can be added to the index
+ */
+- (BOOL)open;
 
 @end

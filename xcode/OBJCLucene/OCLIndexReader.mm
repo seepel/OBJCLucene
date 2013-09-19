@@ -9,6 +9,12 @@
 #import "OCLIndexReader.h"
 #import "OCLDocumentPrivate.h"
 #import "FieldSelector.h"
+#import "NSString+OCL.h"
+
+@interface OCLIndexReader ()
+@property (strong) NSString *path;
+@end
+
 
 @implementation OCLIndexReader {
     IndexReader *_indexReader;
@@ -17,15 +23,18 @@
 - (id)initWithPath:(NSString *)inPath
 {
     if((self = [super init])) {
-        try {
-            _indexReader = IndexReader::open([inPath cStringUsingEncoding:NSASCIIStringEncoding]);
-        } catch (CLuceneError& t) {
-            NSLog(@"Exception: %@", [NSString stringWithCString:t.what() encoding:[NSString defaultCStringEncoding]]);
+        self.path = inPath;
+        
+        if([[NSFileManager defaultManager] fileExistsAtPath:self.path]) {
+            try {
+                _indexReader = IndexReader::open([inPath cStringUsingEncoding:NSASCIIStringEncoding]);
+            } catch (CLuceneError& t) {
+                NSLog(@"Exception: %@", [NSString stringWithCString:t.what() encoding:[NSString defaultCStringEncoding]]);
+                _indexReader = NULL;
+            }
+        } else {
             _indexReader = NULL;
         }
-        
-        if(_indexReader == NULL)
-            return nil;
     }
     
     return self;
@@ -33,8 +42,10 @@
 
 - (void)dealloc
 {
-    _indexReader->close();
-    _CLVDELETE(_indexReader);
+    if(_indexReader != NULL) {
+        _indexReader->close();
+        _CLVDELETE(_indexReader);
+    }
 }
 
 - (IndexReader *)cppIndexReader
@@ -44,11 +55,17 @@
 
 - (NSUInteger)numberOfDocuments
 {
+    if(_indexReader == NULL)
+        return 0;
+    
     return _indexReader->numDocs();
 }
 
 - (OCLDocument *)documentAtIndex:(NSInteger)inIndex
 {
+    if(_indexReader == NULL)
+        return nil;
+
     Document doc;
     BOOL hasDoc = _indexReader->document(inIndex, doc, NULL);
     
@@ -59,6 +76,68 @@
     }
     
     return nil;
+}
+
+- (NSInteger)removeDocumentsWithFieldForKey:(NSString *)inFieldKey matchingValue:(NSString *)inValue
+{
+    const TCHAR *fieldName = [inFieldKey copyToTCHAR];
+    const TCHAR *value = [inValue copyToTCHAR];
+    
+    Term *term = _CLNEW Term(fieldName, value);
+    NSInteger removed = _indexReader->deleteDocuments(term);
+    _CLDECDELETE(term);
+    
+    free((void *)fieldName);
+    free((void *)value);
+    
+    return removed;
+}
+
+- (NSInteger)removeDocumentsWithFieldForKey:(NSString *)inFieldKey matchingValues:(NSArray *)inValues
+{
+    const TCHAR *fieldName = [inFieldKey copyToTCHAR];
+    
+    NSInteger removed = 0;
+    Term *term = _CLNEW Term();
+    for(NSString *string in inValues) {
+        const TCHAR *value = [string copyToTCHAR];
+        term->set(fieldName, value);
+        removed += _indexReader->deleteDocuments(term);
+        free((void *)value);
+    }
+    _CLDECDELETE(term);
+    
+    free((void *)fieldName);
+    
+    return removed;
+}
+
+- (void)close
+{
+    if(_indexReader != NULL) {
+        _indexReader->close();
+        _CLVDELETE(_indexReader);
+    }
+}
+
+- (BOOL)open
+{
+    if(_indexReader == NULL) {
+        if([[NSFileManager defaultManager] fileExistsAtPath:self.path]) {
+            try {
+                _indexReader = IndexReader::open([self.path cStringUsingEncoding:NSASCIIStringEncoding]);
+            } catch (CLuceneError& t) {
+                NSLog(@"Exception: %@", [NSString stringWithCString:t.what() encoding:[NSString defaultCStringEncoding]]);
+                _indexReader = NULL;
+            }
+        } else {
+            _indexReader = NULL;
+        }
+        
+        return (_indexReader != NULL);
+    }
+    
+    return NO;
 }
 
 + (void)unlockIndexAtPath:(NSString *)inPath
