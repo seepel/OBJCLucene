@@ -7,10 +7,25 @@
 //
 
 #import "OCLQuery.h"
+#import "OCLQueryPrivate.h"
+#import "OCLTerm.h"
+#import "OCLTermPrivate.h"
 #import "NSString+OCL.h"
 #import "OCLIndexReaderPrivate.h"
 #import "OCLDocumentPrivate.h"
 #import "FieldSelector.h"
+
+#import "MatchAllDocsQuery.h"
+
+#import "OCLBooleanQuery.h"
+#import "OCLFuzzyQuery.h"
+#import "OCLMultiPhraseQuery.h"
+#import "OCLPhraseQuery.h"
+#import "OCLPrefixQuery.h"
+#import "OCLTermQuery.h"
+#import "OCLWildcardQuery.h"
+
+
 
 class LoadFieldByName : public FieldSelector {
 public:
@@ -63,6 +78,8 @@ struct compareScore {
 
 @implementation OCLQuery {
     Query* _query;
+    // Need to retain things like OCLTerms and OCLQueries, this is a quick and dirty way to do that.
+    NSMutableArray *_storage;
 }
 
 - (void)dealloc
@@ -77,6 +94,37 @@ struct compareScore {
     }
     
     _query = inQuery;
+}
+
+- (Query *)cppQuery
+{
+    return _query;
+}
+
+- (float)boost
+{
+    Query *query = [self cppQuery];
+    if(query == NULL) {
+        return 0;
+    }
+    return query->getBoost();
+}
+
+- (void)setBoost:(float)boost
+{
+    Query *query = [self cppQuery];
+    if(query == NULL) {
+        return;
+    }
+    query->setBoost(boost);
+}
+
+- (NSMutableArray *)storage
+{
+    if(_storage == nil) {
+        _storage = [NSMutableArray array];
+    }
+    return _storage;
 }
 
 - (NSArray *)findFieldValuesForKey:(NSString *)inKey withIndex:(OCLIndexReader *)inReader
@@ -116,5 +164,56 @@ struct compareScore {
     
     return array;
 }
+
++ (id)booleanQueryWithClauses:(NSArray *)clauses
+{
+    return [[OCLBooleanQuery alloc] initWithClauses:clauses];
+}
+
++ (id)constantScoreQueryWithFilter:(OCLFilter *)filter
+{
+#pragma message("Need to implement filters before we can create this query.")
+    return nil;
+}
+
++ (id)fuzzyQueryWithTerm:(OCLTerm *)term minimumSimilarity:(float)minimumSimilarity prefixLength:(NSUInteger)prefixLength
+{
+    return [[OCLFuzzyQuery alloc] initWithTerm:term minimumSimilarity:minimumSimilarity prefixLength:prefixLength];
+}
+
++ (id)allDocsQuery
+{
+    OCLQuery *result = [[OCLQuery alloc] init];
+    MatchAllDocsQuery *query = _CLNEW MatchAllDocsQuery();
+    [result setCPPQuery:query];
+    return result;
+}
+
++ (id)multiPhraseQueryWithTerms:(NSArray *)terms slop:(NSUInteger)slop
+{
+    return [[OCLMultiPhraseQuery alloc] initWithTerms:terms slop:slop];
+}
+
++ (id)phraseQueryWithTerms:(NSArray *)terms slop:(NSUInteger)slop
+{
+    return [[OCLPhraseQuery alloc] initWithTerms:terms slop:slop];
+}
+
++ (id)prefixQueryWithTerm:(OCLTerm *)term
+{
+    return [[OCLPrefixQuery alloc] initWithTerm:term];
+}
+
++ (id)termQueryWithTerm:(OCLTerm *)term
+{
+    return [[OCLTermQuery alloc] initWithTerm:term];
+}
+
+
++ (id)wildcardQueryWithTerm:(OCLTerm *)term
+{
+    return [[OCLWildcardQuery alloc] initWithTerm:term];
+}
+
 
 @end

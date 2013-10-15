@@ -14,3 +14,16 @@
 #import "OCLQuery.h"
 #import "OCLQueryParser.h"
 #import "OCLField.h"
+#import "OCLTerm.h"
+
+#import "OCLBooleanQuery.h"
+#import "OCLTermQuery.h"
+#import "OCLFuzzyQuery.h"
+#import "OCLMultiPhraseQuery.h"
+#import "OCLPhraseQuery.h"
+#import "OCLPrefixQuery.h"
+#import "OCLWildcardQuery.h"
+
+#import "OCLFilter.h"
+#import "OCLPrefixFilter.h"
+#import "OCLWildcardFilter.h"

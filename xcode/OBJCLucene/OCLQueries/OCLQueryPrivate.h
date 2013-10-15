@@ -8,8 +8,11 @@
 
 #import "OCLQuery.h"
 
+@class OCLTerm;
+
 @interface OCLQuery (Private)
 
 - (void)setCPPQuery:(Query *)inQuery;
+- (Query *)cppQuery;
 
 @end

@@ -465,8 +465,33 @@
 		B841E3444DB44A79B5E327B3 /* QueryToken.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76CEAB632F254367861760A8 /* QueryToken.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		B8868911B402473DBFE8515B /* TestExplanations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB4E2381F88E4F959A17D3E0 /* TestExplanations.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		BA31F1E9B4FD4843BA4F6879 /* MultiReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933549452A21472BBF33BE30 /* MultiReader.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		BB1520A6180DC0D50014732C /* OCLFuzzyQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520A4180DC0D50014732C /* OCLFuzzyQuery.h */; };
+		BB1520A7180DC0D50014732C /* OCLFuzzyQuery.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB1520A5180DC0D50014732C /* OCLFuzzyQuery.mm */; };
+		BB1520AA180DC22C0014732C /* OCLBooleanClause.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520A8180DC22C0014732C /* OCLBooleanClause.h */; };
+		BB1520AB180DC22C0014732C /* OCLBooleanClause.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB1520A9180DC22C0014732C /* OCLBooleanClause.mm */; };
+		BB1520AE180DC9AE0014732C /* OCLBooleanQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520AC180DC9AE0014732C /* OCLBooleanQuery.h */; };
+		BB1520AF180DC9AE0014732C /* OCLBooleanQuery.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB1520AD180DC9AE0014732C /* OCLBooleanQuery.mm */; };
+		BB1520B3180DCCBB0014732C /* OCLMultiPhraseQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520B1180DCCBB0014732C /* OCLMultiPhraseQuery.h */; };
+		BB1520B4180DCCBB0014732C /* OCLMultiPhraseQuery.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB1520B2180DCCBB0014732C /* OCLMultiPhraseQuery.mm */; };
+		BB1520B7180DCE5A0014732C /* OCLPhraseQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520B5180DCE5A0014732C /* OCLPhraseQuery.h */; };
+		BB1520B8180DCE5A0014732C /* OCLPhraseQuery.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB1520B6180DCE5A0014732C /* OCLPhraseQuery.mm */; };
+		BB1520BB180DCF320014732C /* OCLPrefixQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520B9180DCF320014732C /* OCLPrefixQuery.h */; };
+		BB1520BC180DCF320014732C /* OCLPrefixQuery.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB1520BA180DCF320014732C /* OCLPrefixQuery.mm */; };
+		BB1520C1180DD1580014732C /* OCLWildcardQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520BF180DD1580014732C /* OCLWildcardQuery.h */; };
+		BB1520C2180DD1580014732C /* OCLWildcardQuery.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB1520C0180DD1580014732C /* OCLWildcardQuery.mm */; };
+		BB1520C6180DDDC70014732C /* OCLFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520C4180DDDC70014732C /* OCLFilter.h */; };
+		BB1520C7180DDDC70014732C /* OCLFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB1520C5180DDDC70014732C /* OCLFilter.mm */; };
+		BB3AB1BF180DE03C0001E94F /* OCLPrefixFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = BB3AB1BD180DE03C0001E94F /* OCLPrefixFilter.h */; };
+		BB3AB1C0180DE03C0001E94F /* OCLPrefixFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB3AB1BE180DE03C0001E94F /* OCLPrefixFilter.mm */; };
+		BB3AB1C3180DE0490001E94F /* OCLWildcardFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = BB3AB1C1180DE0490001E94F /* OCLWildcardFilter.h */; };
+		BB3AB1C4180DE0490001E94F /* OCLWildcardFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB3AB1C2180DE0490001E94F /* OCLWildcardFilter.mm */; };
 		BB49EE77D45A435E93863AC5 /* NumberTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D945A8BFF84BEF9F265F30 /* NumberTools.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		BBC602F628AA4232BED28121 /* IndexOutput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B53476458C254C5EABBA86A4 /* IndexOutput.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		BBD0914217ED00A7004B1776 /* OCLTerm.h in Headers */ = {isa = PBXBuildFile; fileRef = BBD0914017ED00A7004B1776 /* OCLTerm.h */; };
+		BBD0914317ED00A7004B1776 /* OCLTerm.mm in Sources */ = {isa = PBXBuildFile; fileRef = BBD0914117ED00A7004B1776 /* OCLTerm.mm */; };
+		BBD0914617ED06D1004B1776 /* OCLTermPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = BBD0914417ED06D1004B1776 /* OCLTermPrivate.h */; };
+		BBD6873A180DBD4700B1EBD6 /* OCLTermQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BBD68738180DBD4700B1EBD6 /* OCLTermQuery.h */; };
+		BBD6873B180DBD4700B1EBD6 /* OCLTermQuery.mm in Sources */ = {isa = PBXBuildFile; fileRef = BBD68739180DBD4700B1EBD6 /* OCLTermQuery.mm */; };
 		BBF42937043D4BBA88D0E988 /* PhrasePositions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A97F1C0124A4E0482CE82FE /* PhrasePositions.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		BC52B62BE2F641C2B3BA6339 /* CLMonolithic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E053AD70094C4152A6B1841C /* CLMonolithic.cpp */; settings = {COMPILER_FLAGS = "-DMAKE_CLUCENE_SHARED_LIB -DMAKE_CLUCENE_CORE_LIB"; }; };
 		BC635C5C1AD84F9E8FE38B19 /* CuTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 19B2F991CA514128B2EDD32D /* CuTest.cpp */; settings = {COMPILER_FLAGS = ""; }; };
@@ -499,12 +524,12 @@
 		C424A3E517C6BE5700235FE3 /* libclucene-shared-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FAC32E0BA884EEF88C605FA /* libclucene-shared-static.a */; };
 		C424A3E617C6BE5900235FE3 /* libclucene-core-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA42371AD019431C9A57FB35 /* libclucene-core-static.a */; };
 		C424A3EB17C6C4C200235FE3 /* libOBJCLucene.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C435914717C54638009B87BF /* libOBJCLucene.a */; };
-		C424A3ED17C6C64A00235FE3 /* OBJCLucene.h in Headers */ = {isa = PBXBuildFile; fileRef = C435914E17C54638009B87BF /* OBJCLucene.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C424A3EE17C6C64C00235FE3 /* OCLIndexWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = C424A37717C68F0000235FE3 /* OCLIndexWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C424A3EF17C6C64F00235FE3 /* OCLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = C424A37F17C68F7C00235FE3 /* OCLDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C424A3F017C6C65700235FE3 /* OCLField.h in Headers */ = {isa = PBXBuildFile; fileRef = C424A39C17C6A69A00235FE3 /* OCLField.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C424A3F117C6C65700235FE3 /* OCLIndexReader.h in Headers */ = {isa = PBXBuildFile; fileRef = C424A37C17C68F5E00235FE3 /* OCLIndexReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C424A3F217C6C65700235FE3 /* OCLQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = C424A38217C68FB100235FE3 /* OCLQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C424A3ED17C6C64A00235FE3 /* OBJCLucene.h in Headers */ = {isa = PBXBuildFile; fileRef = C435914E17C54638009B87BF /* OBJCLucene.h */; };
+		C424A3EE17C6C64C00235FE3 /* OCLIndexWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = C424A37717C68F0000235FE3 /* OCLIndexWriter.h */; };
+		C424A3EF17C6C64F00235FE3 /* OCLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = C424A37F17C68F7C00235FE3 /* OCLDocument.h */; };
+		C424A3F017C6C65700235FE3 /* OCLField.h in Headers */ = {isa = PBXBuildFile; fileRef = C424A39C17C6A69A00235FE3 /* OCLField.h */; };
+		C424A3F117C6C65700235FE3 /* OCLIndexReader.h in Headers */ = {isa = PBXBuildFile; fileRef = C424A37C17C68F5E00235FE3 /* OCLIndexReader.h */; };
+		C424A3F217C6C65700235FE3 /* OCLQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = C424A38217C68FB100235FE3 /* OCLQuery.h */; };
 		C424A40B17C6CFCD00235FE3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C424A40A17C6CFCD00235FE3 /* libz.dylib */; };
 		C435914A17C54638009B87BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C435914917C54638009B87BF /* Foundation.framework */; };
 		C435915817C54639009B87BF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C435915717C54639009B87BF /* XCTest.framework */; };
@@ -516,7 +541,7 @@
 		C4397DDE5C2F4768A97D62C7 /* TermInfosReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76BA493496EE4744BE7EC5D0 /* TermInfosReader.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		C443485D7C844162AB498C4A /* TestConstantScoreRangeQuery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1B248CA6B4F058205D88B /* TestConstantScoreRangeQuery.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		C4BC6FD517C6E61F00E834F3 /* OCLIndexReaderPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = C4BC6FD317C6E61F00E834F3 /* OCLIndexReaderPrivate.h */; };
-		C4BC6FDF17C722CC00E834F3 /* OCLQueryParser.h in Headers */ = {isa = PBXBuildFile; fileRef = C4BC6FDD17C722CC00E834F3 /* OCLQueryParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4BC6FDF17C722CC00E834F3 /* OCLQueryParser.h in Headers */ = {isa = PBXBuildFile; fileRef = C4BC6FDD17C722CC00E834F3 /* OCLQueryParser.h */; };
 		C4BC6FE017C722CC00E834F3 /* OCLQueryParser.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4BC6FDE17C722CC00E834F3 /* OCLQueryParser.mm */; };
 		C4BC6FE317C7236B00E834F3 /* OCLQueryPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = C4BC6FE117C7236B00E834F3 /* OCLQueryPrivate.h */; };
 		C5549549137E415D96E4E761 /* TestThreading.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D0D73554B5438AB4BFA30D /* TestThreading.cpp */; settings = {COMPILER_FLAGS = ""; }; };
@@ -1081,7 +1106,34 @@
 		BA1E01D8DCA84BE0846B458F /* QueryToken.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = QueryToken.cpp; path = src/core/CLucene/queryParser/QueryToken.cpp; sourceTree = SOURCE_ROOT; };
 		BA23885D877E416686C1F3BF /* Hits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Hits.h; path = src/core/CLucene/search/Hits.h; sourceTree = SOURCE_ROOT; };
 		BA53A889FB4546648D14B766 /* TermVectorWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TermVectorWriter.cpp; path = src/core/CLucene/index/TermVectorWriter.cpp; sourceTree = SOURCE_ROOT; };
+		BB1520A4180DC0D50014732C /* OCLFuzzyQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLFuzzyQuery.h; sourceTree = "<group>"; };
+		BB1520A5180DC0D50014732C /* OCLFuzzyQuery.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLFuzzyQuery.mm; sourceTree = "<group>"; };
+		BB1520A8180DC22C0014732C /* OCLBooleanClause.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLBooleanClause.h; sourceTree = "<group>"; };
+		BB1520A9180DC22C0014732C /* OCLBooleanClause.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLBooleanClause.mm; sourceTree = "<group>"; };
+		BB1520AC180DC9AE0014732C /* OCLBooleanQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLBooleanQuery.h; sourceTree = "<group>"; };
+		BB1520AD180DC9AE0014732C /* OCLBooleanQuery.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLBooleanQuery.mm; sourceTree = "<group>"; };
+		BB1520B0180DCBEA0014732C /* OCLBooleanClausePrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCLBooleanClausePrivate.h; sourceTree = "<group>"; };
+		BB1520B1180DCCBB0014732C /* OCLMultiPhraseQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLMultiPhraseQuery.h; sourceTree = "<group>"; };
+		BB1520B2180DCCBB0014732C /* OCLMultiPhraseQuery.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLMultiPhraseQuery.mm; sourceTree = "<group>"; };
+		BB1520B5180DCE5A0014732C /* OCLPhraseQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLPhraseQuery.h; sourceTree = "<group>"; };
+		BB1520B6180DCE5A0014732C /* OCLPhraseQuery.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLPhraseQuery.mm; sourceTree = "<group>"; };
+		BB1520B9180DCF320014732C /* OCLPrefixQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLPrefixQuery.h; sourceTree = "<group>"; };
+		BB1520BA180DCF320014732C /* OCLPrefixQuery.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLPrefixQuery.mm; sourceTree = "<group>"; };
+		BB1520BF180DD1580014732C /* OCLWildcardQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLWildcardQuery.h; sourceTree = "<group>"; };
+		BB1520C0180DD1580014732C /* OCLWildcardQuery.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLWildcardQuery.mm; sourceTree = "<group>"; };
+		BB1520C4180DDDC70014732C /* OCLFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLFilter.h; sourceTree = "<group>"; };
+		BB1520C5180DDDC70014732C /* OCLFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLFilter.mm; sourceTree = "<group>"; };
+		BB3AB1BC180DDEB90001E94F /* OCLFilterPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCLFilterPrivate.h; sourceTree = "<group>"; };
+		BB3AB1BD180DE03C0001E94F /* OCLPrefixFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLPrefixFilter.h; sourceTree = "<group>"; };
+		BB3AB1BE180DE03C0001E94F /* OCLPrefixFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLPrefixFilter.mm; sourceTree = "<group>"; };
+		BB3AB1C1180DE0490001E94F /* OCLWildcardFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLWildcardFilter.h; sourceTree = "<group>"; };
+		BB3AB1C2180DE0490001E94F /* OCLWildcardFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLWildcardFilter.mm; sourceTree = "<group>"; };
 		BB96A0BBB7A14AF082EAC5F7 /* _gunichartables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _gunichartables.h; path = src/shared/CLucene/config/_gunichartables.h; sourceTree = SOURCE_ROOT; };
+		BBD0914017ED00A7004B1776 /* OCLTerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLTerm.h; sourceTree = "<group>"; };
+		BBD0914117ED00A7004B1776 /* OCLTerm.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLTerm.mm; sourceTree = "<group>"; };
+		BBD0914417ED06D1004B1776 /* OCLTermPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLTermPrivate.h; sourceTree = "<group>"; };
+		BBD68738180DBD4700B1EBD6 /* OCLTermQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLTermQuery.h; sourceTree = "<group>"; };
+		BBD68739180DBD4700B1EBD6 /* OCLTermQuery.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLTermQuery.mm; sourceTree = "<group>"; };
 		BC6DE05EE7BE407EB4B616AA /* SpanQueryFilter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SpanQueryFilter.cpp; path = src/core/CLucene/search/SpanQueryFilter.cpp; sourceTree = SOURCE_ROOT; };
 		BCB6A6644E0E445DBF1F26D2 /* FieldSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FieldSelector.h; path = src/core/CLucene/document/FieldSelector.h; sourceTree = SOURCE_ROOT; };
 		BCCF90F5C36E4B49A233A458 /* _MMapIndexInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _MMapIndexInput.h; path = src/core/CLucene/store/_MMapIndexInput.h; sourceTree = SOURCE_ROOT; };
@@ -2270,6 +2322,48 @@
 			name = "cl_test-pedantic";
 			sourceTree = "<group>";
 		};
+		BB1520C3180DDC910014732C /* OCLFilter */ = {
+			isa = PBXGroup;
+			children = (
+				BB1520C4180DDDC70014732C /* OCLFilter.h */,
+				BB3AB1BC180DDEB90001E94F /* OCLFilterPrivate.h */,
+				BB1520C5180DDDC70014732C /* OCLFilter.mm */,
+				BB3AB1BD180DE03C0001E94F /* OCLPrefixFilter.h */,
+				BB3AB1BE180DE03C0001E94F /* OCLPrefixFilter.mm */,
+				BB3AB1C1180DE0490001E94F /* OCLWildcardFilter.h */,
+				BB3AB1C2180DE0490001E94F /* OCLWildcardFilter.mm */,
+			);
+			name = OCLFilter;
+			path = OCLFilters;
+			sourceTree = "<group>";
+		};
+		BBD68737180DBD1A00B1EBD6 /* OCLQueries */ = {
+			isa = PBXGroup;
+			children = (
+				C424A38217C68FB100235FE3 /* OCLQuery.h */,
+				C4BC6FE117C7236B00E834F3 /* OCLQueryPrivate.h */,
+				C424A38317C68FB100235FE3 /* OCLQuery.mm */,
+				BB1520A8180DC22C0014732C /* OCLBooleanClause.h */,
+				BB1520B0180DCBEA0014732C /* OCLBooleanClausePrivate.h */,
+				BB1520A9180DC22C0014732C /* OCLBooleanClause.mm */,
+				BB1520AC180DC9AE0014732C /* OCLBooleanQuery.h */,
+				BB1520AD180DC9AE0014732C /* OCLBooleanQuery.mm */,
+				BBD68738180DBD4700B1EBD6 /* OCLTermQuery.h */,
+				BBD68739180DBD4700B1EBD6 /* OCLTermQuery.mm */,
+				BB1520A4180DC0D50014732C /* OCLFuzzyQuery.h */,
+				BB1520A5180DC0D50014732C /* OCLFuzzyQuery.mm */,
+				BB1520B1180DCCBB0014732C /* OCLMultiPhraseQuery.h */,
+				BB1520B2180DCCBB0014732C /* OCLMultiPhraseQuery.mm */,
+				BB1520B5180DCE5A0014732C /* OCLPhraseQuery.h */,
+				BB1520B6180DCE5A0014732C /* OCLPhraseQuery.mm */,
+				BB1520B9180DCF320014732C /* OCLPrefixQuery.h */,
+				BB1520BA180DCF320014732C /* OCLPrefixQuery.mm */,
+				BB1520BF180DD1580014732C /* OCLWildcardQuery.h */,
+				BB1520C0180DD1580014732C /* OCLWildcardQuery.mm */,
+			);
+			path = OCLQueries;
+			sourceTree = "<group>";
+		};
 		BC7AA8F1D70A455C9FA96EAD /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -2329,6 +2423,8 @@
 		C435914B17C54638009B87BF /* OBJCLucene */ = {
 			isa = PBXGroup;
 			children = (
+				BB1520C3180DDC910014732C /* OCLFilter */,
+				BBD68737180DBD1A00B1EBD6 /* OCLQueries */,
 				C435914E17C54638009B87BF /* OBJCLucene.h */,
 				C424A37717C68F0000235FE3 /* OCLIndexWriter.h */,
 				C424A37817C68F0000235FE3 /* OCLIndexWriter.mm */,
@@ -2343,12 +2439,12 @@
 				C424A37D17C68F5E00235FE3 /* OCLIndexReader.mm */,
 				C4BC6FDD17C722CC00E834F3 /* OCLQueryParser.h */,
 				C4BC6FDE17C722CC00E834F3 /* OCLQueryParser.mm */,
-				C424A38217C68FB100235FE3 /* OCLQuery.h */,
-				C4BC6FE117C7236B00E834F3 /* OCLQueryPrivate.h */,
-				C424A38317C68FB100235FE3 /* OCLQuery.mm */,
 				C424A39917C6A4D600235FE3 /* NSString+OCL.h */,
 				C424A39A17C6A4D600235FE3 /* NSString+OCL.mm */,
 				C435914C17C54638009B87BF /* Supporting Files */,
+				BBD0914017ED00A7004B1776 /* OCLTerm.h */,
+				BBD0914417ED06D1004B1776 /* OCLTermPrivate.h */,
+				BBD0914117ED00A7004B1776 /* OCLTerm.mm */,
 			);
 			name = OBJCLucene;
 			path = xcode/OBJCLucene;
@@ -2827,13 +2923,26 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB1520BB180DCF320014732C /* OCLPrefixQuery.h in Headers */,
+				BB3AB1C3180DE0490001E94F /* OCLWildcardFilter.h in Headers */,
+				BB1520C6180DDDC70014732C /* OCLFilter.h in Headers */,
+				BB3AB1BF180DE03C0001E94F /* OCLPrefixFilter.h in Headers */,
 				C4BC6FE317C7236B00E834F3 /* OCLQueryPrivate.h in Headers */,
-				C424A3ED17C6C64A00235FE3 /* OBJCLucene.h in Headers */,
+				BB1520A6180DC0D50014732C /* OCLFuzzyQuery.h in Headers */,
 				C4BC6FD517C6E61F00E834F3 /* OCLIndexReaderPrivate.h in Headers */,
+				BB1520B7180DCE5A0014732C /* OCLPhraseQuery.h in Headers */,
+				C424A3ED17C6C64A00235FE3 /* OBJCLucene.h in Headers */,
+				BB1520C1180DD1580014732C /* OCLWildcardQuery.h in Headers */,
+				BBD0914217ED00A7004B1776 /* OCLTerm.h in Headers */,
+				BB1520AA180DC22C0014732C /* OCLBooleanClause.h in Headers */,
+				BBD6873A180DBD4700B1EBD6 /* OCLTermQuery.h in Headers */,
 				C424A3EE17C6C64C00235FE3 /* OCLIndexWriter.h in Headers */,
+				BB1520AE180DC9AE0014732C /* OCLBooleanQuery.h in Headers */,
+				BBD0914617ED06D1004B1776 /* OCLTermPrivate.h in Headers */,
 				C424A3EF17C6C64F00235FE3 /* OCLDocument.h in Headers */,
 				C4BC6FDF17C722CC00E834F3 /* OCLQueryParser.h in Headers */,
 				C424A3F017C6C65700235FE3 /* OCLField.h in Headers */,
+				BB1520B3180DCCBB0014732C /* OCLMultiPhraseQuery.h in Headers */,
 				C424A3F117C6C65700235FE3 /* OCLIndexReader.h in Headers */,
 				C424A3F217C6C65700235FE3 /* OCLQuery.h in Headers */,
 			);
@@ -3719,11 +3828,23 @@
 			files = (
 				C4BC6FE017C722CC00E834F3 /* OCLQueryParser.mm in Sources */,
 				C424A39E17C6A69A00235FE3 /* OCLField.mm in Sources */,
+				BB1520A7180DC0D50014732C /* OCLFuzzyQuery.mm in Sources */,
+				BBD0914317ED00A7004B1776 /* OCLTerm.mm in Sources */,
 				C424A37E17C68F5E00235FE3 /* OCLIndexReader.mm in Sources */,
 				C424A38117C68F7C00235FE3 /* OCLDocument.mm in Sources */,
+				BB1520B8180DCE5A0014732C /* OCLPhraseQuery.mm in Sources */,
+				BB1520C7180DDDC70014732C /* OCLFilter.mm in Sources */,
+				BB3AB1C0180DE03C0001E94F /* OCLPrefixFilter.mm in Sources */,
 				C424A38417C68FB100235FE3 /* OCLQuery.mm in Sources */,
 				C424A39B17C6A4D600235FE3 /* NSString+OCL.mm in Sources */,
+				BB1520B4180DCCBB0014732C /* OCLMultiPhraseQuery.mm in Sources */,
+				BB1520BC180DCF320014732C /* OCLPrefixQuery.mm in Sources */,
+				BB1520C2180DD1580014732C /* OCLWildcardQuery.mm in Sources */,
+				BB1520AF180DC9AE0014732C /* OCLBooleanQuery.mm in Sources */,
 				C424A37917C68F0000235FE3 /* OCLIndexWriter.mm in Sources */,
+				BB1520AB180DC22C0014732C /* OCLBooleanClause.mm in Sources */,
+				BBD6873B180DBD4700B1EBD6 /* OCLTermQuery.mm in Sources */,
+				BB3AB1C4180DE0490001E94F /* OCLWildcardFilter.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4409,6 +4530,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-w",
 				);
 			};
 			name = Debug;
@@ -5095,6 +5217,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-w",
 				);
 			};
 			name = RelWithDebInfo;
@@ -5745,6 +5868,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-w",
 				);
 			};
 			name = Release;
@@ -6125,6 +6249,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-w",
 				);
 			};
 			name = MinSizeRel;
@@ -6359,6 +6484,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-w",
 				);
 			};
 			name = RelWithDebInfo;
@@ -6554,6 +6680,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-w",
 				);
 			};
 			name = Debug;
@@ -7107,6 +7234,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-w",
 				);
 			};
 			name = MinSizeRel;
@@ -7731,7 +7859,9 @@
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					$BUILD_DIR/usr/local/include,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/shared,
+					$SRCROOT/src/core,
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -7809,7 +7939,9 @@
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					$BUILD_DIR/usr/local/include,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/shared,
+					$SRCROOT/src/core,
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -7888,7 +8020,9 @@
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					$BUILD_DIR/usr/local/include,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/shared,
+					$SRCROOT/src/core,
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -7967,7 +8101,9 @@
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					$BUILD_DIR/usr/local/include,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/shared,
+					$SRCROOT/src/core,
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -9138,6 +9274,7 @@
 					"-Wmost",
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
+					"-w",
 				);
 			};
 			name = Release;
