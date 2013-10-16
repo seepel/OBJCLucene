@@ -2500,10 +2500,10 @@
 				C4BC6FDE17C722CC00E834F3 /* OCLQueryParser.mm */,
 				C424A39917C6A4D600235FE3 /* NSString+OCL.h */,
 				C424A39A17C6A4D600235FE3 /* NSString+OCL.mm */,
-				C435914C17C54638009B87BF /* Supporting Files */,
 				BBD0914017ED00A7004B1776 /* OCLTerm.h */,
 				BBD0914417ED06D1004B1776 /* OCLTermPrivate.h */,
 				BBD0914117ED00A7004B1776 /* OCLTerm.mm */,
+				C435914C17C54638009B87BF /* Supporting Files */,
 			);
 			name = OBJCLucene;
 			path = xcode/OBJCLucene;
