@@ -29,31 +29,31 @@
     NSString *basePath = ([paths count] > 0) ? [paths objectAtIndex:0] : nil;
     self.indexPath = [basePath stringByAppendingPathComponent:@"SearchIndex"];
     
-    OCLIndexWriter *writer = [[OCLIndexWriter alloc] initWithPath:self.indexPath overwrite:YES];
-    writer.useCompoundFile = NO;
+//    OCLIndexWriter *writer = [[OCLIndexWriter alloc] initWithPath:self.indexPath overwrite:YES];
+//    writer.useCompoundFile = NO;
     
     NSString* text_file = [[NSBundle mainBundle] pathForResource:@"us_cities" ofType:@"txt"];
     NSString* fileContents = [NSString stringWithContentsOfFile:text_file encoding:NSUTF8StringEncoding error:nil];
     NSArray* allCities = [fileContents componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
     
     NSInteger index = 0;
-    OCLDocument *document = [[OCLDocument alloc] init];
+//    OCLDocument *document = [[OCLDocument alloc] init];
 
-    for(NSString *city in allCities) {
-        [document clear];
-        [document addFieldForKey:@"index" value:[NSString stringWithFormat:@"%d", index] tokenized:NO];
-        [document addFieldForKey:@"name" value:city tokenized:YES];
-        [writer addDocument:document];
+//    for(NSString *city in allCities) {
+//        [document clear];
+//        [document addFieldForKey:@"index" value:[NSString stringWithFormat:@"%d", index] tokenized:NO];
+//        [document addFieldForKey:@"name" value:city tokenized:YES];
+//        [writer addDocument:document];
         
-        index++;
-    }
+//        index++;
+//    }
     
-    [writer removeDocumentsWithFieldForKey:@"index" matchingValue:@"0"];
+//    [writer removeDocumentsWithFieldForKey:@"index" matchingValue:@"0"];
     
-    writer.useCompoundFile = YES;
-    [writer optimize:YES];
+//    writer.useCompoundFile = YES;
+//    [writer optimize:YES];
     
-    self.indexReader = [[OCLIndexReader alloc] initWithPath:self.indexPath];
+//    self.indexReader = [[OCLIndexReader alloc] initWithPath:self.indexPath];
 }
 
 - (void)didReceiveMemoryWarning

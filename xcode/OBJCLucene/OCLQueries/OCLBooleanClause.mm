@@ -34,9 +34,9 @@
 
 - (void)dealloc
 {
-    if(cppBooleanClause_ != NULL) {
-        _CLVDELETE(cppBooleanClause_);
-    }
+//    if(cppBooleanClause_ != NULL) {
+//        _CLVDELETE(cppBooleanClause_);
+//    }
 }
 
 - (void)setCPPBooleanClause:(lucene::search::BooleanClause *)cppBooleanClause

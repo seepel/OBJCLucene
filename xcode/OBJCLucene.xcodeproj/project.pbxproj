@@ -486,6 +486,11 @@
 		BB3AB1C3180DE0490001E94F /* OCLWildcardFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = BB3AB1C1180DE0490001E94F /* OCLWildcardFilter.h */; };
 		BB3AB1C4180DE0490001E94F /* OCLWildcardFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB3AB1C2180DE0490001E94F /* OCLWildcardFilter.mm */; };
 		BB49EE77D45A435E93863AC5 /* NumberTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D945A8BFF84BEF9F265F30 /* NumberTools.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		BB69A266180E181100A23BB9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C435915717C54639009B87BF /* XCTest.framework */; };
+		BB69A267180E181100A23BB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C435914917C54638009B87BF /* Foundation.framework */; };
+		BB69A268180E181100A23BB9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C435915A17C54639009B87BF /* UIKit.framework */; };
+		BB69A26E180E181100A23BB9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB69A26C180E181100A23BB9 /* InfoPlist.strings */; };
+		BB69A27A180E185A00A23BB9 /* OCLQueryTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB69A279180E185A00A23BB9 /* OCLQueryTests.mm */; };
 		BBC602F628AA4232BED28121 /* IndexOutput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B53476458C254C5EABBA86A4 /* IndexOutput.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		BBD0914217ED00A7004B1776 /* OCLTerm.h in Headers */ = {isa = PBXBuildFile; fileRef = BBD0914017ED00A7004B1776 /* OCLTerm.h */; };
 		BBD0914317ED00A7004B1776 /* OCLTerm.mm in Sources */ = {isa = PBXBuildFile; fileRef = BBD0914117ED00A7004B1776 /* OCLTerm.mm */; };
@@ -780,6 +785,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 95698D8262EA47DF85ABBAA6;
 			remoteInfo = "cl_test-ascii";
+		};
+		BB69A272180E181200A23BB9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92D13B526A2C47E4A7E0314E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C424A3A517C6B94E00235FE3;
+			remoteInfo = LuceneTest;
 		};
 		BC1FE0784C8D4D4D918DEB9E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1128,6 +1140,12 @@
 		BB3AB1BE180DE03C0001E94F /* OCLPrefixFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLPrefixFilter.mm; sourceTree = "<group>"; };
 		BB3AB1C1180DE0490001E94F /* OCLWildcardFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLWildcardFilter.h; sourceTree = "<group>"; };
 		BB3AB1C2180DE0490001E94F /* OCLWildcardFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLWildcardFilter.mm; sourceTree = "<group>"; };
+		BB69A265180E181100A23BB9 /* LuceneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuceneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB69A26B180E181100A23BB9 /* LuceneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LuceneTests-Info.plist"; sourceTree = "<group>"; };
+		BB69A26D180E181100A23BB9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BB69A271180E181100A23BB9 /* LuceneTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LuceneTests-Prefix.pch"; sourceTree = "<group>"; };
+		BB69A279180E185A00A23BB9 /* OCLQueryTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLQueryTests.mm; sourceTree = "<group>"; };
+		BB948312180E01110094DB5A /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		BB96A0BBB7A14AF082EAC5F7 /* _gunichartables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _gunichartables.h; path = src/shared/CLucene/config/_gunichartables.h; sourceTree = SOURCE_ROOT; };
 		BBD0914017ED00A7004B1776 /* OCLTerm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLTerm.h; sourceTree = "<group>"; };
 		BBD0914117ED00A7004B1776 /* OCLTerm.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLTerm.mm; sourceTree = "<group>"; };
@@ -1292,6 +1310,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BB69A262180E181100A23BB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB69A266180E181100A23BB9 /* XCTest.framework in Frameworks */,
+				BB69A268180E181100A23BB9 /* UIKit.framework in Frameworks */,
+				BB69A267180E181100A23BB9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C424A3A317C6B94E00235FE3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -2121,6 +2149,7 @@
 				C435914717C54638009B87BF /* libOBJCLucene.a */,
 				C435915617C54638009B87BF /* OBJCLuceneTests.xctest */,
 				C424A3A617C6B94E00235FE3 /* LuceneTest.app */,
+				BB69A265180E181100A23BB9 /* LuceneTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2337,6 +2366,26 @@
 			path = OCLFilters;
 			sourceTree = "<group>";
 		};
+		BB69A269180E181100A23BB9 /* LuceneTests */ = {
+			isa = PBXGroup;
+			children = (
+				BB69A26A180E181100A23BB9 /* Supporting Files */,
+				BB69A279180E185A00A23BB9 /* OCLQueryTests.mm */,
+			);
+			name = LuceneTests;
+			path = xcode/LuceneTests;
+			sourceTree = "<group>";
+		};
+		BB69A26A180E181100A23BB9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BB69A26B180E181100A23BB9 /* LuceneTests-Info.plist */,
+				BB69A26C180E181100A23BB9 /* InfoPlist.strings */,
+				BB69A271180E181100A23BB9 /* LuceneTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		BBD68737180DBD1A00B1EBD6 /* OCLQueries */ = {
 			isa = PBXGroup;
 			children = (
@@ -2416,6 +2465,7 @@
 				C435915717C54639009B87BF /* XCTest.framework */,
 				C435915A17C54639009B87BF /* UIKit.framework */,
 				C424A3A817C6B94E00235FE3 /* CoreGraphics.framework */,
+				BB948312180E01110094DB5A /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2761,6 +2811,7 @@
 				A3B3ED577774421EB80F9F14 /* Resources */,
 				C435915F17C54639009B87BF /* OBJCLuceneTests */,
 				C424A3AB17C6B94E00235FE3 /* LuceneTest */,
+				BB69A269180E181100A23BB9 /* LuceneTests */,
 				C435914817C54638009B87BF /* Frameworks */,
 				98ED8B04D02E495B9CD94E09 /* Products */,
 			);
@@ -3042,6 +3093,24 @@
 			productReference = 93AD82C80EA240C4ACCA96A1 /* cl_test-namespace */;
 			productType = "com.apple.product-type.tool";
 		};
+		BB69A264180E181100A23BB9 /* LuceneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB69A274180E181200A23BB9 /* Build configuration list for PBXNativeTarget "LuceneTests" */;
+			buildPhases = (
+				BB69A261180E181100A23BB9 /* Sources */,
+				BB69A262180E181100A23BB9 /* Frameworks */,
+				BB69A263180E181100A23BB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BB69A273180E181200A23BB9 /* PBXTargetDependency */,
+			);
+			name = LuceneTests;
+			productName = LuceneTests;
+			productReference = BB69A265180E181100A23BB9 /* LuceneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C424A3A517C6B94E00235FE3 /* LuceneTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C424A3D417C6B94E00235FE3 /* Build configuration list for PBXNativeTarget "LuceneTest" */;
@@ -3216,6 +3285,9 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
+					BB69A264180E181100A23BB9 = {
+						TestTargetID = C424A3A517C6B94E00235FE3;
+					};
 					C435915517C54638009B87BF = {
 						TestTargetID = D0921DEF62F247F58157F2E8;
 					};
@@ -3262,11 +3334,20 @@
 				31CCC89A43EA431CB4C6BE90 /* test-refcnt */,
 				2BEC0725475E41AAA94FB771 /* test-singlethreading */,
 				C424A3A517C6B94E00235FE3 /* LuceneTest */,
+				BB69A264180E181100A23BB9 /* LuceneTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BB69A263180E181100A23BB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB69A26E180E181100A23BB9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C424A3A417C6B94E00235FE3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3752,6 +3833,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BB69A261180E181100A23BB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB69A27A180E185A00A23BB9 /* OCLQueryTests.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C28A5ED4F134484B8123B642 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -3948,6 +4037,11 @@
 			target = 756DDB99C69943B387A9E43F /* cl_test-platform-charfuncs */;
 			targetProxy = 2558E8AD2F3144C58763AD7D /* PBXContainerItemProxy */;
 		};
+		BB69A273180E181200A23BB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C424A3A517C6B94E00235FE3 /* LuceneTest */;
+			targetProxy = BB69A272180E181200A23BB9 /* PBXContainerItemProxy */;
+		};
 		BD3B29EE0CFE417EAAE96A27 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 430F592970964167A94FC1ED /* ALL_BUILD */;
@@ -4001,6 +4095,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		BB69A26C180E181100A23BB9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB69A26D180E181100A23BB9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		C424A3AE17C6B94E00235FE3 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -7299,6 +7401,207 @@
 			};
 			name = MinSizeRel;
 		};
+		BB69A275180E181200A23BB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuceneTest.app/LuceneTest";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "xcode/LuceneTests/LuceneTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/shared,
+					$SRCROOT/src/core,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		BB69A276180E181200A23BB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuceneTest.app/LuceneTest";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "xcode/LuceneTests/LuceneTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/shared,
+					$SRCROOT/src/core,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		BB69A277180E181200A23BB9 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuceneTest.app/LuceneTest";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "xcode/LuceneTests/LuceneTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/shared,
+					$SRCROOT/src/core,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = MinSizeRel;
+		};
+		BB69A278180E181200A23BB9 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuceneTest.app/LuceneTest";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "xcode/LuceneTests/LuceneTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/shared,
+					$SRCROOT/src/core,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = RelWithDebInfo;
+		};
 		BDC067ABD3E64A2DAB7A44F9 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -9593,6 +9896,17 @@
 				F8B62F37A82044C7AFC7F621 /* Release */,
 				7BFEDF8379C44FBCA12375F0 /* MinSizeRel */,
 				8338FA717C1C469E904D138D /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BB69A274180E181200A23BB9 /* Build configuration list for PBXNativeTarget "LuceneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB69A275180E181200A23BB9 /* Debug */,
+				BB69A276180E181200A23BB9 /* Release */,
+				BB69A277180E181200A23BB9 /* MinSizeRel */,
+				BB69A278180E181200A23BB9 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
