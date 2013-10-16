@@ -10,6 +10,7 @@
 
 #import "OCLIndexWriter.h"
 #import "OCLIndexReader.h"
+#import "OCLIndexSearcher.h"
 #import "OCLDocument.h"
 #import "OCLQueryParser.h"
 #import "OCLField.h"

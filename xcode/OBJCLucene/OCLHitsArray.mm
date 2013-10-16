@@ -31,9 +31,9 @@
 
 - (void)dealloc
 {
-    if(hits_ != NULL) {
-        _CLVDELETE(hits_);
-    }
+//    if(hits_ != NULL) {
+//        _CLVDELETE(hits_);
+//    }
 }
 
 - (void)setHits:(lucene::search::Hits *)hits
@@ -54,8 +54,8 @@
 
 - (id)objectAtIndex:(NSUInteger)index
 {
-    if(index < hits_->length()) {
-        @throw [NSException exceptionWithName:NSRangeException reason:[NSString stringWithFormat:@"The requested index is outside of the receiver's range [0..%d]", self.count] userInfo:nil];
+    if(index >= hits_->length()) {
+        @throw [NSException exceptionWithName:NSRangeException reason:[NSString stringWithFormat:@"The requested index ^d is outside of the receiver's range [0..%d]", index, self.count] userInfo:nil];
     }
     
     for(int i = documentCache_.count; i <= index; i++) {

@@ -7,6 +7,7 @@
 //
 
 #import "OCLIndexSearcher.h"
+#import "OCLQueryPrivate.h"
 #import "OCLIndexReaderPrivate.h"
 #import "OCLQueryPrivate.h"
 #import "OCLFilterPrivate.h"
