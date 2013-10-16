@@ -485,6 +485,7 @@
 		BB3AB1C0180DE03C0001E94F /* OCLPrefixFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB3AB1BE180DE03C0001E94F /* OCLPrefixFilter.mm */; };
 		BB3AB1C3180DE0490001E94F /* OCLWildcardFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = BB3AB1C1180DE0490001E94F /* OCLWildcardFilter.h */; };
 		BB3AB1C4180DE0490001E94F /* OCLWildcardFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB3AB1C2180DE0490001E94F /* OCLWildcardFilter.mm */; };
+		BB3E738F180F0F1200F2028F /* OCLFilterTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB3E738E180F0F1200F2028F /* OCLFilterTests.mm */; };
 		BB49EE77D45A435E93863AC5 /* NumberTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96D945A8BFF84BEF9F265F30 /* NumberTools.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		BB69A266180E181100A23BB9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C435915717C54639009B87BF /* XCTest.framework */; };
 		BB69A267180E181100A23BB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C435914917C54638009B87BF /* Foundation.framework */; };
@@ -1140,6 +1141,7 @@
 		BB3AB1BE180DE03C0001E94F /* OCLPrefixFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLPrefixFilter.mm; sourceTree = "<group>"; };
 		BB3AB1C1180DE0490001E94F /* OCLWildcardFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLWildcardFilter.h; sourceTree = "<group>"; };
 		BB3AB1C2180DE0490001E94F /* OCLWildcardFilter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLWildcardFilter.mm; sourceTree = "<group>"; };
+		BB3E738E180F0F1200F2028F /* OCLFilterTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLFilterTests.mm; sourceTree = "<group>"; };
 		BB69A265180E181100A23BB9 /* LuceneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LuceneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB69A26B180E181100A23BB9 /* LuceneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LuceneTests-Info.plist"; sourceTree = "<group>"; };
 		BB69A26D180E181100A23BB9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -2371,6 +2373,7 @@
 			children = (
 				BB69A26A180E181100A23BB9 /* Supporting Files */,
 				BB69A279180E185A00A23BB9 /* OCLQueryTests.mm */,
+				BB3E738E180F0F1200F2028F /* OCLFilterTests.mm */,
 			);
 			name = LuceneTests;
 			path = xcode/LuceneTests;
@@ -3306,6 +3309,10 @@
 			projectRoot = "";
 			targets = (
 				C435914617C54638009B87BF /* OBJCLucene */,
+				F2D9F3663615477AA3B3BAB3 /* clucene-shared-static */,
+				7DA45354B7004AD08820E631 /* clucene-core-static */,
+				C424A3A517C6B94E00235FE3 /* LuceneTest */,
+				BB69A264180E181100A23BB9 /* LuceneTests */,
 				C435915517C54638009B87BF /* OBJCLuceneTests */,
 				430F592970964167A94FC1ED /* ALL_BUILD */,
 				A7045ECA9866408998B1C048 /* RUN_TESTS */,
@@ -3313,9 +3320,7 @@
 				A7136258FE6640B0A00E5934 /* install */,
 				E77486668F234441AEEECC40 /* uninstall */,
 				D0921DEF62F247F58157F2E8 /* clucene-shared */,
-				F2D9F3663615477AA3B3BAB3 /* clucene-shared-static */,
 				D1D140278C1E464A994257E0 /* clucene-core */,
-				7DA45354B7004AD08820E631 /* clucene-core-static */,
 				CE2B22685CC04DA6A478AD81 /* cl_test */,
 				95698D8262EA47DF85ABBAA6 /* cl_test-ascii */,
 				A6291B12438C49EBA1BC2CBF /* cl_test-mmap */,
@@ -3333,8 +3338,6 @@
 				341C4A85208740A78D3A8618 /* test-platform-charfuncs */,
 				31CCC89A43EA431CB4C6BE90 /* test-refcnt */,
 				2BEC0725475E41AAA94FB771 /* test-singlethreading */,
-				C424A3A517C6B94E00235FE3 /* LuceneTest */,
-				BB69A264180E181100A23BB9 /* LuceneTests */,
 			);
 		};
 /* End PBXProject section */
@@ -3837,6 +3840,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB3E738F180F0F1200F2028F /* OCLFilterTests.mm in Sources */,
 				BB69A27A180E185A00A23BB9 /* OCLQueryTests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

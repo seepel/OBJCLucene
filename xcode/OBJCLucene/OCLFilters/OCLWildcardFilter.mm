@@ -22,6 +22,11 @@
 
 @synthesize term = term_;
 
+- (id)initWithTerm:(OCLTerm *)term
+{
+    return [self initWithTerm:term cache:NO];
+}
+
 - (id)initWithTerm:(OCLTerm *)term cache:(BOOL)cache;
 {
     if((self = [super init])) {
