@@ -15,7 +15,7 @@
 /**
  @class OCLQuery
  @abstract Searches an index
- @discussion Retrieved from OCLQueryParser, this will perform the actual search on an OCLIndexReader
+ @discussion Can be retrieved from an OCLQueryParser or created manually, this will perform the actual search on an OCLIndexReader
  @author  Bob Van Osten
  @version 1.0
  */
@@ -43,16 +43,16 @@
 - (NSArray *)findFieldValuesForKey:(NSString *)inKey withIndex:(OCLIndexReader *)inReader;
 
 /**
- @method booleanQueryWithQueries:andOccurances:
- @abstract Returns an OCLQuery initialized with a backing BooleanQuery
+ @method booleanQueryWithClauses:
+ @abstract Creates an OCLBooleanQuery
  @discussion
- @param inQueries An array of OCLQueries
- @param inOccurances An array of strings to represent tho Boolean::Clause::Occur to be set with the corresponding OCLQuery
+ @param inClauses An array of OCLBooleanClauses used to construct the query
  @result An initialized OCLQuery with a backing BooleanQuery
  */
-+ (id)booleanQueryWithClauses:(NSArray *)clauses;
++ (id)booleanQueryWithClauses:(NSArray *)inClauses;
 
-+ (id)constantScoreQueryWithFilter:(OCLFilter *)filter;
+// Not implemented
+//+ (id)constantScoreQueryWithFilter:(OCLFilter *)filter;
 
 /**
  @method fuzzyQueryWithTerm:minimumSimilarity:prefixLength:
@@ -83,13 +83,19 @@
 
 /**
  @method phraseQueryWithTerms:slop:
- @abstarct Returns an OCLQuery with a backing PhraseQuery
+ @abstarct Returns an OCLPhraseQuery configured with the specified terms
  @param tecms an Array of OCLTerms for the phrase of the PhraseQuery
  @param slop An iinteger representing the number of
- @result An initalized OCLQuery with a backing PhraseQuery
+ @result An initalized OCLPhraseQuery configured with the specified terms
  */
 + (id)phraseQueryWithTerms:(NSArray *)terms slop:(NSUInteger)slop;
 
+/**
+ @method prefixQueryWithTerm:
+ @abstract Creates an OCLPrefixQuery
+ @param term An OCLTerm representing the desired prefix
+ @result An OCLPrefixQuery
+ */
 + (id)prefixQueryWithTerm:(OCLTerm *)term;
 
 //+ (id)rangeQueryWithRange:(NSRange)range;

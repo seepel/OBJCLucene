@@ -16,11 +16,26 @@ typedef enum {
     OCLBooleanClauseMustNotOccur = 4
 } OCLBooleanClauseOccur;
 
+/**
+ @class OCLBooleanClause
+ @abstract Wraps an OCLQuery for inclusion in an OCLBooleanQuery.
+ @discussion
+ @author Sean Lynch 
+ @version 1.0
+ */
 @interface OCLBooleanClause : NSObject
 
 @property (nonatomic, strong) OCLQuery *query;
 @property (nonatomic) OCLBooleanClauseOccur occur;
 
+/**
+ @method initWithQuery:occur:
+ @abstract Returns an initialized OCLBooleanClause containing the given OCLQuery and OCLBooleanClauseOccur
+ @param query An OCLQuery to be included in the OCLBooleanClause
+ @param occur An OCLBooleanClauseOccur specifying whether the query must match, must not match, or should match.
+ @discussion
+ @result An initialized OCLBooleanClause for the give OCLQuery and OCLBooleanClauseOccur
+ */
 - (id)initWithQuery:(OCLQuery *)query occur:(OCLBooleanClauseOccur)occur;
 
 @end
