@@ -78,8 +78,6 @@ struct compareScore {
 
 @implementation OCLQuery {
     Query* _query;
-    // Need to retain things like OCLTerms and OCLQueries, this is a quick and dirty way to do that.
-    NSMutableArray *_storage;
 }
 
 - (void)dealloc
@@ -119,12 +117,36 @@ struct compareScore {
     query->setBoost(boost);
 }
 
-- (NSMutableArray *)storage
+- (BOOL)isEqual:(id)object
 {
-    if(_storage == nil) {
-        _storage = [NSMutableArray array];
+    if(![object isKindOfClass:[self class]]) {
+        return NO;
     }
-    return _storage;
+    if([self cppQuery] == NULL) {
+        if([object cppQuery] == NULL) {
+            return self == object;
+        }
+    }
+    if([self hash] != [object hash]) {
+        return NO;
+    }
+    return [self cppQuery]->equals([object cppQuery]);
+}
+
+- (NSUInteger)hash
+{
+    if([self cppQuery] == NULL) {
+        return 0;
+    }
+    return [self cppQuery]->hashCode();
+}
+
+- (NSString *)description
+{
+    if(_query == NULL) {
+        return [super description];
+    }
+    return [NSString stringWithFormat:@"%@ - %@", [super description], [NSString stringFromTCHAR:_query->toString()]];
 }
 
 - (NSArray *)findFieldValuesForKey:(NSString *)inKey withIndex:(OCLIndexReader *)inReader

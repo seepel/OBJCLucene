@@ -40,6 +40,33 @@
     }
 }
 
+- (BOOL)isEqual:(id)object
+{
+    if(![object isKindOfClass:[self class]]) {
+        return NO;
+    }
+    if([self hash] != [object hash]) {
+        return NO;
+    }
+    return [self cppTerm]->equals([object cppTerm]);
+}
+
+- (NSUInteger)hash
+{
+    if(_term == NULL) {
+        return 0;
+    }
+    return _term->hashCode();
+}
+
+- (NSString *)description
+{
+    if(_term == NULL) {
+        return [super description];
+    }
+    return [NSString stringWithFormat:@"%@ - %@", [super description], [NSString stringFromTCHAR:_term->toString()]];
+}
+
 - (Term *)cppTerm
 {
     return _term;
