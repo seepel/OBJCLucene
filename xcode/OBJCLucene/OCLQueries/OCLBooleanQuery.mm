@@ -21,11 +21,18 @@
 
 @synthesize booleanClauses = booleanClauses_;
 
-- (id)initWithClauses:(NSArray *)booleanClauses
+- (id)init
 {
     if((self = [super init])) {
         BooleanQuery *query = _CLNEW BooleanQuery();
         [self setCPPQuery:query];
+    }
+    return self;
+}
+
+- (id)initWithClauses:(NSArray *)booleanClauses
+{
+    if((self = [self init])) {
         booleanClauses_ = [NSMutableArray arrayWithCapacity:booleanClauses.count];
         for(OCLBooleanClause *clause in booleanClauses) {
             [self addClause:clause];

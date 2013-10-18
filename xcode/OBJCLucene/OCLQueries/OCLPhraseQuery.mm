@@ -19,11 +19,18 @@
 
 @implementation OCLPhraseQuery
 
-- (id)initWithTerms:(NSArray *)terms slop:(NSUInteger)slop
+- (id)init
 {
     if((self = [super init])) {
         PhraseQuery *query = _CLNEW PhraseQuery();
         [self setCPPQuery:query];
+    }
+    return self;
+}
+
+- (id)initWithTerms:(NSArray *)terms slop:(NSUInteger)slop
+{
+    if((self = [self init])) {
         self.slop = slop;
         for(OCLTerm *term in terms) {
             [self addTerm:term];

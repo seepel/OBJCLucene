@@ -19,11 +19,18 @@
 
 @implementation OCLMultiPhraseQuery
 
-- (id)initWithTerms:(NSArray *)terms slop:(NSUInteger)slop
+- (id)init
 {
     if((self = [super init])) {
         MultiPhraseQuery *query = _CLNEW MultiPhraseQuery();
         [self setCPPQuery:query];
+    }
+    return self;
+}
+
+- (id)initWithTerms:(NSArray *)terms slop:(NSUInteger)slop
+{
+    if((self = [self init])) {
         self.slop = slop;
         for(OCLTerm *term in terms) {
             [self addTerm:term];
