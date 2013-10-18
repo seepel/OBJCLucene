@@ -465,25 +465,25 @@
 		B841E3444DB44A79B5E327B3 /* QueryToken.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76CEAB632F254367861760A8 /* QueryToken.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		B8868911B402473DBFE8515B /* TestExplanations.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB4E2381F88E4F959A17D3E0 /* TestExplanations.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		BA31F1E9B4FD4843BA4F6879 /* MultiReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933549452A21472BBF33BE30 /* MultiReader.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		BB1520A6180DC0D50014732C /* OCLFuzzyQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520A4180DC0D50014732C /* OCLFuzzyQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB1520A6180DC0D50014732C /* OCLFuzzyQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520A4180DC0D50014732C /* OCLFuzzyQuery.h */; };
 		BB1520A7180DC0D50014732C /* OCLFuzzyQuery.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB1520A5180DC0D50014732C /* OCLFuzzyQuery.mm */; };
-		BB1520AA180DC22C0014732C /* OCLBooleanClause.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520A8180DC22C0014732C /* OCLBooleanClause.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB1520AA180DC22C0014732C /* OCLBooleanClause.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520A8180DC22C0014732C /* OCLBooleanClause.h */; };
 		BB1520AB180DC22C0014732C /* OCLBooleanClause.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB1520A9180DC22C0014732C /* OCLBooleanClause.mm */; };
-		BB1520AE180DC9AE0014732C /* OCLBooleanQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520AC180DC9AE0014732C /* OCLBooleanQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB1520AE180DC9AE0014732C /* OCLBooleanQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520AC180DC9AE0014732C /* OCLBooleanQuery.h */; };
 		BB1520AF180DC9AE0014732C /* OCLBooleanQuery.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB1520AD180DC9AE0014732C /* OCLBooleanQuery.mm */; };
-		BB1520B3180DCCBB0014732C /* OCLMultiPhraseQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520B1180DCCBB0014732C /* OCLMultiPhraseQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB1520B3180DCCBB0014732C /* OCLMultiPhraseQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520B1180DCCBB0014732C /* OCLMultiPhraseQuery.h */; };
 		BB1520B4180DCCBB0014732C /* OCLMultiPhraseQuery.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB1520B2180DCCBB0014732C /* OCLMultiPhraseQuery.mm */; };
-		BB1520B7180DCE5A0014732C /* OCLPhraseQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520B5180DCE5A0014732C /* OCLPhraseQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB1520B7180DCE5A0014732C /* OCLPhraseQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520B5180DCE5A0014732C /* OCLPhraseQuery.h */; };
 		BB1520B8180DCE5A0014732C /* OCLPhraseQuery.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB1520B6180DCE5A0014732C /* OCLPhraseQuery.mm */; };
-		BB1520BB180DCF320014732C /* OCLPrefixQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520B9180DCF320014732C /* OCLPrefixQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB1520BB180DCF320014732C /* OCLPrefixQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520B9180DCF320014732C /* OCLPrefixQuery.h */; };
 		BB1520BC180DCF320014732C /* OCLPrefixQuery.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB1520BA180DCF320014732C /* OCLPrefixQuery.mm */; };
-		BB1520C1180DD1580014732C /* OCLWildcardQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520BF180DD1580014732C /* OCLWildcardQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB1520C1180DD1580014732C /* OCLWildcardQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520BF180DD1580014732C /* OCLWildcardQuery.h */; };
 		BB1520C2180DD1580014732C /* OCLWildcardQuery.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB1520C0180DD1580014732C /* OCLWildcardQuery.mm */; };
-		BB1520C6180DDDC70014732C /* OCLFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520C4180DDDC70014732C /* OCLFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB1520C6180DDDC70014732C /* OCLFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = BB1520C4180DDDC70014732C /* OCLFilter.h */; };
 		BB1520C7180DDDC70014732C /* OCLFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB1520C5180DDDC70014732C /* OCLFilter.mm */; };
-		BB3AB1BF180DE03C0001E94F /* OCLPrefixFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = BB3AB1BD180DE03C0001E94F /* OCLPrefixFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB3AB1BF180DE03C0001E94F /* OCLPrefixFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = BB3AB1BD180DE03C0001E94F /* OCLPrefixFilter.h */; };
 		BB3AB1C0180DE03C0001E94F /* OCLPrefixFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB3AB1BE180DE03C0001E94F /* OCLPrefixFilter.mm */; };
-		BB3AB1C3180DE0490001E94F /* OCLWildcardFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = BB3AB1C1180DE0490001E94F /* OCLWildcardFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BB3AB1C3180DE0490001E94F /* OCLWildcardFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = BB3AB1C1180DE0490001E94F /* OCLWildcardFilter.h */; };
 		BB3AB1C4180DE0490001E94F /* OCLWildcardFilter.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB3AB1C2180DE0490001E94F /* OCLWildcardFilter.mm */; };
 		BB3E738F180F0F1200F2028F /* OCLFilterTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB3E738E180F0F1200F2028F /* OCLFilterTests.mm */; };
 		BB3E7391180F130E00F2028F /* OCLIndexReaderTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB3E7390180F130E00F2028F /* OCLIndexReaderTests.mm */; };
@@ -494,17 +494,16 @@
 		BB69A268180E181100A23BB9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C435915A17C54639009B87BF /* UIKit.framework */; };
 		BB69A26E180E181100A23BB9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB69A26C180E181100A23BB9 /* InfoPlist.strings */; };
 		BB69A27A180E185A00A23BB9 /* OCLQueryTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = BB69A279180E185A00A23BB9 /* OCLQueryTests.mm */; };
-		BBBF39CB180F6B34006E5E7E /* CLConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 29E1CF10A1204E938E4A3710 /* CLConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BBC602F628AA4232BED28121 /* IndexOutput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B53476458C254C5EABBA86A4 /* IndexOutput.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		BBD0914217ED00A7004B1776 /* OCLTerm.h in Headers */ = {isa = PBXBuildFile; fileRef = BBD0914017ED00A7004B1776 /* OCLTerm.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BBD0914217ED00A7004B1776 /* OCLTerm.h in Headers */ = {isa = PBXBuildFile; fileRef = BBD0914017ED00A7004B1776 /* OCLTerm.h */; };
 		BBD0914317ED00A7004B1776 /* OCLTerm.mm in Sources */ = {isa = PBXBuildFile; fileRef = BBD0914117ED00A7004B1776 /* OCLTerm.mm */; };
 		BBD0914617ED06D1004B1776 /* OCLTermPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = BBD0914417ED06D1004B1776 /* OCLTermPrivate.h */; };
-		BBD6873A180DBD4700B1EBD6 /* OCLTermQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BBD68738180DBD4700B1EBD6 /* OCLTermQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BBD6873A180DBD4700B1EBD6 /* OCLTermQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = BBD68738180DBD4700B1EBD6 /* OCLTermQuery.h */; };
 		BBD6873B180DBD4700B1EBD6 /* OCLTermQuery.mm in Sources */ = {isa = PBXBuildFile; fileRef = BBD68739180DBD4700B1EBD6 /* OCLTermQuery.mm */; };
 		BBF42937043D4BBA88D0E988 /* PhrasePositions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A97F1C0124A4E0482CE82FE /* PhrasePositions.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		BBF82763180F3E9C005350FB /* OCLHitsArray.h in Headers */ = {isa = PBXBuildFile; fileRef = BBF8275C180F3E9C005350FB /* OCLHitsArray.h */; };
 		BBF82764180F3E9C005350FB /* OCLHitsArray.mm in Sources */ = {isa = PBXBuildFile; fileRef = BBF8275D180F3E9C005350FB /* OCLHitsArray.mm */; };
-		BBF82765180F3E9C005350FB /* OCLIndexSearcher.h in Headers */ = {isa = PBXBuildFile; fileRef = BBF8275E180F3E9C005350FB /* OCLIndexSearcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BBF82765180F3E9C005350FB /* OCLIndexSearcher.h in Headers */ = {isa = PBXBuildFile; fileRef = BBF8275E180F3E9C005350FB /* OCLIndexSearcher.h */; };
 		BBF82766180F3E9C005350FB /* OCLIndexSearcher.mm in Sources */ = {isa = PBXBuildFile; fileRef = BBF8275F180F3E9C005350FB /* OCLIndexSearcher.mm */; };
 		BBF8276B180F3FC4005350FB /* OCLIndexSearcherTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = BBF8276A180F3FC4005350FB /* OCLIndexSearcherTests.mm */; };
 		BC52B62BE2F641C2B3BA6339 /* CLMonolithic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E053AD70094C4152A6B1841C /* CLMonolithic.cpp */; settings = {COMPILER_FLAGS = "-DMAKE_CLUCENE_SHARED_LIB -DMAKE_CLUCENE_CORE_LIB"; }; };
@@ -538,12 +537,12 @@
 		C424A3E517C6BE5700235FE3 /* libclucene-shared-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FAC32E0BA884EEF88C605FA /* libclucene-shared-static.a */; };
 		C424A3E617C6BE5900235FE3 /* libclucene-core-static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AA42371AD019431C9A57FB35 /* libclucene-core-static.a */; };
 		C424A3EB17C6C4C200235FE3 /* libOBJCLucene.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C435914717C54638009B87BF /* libOBJCLucene.a */; };
-		C424A3ED17C6C64A00235FE3 /* OBJCLucene.h in Headers */ = {isa = PBXBuildFile; fileRef = C435914E17C54638009B87BF /* OBJCLucene.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C424A3EE17C6C64C00235FE3 /* OCLIndexWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = C424A37717C68F0000235FE3 /* OCLIndexWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C424A3EF17C6C64F00235FE3 /* OCLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = C424A37F17C68F7C00235FE3 /* OCLDocument.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C424A3F017C6C65700235FE3 /* OCLField.h in Headers */ = {isa = PBXBuildFile; fileRef = C424A39C17C6A69A00235FE3 /* OCLField.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C424A3F117C6C65700235FE3 /* OCLIndexReader.h in Headers */ = {isa = PBXBuildFile; fileRef = C424A37C17C68F5E00235FE3 /* OCLIndexReader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C424A3F217C6C65700235FE3 /* OCLQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = C424A38217C68FB100235FE3 /* OCLQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C424A3ED17C6C64A00235FE3 /* OBJCLucene.h in Headers */ = {isa = PBXBuildFile; fileRef = C435914E17C54638009B87BF /* OBJCLucene.h */; };
+		C424A3EE17C6C64C00235FE3 /* OCLIndexWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = C424A37717C68F0000235FE3 /* OCLIndexWriter.h */; };
+		C424A3EF17C6C64F00235FE3 /* OCLDocument.h in Headers */ = {isa = PBXBuildFile; fileRef = C424A37F17C68F7C00235FE3 /* OCLDocument.h */; };
+		C424A3F017C6C65700235FE3 /* OCLField.h in Headers */ = {isa = PBXBuildFile; fileRef = C424A39C17C6A69A00235FE3 /* OCLField.h */; };
+		C424A3F117C6C65700235FE3 /* OCLIndexReader.h in Headers */ = {isa = PBXBuildFile; fileRef = C424A37C17C68F5E00235FE3 /* OCLIndexReader.h */; };
+		C424A3F217C6C65700235FE3 /* OCLQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = C424A38217C68FB100235FE3 /* OCLQuery.h */; };
 		C424A40B17C6CFCD00235FE3 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C424A40A17C6CFCD00235FE3 /* libz.dylib */; };
 		C435914A17C54638009B87BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C435914917C54638009B87BF /* Foundation.framework */; };
 		C435915817C54639009B87BF /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C435915717C54639009B87BF /* XCTest.framework */; };
@@ -555,7 +554,7 @@
 		C4397DDE5C2F4768A97D62C7 /* TermInfosReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 76BA493496EE4744BE7EC5D0 /* TermInfosReader.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		C443485D7C844162AB498C4A /* TestConstantScoreRangeQuery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7AA1B248CA6B4F058205D88B /* TestConstantScoreRangeQuery.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		C4BC6FD517C6E61F00E834F3 /* OCLIndexReaderPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = C4BC6FD317C6E61F00E834F3 /* OCLIndexReaderPrivate.h */; };
-		C4BC6FDF17C722CC00E834F3 /* OCLQueryParser.h in Headers */ = {isa = PBXBuildFile; fileRef = C4BC6FDD17C722CC00E834F3 /* OCLQueryParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4BC6FDF17C722CC00E834F3 /* OCLQueryParser.h in Headers */ = {isa = PBXBuildFile; fileRef = C4BC6FDD17C722CC00E834F3 /* OCLQueryParser.h */; };
 		C4BC6FE017C722CC00E834F3 /* OCLQueryParser.mm in Sources */ = {isa = PBXBuildFile; fileRef = C4BC6FDE17C722CC00E834F3 /* OCLQueryParser.mm */; };
 		C4BC6FE317C7236B00E834F3 /* OCLQueryPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = C4BC6FE117C7236B00E834F3 /* OCLQueryPrivate.h */; };
 		C5549549137E415D96E4E761 /* TestThreading.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 12D0D73554B5438AB4BFA30D /* TestThreading.cpp */; settings = {COMPILER_FLAGS = ""; }; };
@@ -802,6 +801,20 @@
 			remoteGlobalIDString = C424A3A517C6B94E00235FE3;
 			remoteInfo = LuceneTest;
 		};
+		BB9574331811BD310054F13E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92D13B526A2C47E4A7E0314E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F2D9F3663615477AA3B3BAB3;
+			remoteInfo = "clucene-shared-static";
+		};
+		BB9574351811BD340054F13E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92D13B526A2C47E4A7E0314E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7DA45354B7004AD08820E631;
+			remoteInfo = "clucene-core-static";
+		};
 		BC1FE0784C8D4D4D918DEB9E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 92D13B526A2C47E4A7E0314E /* Project object */;
@@ -815,13 +828,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = C7D4CD42A1FD4FA3A65A2870;
 			remoteInfo = ZERO_CHECK;
-		};
-		C424A37117C68B3C00235FE3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 92D13B526A2C47E4A7E0314E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 430F592970964167A94FC1ED;
-			remoteInfo = ALL_BUILD;
 		};
 		C424A3DE17C6B97F00235FE3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -3004,7 +3010,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBBF39CB180F6B34006E5E7E /* CLConfig.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3177,12 +3182,12 @@
 				C435914317C54638009B87BF /* Sources */,
 				C435914417C54638009B87BF /* Frameworks */,
 				C424A3EC17C6C64500235FE3 /* Headers */,
-				C424A37317C68C8D00235FE3 /* Create Fat Library */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C424A37217C68B3C00235FE3 /* PBXTargetDependency */,
+				BB9574361811BD340054F13E /* PBXTargetDependency */,
+				BB9574341811BD310054F13E /* PBXTargetDependency */,
 			);
 			name = OBJCLucene;
 			productName = OBJCLucene;
@@ -3411,20 +3416,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C424A37317C68C8D00235FE3 /* Create Fat Library */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Create Fat Library";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "##########################################\n#\n# c.f. http://stackoverflow.com/questions/3520977/build-fat-static-library-device-simulator-using-xcode-and-sdk-4\n#\n# Version 2.7\n#\n# Latest Change:\n# - Supports iPhone 5 / iPod Touch 5 (uses Apple's workaround to lipo bug)\n#\n# Purpose:\n#   Automatically create a Universal static library for iPhone + iPad + iPhone Simulator from within XCode\n#\n# Author: Adam Martin - http://twitter.com/redglassesapps\n# Based on: original script from Eonil (main changes: Eonil's script WILL NOT WORK in Xcode GUI - it WILL CRASH YOUR COMPUTER)\n#\n\nset -e\nset -o pipefail\n\n#################[ Tests: helps workaround any future bugs in Xcode ]########\n#\nDEBUG_THIS_SCRIPT=\"false\"\n\nif [ $DEBUG_THIS_SCRIPT = \"true\" ]\nthen\necho \"########### TESTS #############\"\necho \"Use the following variables when debugging this script; note that they may change on recursions\"\necho \"BUILD_DIR = $BUILD_DIR\"\necho \"BUILD_ROOT = $BUILD_ROOT\"\necho \"CONFIGURATION_BUILD_DIR = $CONFIGURATION_BUILD_DIR\"\necho \"BUILT_PRODUCTS_DIR = $BUILT_PRODUCTS_DIR\"\necho \"CONFIGURATION_TEMP_DIR = $CONFIGURATION_TEMP_DIR\"\necho \"TARGET_BUILD_DIR = $TARGET_BUILD_DIR\"\nfi\n\n#####################[ part 1 ]##################\n# First, work out the BASESDK version number (NB: Apple ought to report this, but they hide it)\n#    (incidental: searching for substrings in sh is a nightmare! Sob)\n\nSDK_VERSION=$(echo ${SDK_NAME} | grep -o '.\\{3\\}$')\n\n# Next, work out if we're in SIM or DEVICE\n\nif [ ${PLATFORM_NAME} = \"iphonesimulator\" ]\nthen\nOTHER_SDK_TO_BUILD=iphoneos${SDK_VERSION}\nelse\nOTHER_SDK_TO_BUILD=iphonesimulator${SDK_VERSION}\nfi\n\necho \"XCode has selected SDK: ${PLATFORM_NAME} with version: ${SDK_VERSION} (although back-targetting: ${IPHONEOS_DEPLOYMENT_TARGET})\"\necho \"...therefore, OTHER_SDK_TO_BUILD = ${OTHER_SDK_TO_BUILD}\"\n#\n#####################[ end of part 1 ]##################\n\n#####################[ part 2 ]##################\n#\n# IF this is the original invocation, invoke WHATEVER other builds are required\n#\n# Xcode is already building ONE target...\n#\n# ...but this is a LIBRARY, so Apple is wrong to set it to build just one.\n# ...we need to build ALL targets\n# ...we MUST NOT re-build the target that is ALREADY being built: Xcode WILL CRASH YOUR COMPUTER if you try this (infinite recursion!)\n#\n#\n# So: build ONLY the missing platforms/configurations.\n\nif [ \"true\" == ${ALREADYINVOKED:-false} ]\nthen\necho \"RECURSION: I am NOT the root invocation, so I'm NOT going to recurse\"\nelse\n# CRITICAL:\n# Prevent infinite recursion (Xcode sucks)\nexport ALREADYINVOKED=\"true\"\n\necho \"RECURSION: I am the root ... recursing all missing build targets NOW...\"\necho \"RECURSION: ...about to invoke: xcodebuild -configuration \\\"${CONFIGURATION}\\\" -project \\\"${PROJECT_NAME}.xcodeproj\\\" -target \\\"${TARGET_NAME}\\\" -sdk \\\"${OTHER_SDK_TO_BUILD}\\\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO\" BUILD_DIR=\\\"${BUILD_DIR}\\\" BUILD_ROOT=\\\"${BUILD_ROOT}\\\" SYMROOT=\\\"${SYMROOT}\\\"\n\nxcodebuild -configuration \"${CONFIGURATION}\" -project \"xcode/${PROJECT_NAME}.xcodeproj\" -target \"${TARGET_NAME}\" -sdk \"${OTHER_SDK_TO_BUILD}\" ${ACTION} RUN_CLANG_STATIC_ANALYZER=NO BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\" SYMROOT=\"${SYMROOT}\"\n\nACTION=\"build\"\n\n#Merge all platform binaries as a fat binary for each configurations.\n\n# Calculate where the (multiple) built files are coming from:\nCURRENTCONFIG_DEVICE_DIR=${SYMROOT}/${CONFIGURATION}-iphoneos\nCURRENTCONFIG_SIMULATOR_DIR=${SYMROOT}/${CONFIGURATION}-iphonesimulator\n\necho \"Taking device build from: ${CURRENTCONFIG_DEVICE_DIR}\"\necho \"Taking simulator build from: ${CURRENTCONFIG_SIMULATOR_DIR}\"\n\nCREATING_UNIVERSAL_DIR=${SYMROOT}/${CONFIGURATION}-universal\necho \"...I will output a universal build to: ${CREATING_UNIVERSAL_DIR}\"\n\n# ... remove the products of previous runs of this script\n#      NB: this directory is ONLY created by this script - it should be safe to delete!\n\nrm -rf \"${CREATING_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\"\n\nif [ ! -d \"${CREATING_UNIVERSAL_DIR}\" ]\nthen\nmkdir \"${CREATING_UNIVERSAL_DIR}\"\nfi\n\n#\necho \"lipo: for current configuration (${CONFIGURATION}) creating output file: ${CREATING_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\"\nxcrun -sdk iphoneos lipo -create -output \"${CREATING_UNIVERSAL_DIR}/${EXECUTABLE_NAME}\" \"${CURRENTCONFIG_DEVICE_DIR}/${EXECUTABLE_NAME}\" \"${CURRENTCONFIG_SIMULATOR_DIR}/${EXECUTABLE_NAME}\"\n\n#########\n#\n# Added: StackOverflow suggestion to also copy \"include\" files\n#    (untested, but should work OK)\n#\necho \"Fetching headers from ${PUBLIC_HEADERS_FOLDER_PATH}\"\necho \"  (if you embed your library project in another project, you will need to add\"\necho \"   a \"User Search Headers\" build setting of: (NB INCLUDE THE DOUBLE QUOTES BELOW!)\"\necho '        \"$(TARGET_BUILD_DIR)/usr/local/include/\"'\nif [ -d \"${CURRENTCONFIG_DEVICE_DIR}${PUBLIC_HEADERS_FOLDER_PATH}\" ]\nthen\nrm -rf \"${CREATING_UNIVERSAL_DIR}${PUBLIC_HEADERS_FOLDER_PATH}\"\nmkdir -p \"${CREATING_UNIVERSAL_DIR}${PUBLIC_HEADERS_FOLDER_PATH}\"\n# * needs to be outside the double quotes?\ncp -r \"${CURRENTCONFIG_DEVICE_DIR}${PUBLIC_HEADERS_FOLDER_PATH}/\"* \"${CREATING_UNIVERSAL_DIR}${PUBLIC_HEADERS_FOLDER_PATH}\"\nfi\nfi";
-		};
 		C424A39117C6972B00235FE3 /* Copy Header Files */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -4089,15 +4080,20 @@
 			target = C424A3A517C6B94E00235FE3 /* LuceneTest */;
 			targetProxy = BB69A272180E181200A23BB9 /* PBXContainerItemProxy */;
 		};
+		BB9574341811BD310054F13E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F2D9F3663615477AA3B3BAB3 /* clucene-shared-static */;
+			targetProxy = BB9574331811BD310054F13E /* PBXContainerItemProxy */;
+		};
+		BB9574361811BD340054F13E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7DA45354B7004AD08820E631 /* clucene-core-static */;
+			targetProxy = BB9574351811BD340054F13E /* PBXContainerItemProxy */;
+		};
 		BD3B29EE0CFE417EAAE96A27 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 430F592970964167A94FC1ED /* ALL_BUILD */;
 			targetProxy = 15F1725D77484F4FA1A623E0 /* PBXContainerItemProxy */;
-		};
-		C424A37217C68B3C00235FE3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 430F592970964167A94FC1ED /* ALL_BUILD */;
-			targetProxy = C424A37117C68B3C00235FE3 /* PBXContainerItemProxy */;
 		};
 		C424A3DF17C6B97F00235FE3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

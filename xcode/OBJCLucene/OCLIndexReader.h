@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class OCLDocument;
+@class OCLTerm;
 
 /**
  @class OCLIndexReader
@@ -93,5 +94,13 @@
  @discussion Opens the index so documents can be added to the index
  */
 - (BOOL)open;
+
+/**
+ @method terms:
+ @abstract Returns an enumeration of all terms starting at a given term. If the given term does not exist, the enumeration is positioned at the first term greater than the supplied therm. The enumeration is ordered by Term.compareTo(). Each term is greater than all that precede it in the enumeration.
+ @param term The OCLTerm to start the enumeration at
+ @result A sorted NSArray containing all terms that are greater than or equal to the given term
+ */
+- (NSArray *)terms:(OCLTerm *)term;
 
 @end
