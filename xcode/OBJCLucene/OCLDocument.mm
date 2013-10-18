@@ -72,4 +72,23 @@
     _document->clear();
 }
 
+- (NSString *)description
+{
+    if(_document == NULL) {
+        return [super description];
+    }
+    NSMutableString *description = [[super description] mutableCopy];
+    const Document::FieldsType *fields = _document->getFields();
+    [description appendString:@"{\n"];
+    for(Field *field: *fields) {
+        [description appendString:@"\t"];
+        [description appendString:[NSString stringFromTCHAR:field->name()]];
+        [description appendString:@": "];
+        [description appendString:[NSString stringFromTCHAR:field->stringValue()]];
+        [description appendString:@",\n"];
+    }
+    [description appendString:@"};"];
+    return description;
+}
+
 @end
