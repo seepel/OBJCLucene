@@ -47,6 +47,22 @@
     return _document;
 }
 
+- (float)boost
+{
+    if(_document == NULL) {
+        return 0;
+    }
+    return _document->getBoost();
+}
+
+- (void)setBoost:(float)boost
+{
+    if(_document == NULL) {
+        return;
+    }
+    _document->setBoost(boost);
+}
+
 - (void)addFieldForKey:(NSString *)inKey value:(NSString *)inValue tokenized:(BOOL)inTokenized
 {
     int config = (inTokenized) ? (Field::STORE_YES | Field::INDEX_TOKENIZED) : (Field::STORE_YES | Field::INDEX_UNTOKENIZED);

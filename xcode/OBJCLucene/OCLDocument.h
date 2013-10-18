@@ -19,6 +19,8 @@
  */
 @interface OCLDocument : NSObject
 
+@property (nonatomic) float boost;
+
 /**
  @method addFieldForKey:value:tokenized:
  @abstract Adds a field to the document that may be searched
