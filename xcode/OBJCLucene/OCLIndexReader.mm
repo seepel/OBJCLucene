@@ -150,7 +150,24 @@
 {
     return IndexReader::isLocked([inPath cStringUsingEncoding:NSASCIIStringEncoding]);
 }
-    
+
+- (NSArray *)terms
+{
+    NSMutableArray *result = [NSMutableArray array];
+    if(_indexReader == NULL) {
+        return nil;
+    }
+    TermEnum *terms = _indexReader->terms();
+    while (terms->next()) {
+        Term *term = terms->term();
+        OCLTerm *oclTerm = [[OCLTerm alloc] initWithField:[NSString stringFromTCHAR:term->field()]
+                                                     text:[NSString stringFromTCHAR:term->text()]
+                                              internField:YES];
+        [result addObject:oclTerm];
+    }
+    return result;
+}
+
     - (NSArray *)terms:(OCLTerm *)term
     {
         NSMutableArray *result = [NSMutableArray array];

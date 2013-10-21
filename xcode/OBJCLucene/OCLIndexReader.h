@@ -95,6 +95,14 @@
  */
 - (BOOL)open;
 
+
+/**
+ @method terms
+ @abstract Returns all terms in the index.
+ @result A sorted NSArray containing all terms that are in the index
+ */
+- (NSArray *)terms;
+
 /**
  @method terms:
  @abstract Returns an enumeration of all terms starting at a given term. If the given term does not exist, the enumeration is positioned at the first term greater than the supplied therm. The enumeration is ordered by Term.compareTo(). Each term is greater than all that precede it in the enumeration.
