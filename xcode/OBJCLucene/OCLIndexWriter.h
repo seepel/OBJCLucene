@@ -19,7 +19,26 @@
  */
 @interface OCLIndexWriter : NSObject
 
+/**
+ @method initWithPath:overwrite:stopWords:
+ @abstract Returns an initialized OCLIndexWriter at a given path.
+ @param inPath The path that the index should be written to
+ @param inOverwrite A BOOL indicating whether the writer should over write an index that already exists at the specified path.
+ @discussion This method will create an OCLIndexWriter with a default dictionary of english stop words that should not be indexed when writing documents. 
+ @see initWithPath:overwrite:stopWords:
+ @result An initialized OCLIndexWriter at a given path, using a specified dictionary of stop words.
+ */
 - (id)initWithPath:(NSString *)inPath overwrite:(BOOL)inOverwrite;
+
+/**
+ @method initWithPath:overwrite:stopWords:
+ @abstract Returns an initialized OCLIndexWriter at a given path, using a specified dictionary of stop words.
+ @param inPath The path that the index should be written to
+ @param inOverwrite A BOOL indicating whether the writer should over write an index that already exists at the specified path.
+ @param inStopWords An array of words that should be skipped when indexing documents. Passing nil will result in a defualt dictionary of english stop words. Passing an empty array will specify that no stop words should be used.
+ @result An initialized OCLIndexWriter at a given path, using a specified dictionary of stop words.
+ */
+- (id)initWithPath:(NSString *)inPath overwrite:(BOOL)inOverwrite stopWords:(NSArray *)inStopWords;
 
 @property (nonatomic, assign) int32_t   maxFieldLength;
 @property (nonatomic, assign) BOOL      useCompoundFile;

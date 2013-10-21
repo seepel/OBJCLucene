@@ -18,13 +18,19 @@
 
 @implementation OCLIndexWriter {
     IndexWriter *_indexWriter;
-    standard::StandardAnalyzer _analyzer;
+    standard::StandardAnalyzer *_analyzer;
+    std::vector<const TCHAR *> _stopWords;
 }
 
 @synthesize maxFieldLength = _maxFieldLength;
 @synthesize useCompoundFile = _useCompoundFile;
 
 - (id)initWithPath:(NSString *)inPath overwrite:(BOOL)inOverwrite
+{
+    return [self initWithPath:inPath overwrite:inOverwrite stopWords:nil];
+}
+
+- (id)initWithPath:(NSString *)inPath overwrite:(BOOL)inOverwrite stopWords:(NSArray *)inStopWords
 {
     if((self = [super init])) {
         self.path = inPath;
@@ -46,8 +52,20 @@
             }
         }
         
+
         try {
-            _indexWriter = new IndexWriter([inPath cStringUsingEncoding:NSASCIIStringEncoding], &_analyzer, inOverwrite);
+            if(inStopWords != nil) {
+                std::vector<const TCHAR *> stopWords;
+                for(NSString *stopWord in inStopWords) {
+                    stopWords.push_back([stopWord toTCHAR]);
+                }
+                stopWords.push_back(NULL);
+                _analyzer = new standard::StandardAnalyzer(&stopWords[0]);
+            } else {
+                _analyzer = new standard::StandardAnalyzer();
+            }
+            
+            _indexWriter = new IndexWriter([inPath cStringUsingEncoding:NSASCIIStringEncoding], _analyzer, inOverwrite);
         } catch (CLuceneError& t) {
             NSLog(@"Exception: %@", [NSString stringWithCString:t.what() encoding:[NSString defaultCStringEncoding]]);
             _indexWriter = NULL;
@@ -67,6 +85,9 @@
         _indexWriter->close();
         _CLVDELETE(_indexWriter);
     }
+    if(_analyzer != NULL) {
+        _CLVDELETE(_analyzer);
+    }
 }
 
 - (void)close
@@ -83,7 +104,7 @@
         BOOL overwrite = ![[NSFileManager defaultManager] fileExistsAtPath:self.path];
         
         try {
-            _indexWriter = new IndexWriter([self.path cStringUsingEncoding:NSASCIIStringEncoding], &_analyzer, overwrite);
+            _indexWriter = new IndexWriter([self.path cStringUsingEncoding:NSASCIIStringEncoding], _analyzer, overwrite);
         } catch (CLuceneError& t) {
             NSLog(@"Exception: %@", [NSString stringWithCString:t.what() encoding:[NSString defaultCStringEncoding]]);
             _indexWriter = NULL;

@@ -66,6 +66,21 @@
     XCTAssertEqual(result, expected, @"");
 }
 
+- (void)testTokenizedDocument
+{
+    OCLDocument *document = [[OCLDocument alloc] init];
+    [document addFieldForKey:@"f" value:@"t1 t2" tokenized:YES];
+    [self.indexReader close];
+    [self.indexWriter open];
+    [self.indexWriter addDocument:document];
+    [self.indexWriter close];
+    [self.indexReader open];
+    NSArray *result = [self.indexReader terms];
+    NSArray *expected = @[ [[OCLTerm alloc] initWithField:@"f" text:@"t1" internField:YES],
+                           [[OCLTerm alloc] initWithField:@"f" text:@"t2" internField:YES] ];
+    XCTAssertEqualObjects(result, expected, @"");
+}
+
 - (void)testRemoveDocuments
 {
     OCLDocument *document1 = [[OCLDocument alloc] init];
@@ -100,6 +115,57 @@
     NSString *expected = [NSString stringFromTCHAR:[document cppDocument]->toString()];
     XCTAssertEqualObjects(result, expected, @"");
     
+}
+
+- (void)testNoStopWords
+{
+    
+    NSString *cacheDirectory = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDirectory, YES)[0];
+    self.path = [cacheDirectory stringByAppendingPathComponent:@"testNoStop.index"];
+    [[NSFileManager defaultManager] removeItemAtPath:self.path error:nil];
+    
+    OCLIndexWriter *indexWriter = [[OCLIndexWriter alloc] initWithPath:self.path overwrite:NO stopWords:@[ ]];
+    
+    OCLIndexReader *indexReader = [[OCLIndexReader alloc] initWithPath:self.path];
+    
+    OCLDocument *document = [[OCLDocument alloc] init];
+    [document addFieldForKey:@"f" value:@"will test" tokenized:YES];
+    
+    [indexReader close];
+    [indexWriter open];
+    [indexWriter addDocument:document];
+    [indexWriter close];
+    [indexReader open];
+    
+    NSArray *result = [indexReader terms];
+    NSArray *expected = @[ [[OCLTerm alloc] initWithField:@"f" text:@"test" internField:YES],
+                           [[OCLTerm alloc] initWithField:@"f" text:@"will" internField:YES] ];
+    XCTAssertEqualObjects(result, expected, @"");
+}
+
+- (void)testCustomStopWord
+{
+    
+    NSString *cacheDirectory = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDirectory, YES)[0];
+    self.path = [cacheDirectory stringByAppendingPathComponent:@"testNoStop.index"];
+    [[NSFileManager defaultManager] removeItemAtPath:self.path error:nil];
+    
+    OCLIndexWriter *indexWriter = [[OCLIndexWriter alloc] initWithPath:self.path overwrite:NO stopWords:@[ @"test" ]];
+    
+    OCLIndexReader *indexReader = [[OCLIndexReader alloc] initWithPath:self.path];
+    
+    OCLDocument *document = [[OCLDocument alloc] init];
+    [document addFieldForKey:@"f" value:@"will test" tokenized:YES];
+    
+    [indexReader close];
+    [indexWriter open];
+    [indexWriter addDocument:document];
+    [indexWriter close];
+    [indexReader open];
+    
+    NSArray *result = [indexReader terms];
+    NSArray *expected = @[ [[OCLTerm alloc] initWithField:@"f" text:@"will" internField:YES] ];
+    XCTAssertEqualObjects(result, expected, @"");
 }
 
 @end
