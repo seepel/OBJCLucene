@@ -73,6 +73,7 @@
                 
         if(_indexWriter != NULL) {
             _indexWriter->setMaxFieldLength(0x7FFFFFFFL);
+            _indexWriter->setMaxMergeDocs(0x7FFFFFFFL);
         }
     }
     
