@@ -68,7 +68,7 @@ class CLUCENE_EXPORT Directory: LUCENE_REFBASE, public CL_NS(util)::NamedObject 
 		virtual void touchFile(const char* name) = 0;
 
 		// Removes an existing file in the directory.
-		virtual bool deleteFile(const char* name, const bool throwError=true);
+		virtual bool deleteFile(const char* name, const bool throwError=false);
 
 		// Renames an existing file in the directory.
 		//	If a file already exists with the new name, then it is replaced.
