@@ -45,7 +45,9 @@
             if([[NSFileManager defaultManager] contentsOfDirectoryAtPath:inPath error:nil].count == 0) {
                 [[NSFileManager defaultManager] removeItemAtPath:inPath error:nil];
             }
-        } else if(inOverwrite) {
+        }
+        
+        if(inOverwrite) {
             NSString *subpath = [inPath stringByDeletingLastPathComponent];
             if(![[NSFileManager defaultManager] fileExistsAtPath:subpath]) {
                 [[NSFileManager defaultManager] createDirectoryAtPath:subpath withIntermediateDirectories:NO attributes:nil error:nil];
