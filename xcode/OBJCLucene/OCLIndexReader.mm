@@ -134,11 +134,9 @@
         } else {
             _indexReader = NULL;
         }
-        
-        return (_indexReader != NULL);
     }
     
-    return NO;
+    return (_indexReader != NULL);
 }
 
 + (void)unlockIndexAtPath:(NSString *)inPath

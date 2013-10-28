@@ -116,11 +116,9 @@
         if(_indexWriter != NULL) {
             _indexWriter->setMaxFieldLength(0x7FFFFFFFL);
         }
-        
-        return (_indexWriter != NULL);
     }
     
-    return NO;
+    return (_indexWriter != nil);
 }
 
 - (void)setMaxFieldLength:(int32_t)maxFieldLength
