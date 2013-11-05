@@ -42,6 +42,13 @@
     return self;
 }
 
+- (void)dealloc
+{
+    if(cppFilter_ != NULL) {
+        _CLVDELETE(cppFilter_);
+    }
+}
+
 - (void)setCPPFilter:(lucene::search::Filter *)filter
 {
     if(cppFilter_ != NULL) {
