@@ -31,9 +31,9 @@
 
 - (void)dealloc
 {
-//    if(hits_ != NULL) {
-//        _CLVDELETE(hits_);
-//    }
+    if(hits_ != NULL) {
+        _CLVDELETE(hits_);
+    }
 }
 
 - (void)setHits:(lucene::search::Hits *)hits
@@ -59,9 +59,9 @@
     }
     
     for(int i = documentCache_.count; i <= index; i++) {
-        Document cppDocument = hits_->doc(i);
+        Document *cppDocument = _CLNEW Document(hits_->doc(i));
         OCLDocument *document = [[OCLDocument alloc] init];
-        [document setCPPDocument:&cppDocument];
+        [document setCPPDocument:cppDocument];
         [documentCache_ addObject:document];
     }
     
