@@ -9,6 +9,7 @@
 #import "OCLBooleanQuery.h"
 #import "OCLQueryPrivate.h"
 #import "BooleanQuery.h"
+#import "BooleanClause.h"
 #import "OCLBooleanClausePrivate.h"
 
 @interface OCLBooleanQuery () {
@@ -45,7 +46,21 @@
 {
     [booleanClauses_ addObject:booleanClause];
     BooleanQuery *query = (BooleanQuery *)[self cppQuery];
-    query->add([booleanClause cppBooleanClause]);
+    BooleanClause::Occur occur = BooleanClause::SHOULD;
+    switch (booleanClause.occur) {
+        case OCLBooleanClauseMustOccur:
+            occur = BooleanClause::MUST;
+            break;
+            
+        case OCLBooleanClauseMustNotOccur:
+            occur = BooleanClause::MUST_NOT;
+            break;
+            
+        case OCLBooleanClauseShouldOccur:
+            occur = BooleanClause::SHOULD;
+            break;
+    }
+    query->add([booleanClause.query cppQuery], false, occur);
 }
 
 - (void)addQuery:(OCLQuery *)query occur:(OCLBooleanClauseOccur)occur
