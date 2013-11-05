@@ -12,7 +12,7 @@
 #import "MultiPhraseQuery.h"
 
 @interface OCLMultiPhraseQuery () {
-    NSArray *terms_;
+    NSMutableArray *terms_;
 }
 
 @end
@@ -24,6 +24,7 @@
     if((self = [super init])) {
         MultiPhraseQuery *query = _CLNEW MultiPhraseQuery();
         [self setCPPQuery:query];
+        terms_ = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -55,6 +56,7 @@
 {
     MultiPhraseQuery *cppQuery = (MultiPhraseQuery *)[self cppQuery];
     cppQuery->add([term cppTerm]);
+    [terms_ addObject:term];
 }
 
 @end

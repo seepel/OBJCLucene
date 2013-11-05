@@ -12,7 +12,7 @@
 #import "PhraseQuery.h"
 
 @interface OCLPhraseQuery () {
-    NSArray *terms_;
+    NSMutableArray *terms_;
 }
 
 @end
@@ -24,6 +24,7 @@
     if((self = [super init])) {
         PhraseQuery *query = _CLNEW PhraseQuery();
         [self setCPPQuery:query];
+        terms_ = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -55,6 +56,7 @@
 {
     PhraseQuery *cppQuery = (PhraseQuery *)[self cppQuery];
     cppQuery->add([term cppTerm]);
+    [terms_ addObject:term];
 }
 
 @end
