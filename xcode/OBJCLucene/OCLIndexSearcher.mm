@@ -49,11 +49,17 @@
 {
     Hits *hits = NULL;
     if(filter != nil) {
-        hits = indexSearcher_->search([query cppQuery], [filter cppFilter]);
+        if([query cppQuery] != NULL && [filter cppFilter] != NULL)
+            hits = indexSearcher_->search([query cppQuery], [filter cppFilter]);
     } else {
-        hits  = indexSearcher_->search([query cppQuery]);
+        if([query cppQuery] != NULL)
+            hits  = indexSearcher_->search([query cppQuery]);
     }
-    return [[OCLHitsArray alloc] initWithHits:hits];
+    
+    if(hits != NULL)
+        return [[OCLHitsArray alloc] initWithHits:hits];
+    
+    return nil;
 }
 
 @end
