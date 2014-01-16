@@ -4256,7 +4256,7 @@
 			};
 			name = Release;
 		};
-		07BE35C3FEC84AB0AE129DA8 /* MinSizeRel */ = {
+		07BE35C3FEC84AB0AE129DA8 /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -4290,7 +4290,7 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
 		07D5490915E14E098EEEDDEF /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -4711,7 +4711,7 @@
 			};
 			name = Release;
 		};
-		1E7362CA612D4B2EAD4A2AE0 /* MinSizeRel */ = {
+		1E7362CA612D4B2EAD4A2AE0 /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -4763,7 +4763,7 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
 		1FDF51DB6CEA40DA8153A1A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -4994,7 +4994,7 @@
 			};
 			name = RelWithDebInfo;
 		};
-		286A5EF5579C44259D07D97B /* MinSizeRel */ = {
+		286A5EF5579C44259D07D97B /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -5046,7 +5046,7 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
 		2D657EB254524A218F41B1A7 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
@@ -5174,7 +5174,7 @@
 			};
 			name = Debug;
 		};
-		3B521445EDCD49D6BB7064C7 /* MinSizeRel */ = {
+		3B521445EDCD49D6BB7064C7 /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -5203,9 +5203,9 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
-		3D1F9AA9F1F44B9E837DA7F8 /* MinSizeRel */ = {
+		3D1F9AA9F1F44B9E837DA7F8 /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -5256,9 +5256,9 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
-		3E1586EB1024464DBF3C24DB /* MinSizeRel */ = {
+		3E1586EB1024464DBF3C24DB /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -5310,7 +5310,7 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
 		418C7AF8BFC24E269E7318A7 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
@@ -5856,7 +5856,7 @@
 			};
 			name = Release;
 		};
-		5B258DF4FC754845AFCC03F0 /* MinSizeRel */ = {
+		5B258DF4FC754845AFCC03F0 /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -5890,9 +5890,9 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
-		5F377E35342F4428833E2564 /* MinSizeRel */ = {
+		5F377E35342F4428833E2564 /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -5926,7 +5926,7 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
 		658347AC220A41DE985CD684 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -6164,7 +6164,7 @@
 			};
 			name = Release;
 		};
-		718FDF34E37548D8B620A2A4 /* MinSizeRel */ = {
+		718FDF34E37548D8B620A2A4 /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -6193,9 +6193,9 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
-		731C44131C0B4737BF96E05C /* MinSizeRel */ = {
+		731C44131C0B4737BF96E05C /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -6229,7 +6229,7 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
 		73CA41312A0845F4A5D66795 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -6346,7 +6346,7 @@
 			};
 			name = Debug;
 		};
-		7BFEDF8379C44FBCA12375F0 /* MinSizeRel */ = {
+		7BFEDF8379C44FBCA12375F0 /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -6399,7 +6399,7 @@
 					"-w",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
 		7CFBC61B154F47C192F1A5B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -6522,7 +6522,7 @@
 			};
 			name = RelWithDebInfo;
 		};
-		82925DED815F4670B94B28FB /* MinSizeRel */ = {
+		82925DED815F4670B94B28FB /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -6579,7 +6579,7 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
 		8338FA717C1C469E904D138D /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
@@ -6636,7 +6636,7 @@
 			};
 			name = RelWithDebInfo;
 		};
-		8C498D1D1EF447B58C88853D /* MinSizeRel */ = {
+		8C498D1D1EF447B58C88853D /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -6670,9 +6670,9 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
-		8D650E354ED24427BB4B725D /* MinSizeRel */ = {
+		8D650E354ED24427BB4B725D /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -6722,9 +6722,9 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
-		93A704B8BF014FEDBA7E7E66 /* MinSizeRel */ = {
+		93A704B8BF014FEDBA7E7E66 /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -6776,7 +6776,7 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
 		951D8FF1C92046FFAA42AE94 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -7139,7 +7139,7 @@
 			};
 			name = Debug;
 		};
-		ABB2F3429036432CBADEDEA8 /* MinSizeRel */ = {
+		ABB2F3429036432CBADEDEA8 /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -7173,7 +7173,7 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
 		AC90EFC9DCC8461B88B4692C /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
@@ -7292,7 +7292,7 @@
 			};
 			name = RelWithDebInfo;
 		};
-		B4102831B505469B80EFAEC9 /* MinSizeRel */ = {
+		B4102831B505469B80EFAEC9 /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -7321,18 +7321,18 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
-		B58FD5D10BCF4ABFA03849DE /* MinSizeRel */ = {
+		B58FD5D10BCF4ABFA03849DE /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SYMROOT = build;
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
-		B7A94F613FAD4F5E8A5C03DE /* MinSizeRel */ = {
+		B7A94F613FAD4F5E8A5C03DE /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -7386,9 +7386,9 @@
 					"-w",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
-		B98829B8F5F0478F96453F36 /* MinSizeRel */ = {
+		B98829B8F5F0478F96453F36 /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -7446,7 +7446,7 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
 		BB69A275180E181200A23BB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -7551,7 +7551,7 @@
 			};
 			name = Release;
 		};
-		BB69A277180E181200A23BB9 /* MinSizeRel */ = {
+		BB69A277180E181200A23BB9 /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -7598,7 +7598,7 @@
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = xctest;
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
 		BB69A278180E181200A23BB9 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
@@ -8040,7 +8040,7 @@
 			};
 			name = Release;
 		};
-		C424A3D717C6B94E00235FE3 /* MinSizeRel */ = {
+		C424A3D717C6B94E00235FE3 /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -8088,7 +8088,7 @@
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
 		C424A3D817C6B94E00235FE3 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
@@ -8307,7 +8307,7 @@
 			};
 			name = Release;
 		};
-		C435916917C54639009B87BF /* MinSizeRel */ = {
+		C435916917C54639009B87BF /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -8386,7 +8386,7 @@
 				SYMROOT = build;
 				VALIDATE_PRODUCT = YES;
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
 		C435916A17C54639009B87BF /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
@@ -8560,7 +8560,7 @@
 			};
 			name = Release;
 		};
-		C435916D17C54639009B87BF /* MinSizeRel */ = {
+		C435916D17C54639009B87BF /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -8601,7 +8601,7 @@
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = xctest;
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
 		C435916E17C54639009B87BF /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
@@ -8645,6 +8645,1397 @@
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = RelWithDebInfo;
+		};
+		C497F77D1888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SYMROOT = build;
+			};
+			name = "Ad Hoc";
+		};
+		C497F77E1888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_SECURITY_FLOATLOOPCOUNTER = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_CXX0X_EXTENSIONS = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_EXPLICIT_OWNERSHIP_TYPE = YES;
+				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_MISSING_PROPERTY_SYNTHESIS = YES;
+				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
+				CLANG_WARN_OBJC_REPEATED_USE_OF_WEAK = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_IMPLICIT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CLANG_WARN__EXIT_TIME_DESTRUCTORS = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/OBJCLucene.dst;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "xcode/OBJCLucene/OBJCLucene-Prefix.pch";
+				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
+				GCC_TREAT_INCOMPATIBLE_POINTER_TYPE_WARNINGS_AS_ERRORS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_FIELD_INITIALIZERS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_MULTIPLE_DEFINITION_TYPES_FOR_SELECTOR = YES;
+				GCC_WARN_NON_VIRTUAL_DESTRUCTOR = YES;
+				GCC_WARN_PEDANTIC = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_SIGN_COMPARE = YES;
+				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_LABEL = YES;
+				GCC_WARN_UNUSED_PARAMETER = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/src/core,
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					$SRCROOT/xcode/src/shared,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SYMROOT = build;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Ad Hoc";
+		};
+		C497F77F1888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREFIX_HEADER = "xcode/src/CLucene-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					MAKE_CLUCENE_SHARED_LIB,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+				);
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "clucene-shared-static";
+				SDKROOT = iphoneos;
+				SECTORDER_FLAGS = "";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SYMROOT = build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"-w",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F7801888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREFIX_HEADER = "xcode/src/CLucene-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					MAKE_CLUCENE_CORE_LIB,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+				);
+				INSTALL_PATH = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_STYLE = STATIC;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "clucene-core-static";
+				PUBLIC_HEADERS_FOLDER_PATH = /usr/local/include;
+				SDKROOT = iphoneos;
+				SECTORDER_FLAGS = "";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SYMROOT = build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"-w",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F7811888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "xcode/LuceneTest/LuceneTest-Prefix.pch";
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "xcode/LuceneTest/LuceneTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-lstdc++",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = "Ad Hoc";
+		};
+		C497F7821888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuceneTest.app/LuceneTest";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "xcode/LuceneTests/LuceneTests-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/shared,
+					$SRCROOT/src/core,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = "Ad Hoc";
+		};
+		C497F7831888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "OBJCLucene/OBJCLucene-Prefix.pch";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "OBJCLuceneTests/OBJCLuceneTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = "Ad Hoc";
+		};
+		C497F7841888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+				);
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SDKROOT = iphoneos;
+				SECTORDER_FLAGS = "";
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SYMROOT = build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F7851888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = RUN_TESTS;
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F7861888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = build;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F7871888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F7881888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = "  ";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = uninstall;
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F7891888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = $SRCROOT/xcode/bin/MinSizeRel;
+				DYLIB_COMPATIBILITY_VERSION = 1.0.0;
+				DYLIB_CURRENT_VERSION = 2.3.3;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					clucene_shared_EXPORTS,
+					MAKE_CLUCENE_SHARED_LIB,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+				);
+				INSTALL_PATH = $SRCROOT/xcode/bin/MinSizeRel;
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-fPIC",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-fPIC",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_LDFLAGS = (
+					"-dynamiclib",
+					"-Wl,-headerpad_max_install_names",
+					/usr/lib/libz.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "clucene-shared";
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode/src/shared;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F78A1888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = $SRCROOT/xcode/bin/MinSizeRel;
+				DYLIB_COMPATIBILITY_VERSION = 1.0.0;
+				DYLIB_CURRENT_VERSION = 2.3.3;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					clucene_core_EXPORTS,
+					MAKE_CLUCENE_CORE_LIB,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+				);
+				INSTALL_PATH = $SRCROOT/xcode/bin/MinSizeRel;
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-fPIC",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-fPIC",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_LDFLAGS = (
+					"-dynamiclib",
+					"-Wl,-headerpad_max_install_names",
+					"$SRCROOT/xcode/bin/MinSizeRel/libclucene-shared.dylib",
+					/usr/lib/libz.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "clucene-core";
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode/src/core;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F78B1888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = $SRCROOT/xcode/bin/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+					$SRCROOT/src/test,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"$SRCROOT/xcode/bin/MinSizeRel/libclucene-core.dylib",
+					"$SRCROOT/xcode/bin/MinSizeRel/libclucene-shared.dylib",
+					/usr/lib/libz.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = cl_test;
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode/src/test;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F78C1888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = $SRCROOT/xcode/bin/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					_ASCII,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+					$SRCROOT/src/test,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/lib/libz.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "cl_test-ascii";
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode/src/test;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F78D1888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = $SRCROOT/xcode/bin/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					LUCENE_FS_MMAP,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+					$SRCROOT/src/test,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/lib/libz.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "cl_test-mmap";
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode/src/test;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F78E1888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = $SRCROOT/xcode/bin/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					DISABLE_NAMESPACE,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+					$SRCROOT/src/test,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/lib/libz.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "cl_test-namespace";
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode/src/test;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F78F1888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = $SRCROOT/xcode/bin/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+					$SRCROOT/src/test,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_LDFLAGS = (
+					"-Wall",
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/lib/libz.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "cl_test-pedantic";
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode/src/test;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F7901888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = $SRCROOT/xcode/bin/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					"'LUCENE_USE_INTERNAL_CHAR_FUNCTIONS=0'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+					$SRCROOT/src/test,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/lib/libz.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "cl_test-platform-charfuncs";
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode/src/test;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F7911888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = $SRCROOT/xcode/bin/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					LUCENE_ENABLE_REFCOUNT,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+					$SRCROOT/src/test,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/lib/libz.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "cl_test-refcnt";
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode/src/test;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F7921888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = $SRCROOT/xcode/bin/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					_CL_DISABLE_MULTITHREADING,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+					$SRCROOT/src/test,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					/usr/lib/libz.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "cl_test-singlethreading";
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode/src/test;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F7931888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = $SRCROOT/xcode/bin/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+					$SRCROOT/src/test,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_CFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNDEBUG",
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_LDFLAGS = (
+					"-Wl,-search_paths_first",
+					"-Wl,-headerpad_max_install_names",
+					"$SRCROOT/xcode/bin/MinSizeRel/libclucene-core-static.a",
+					"$SRCROOT/xcode/bin/MinSizeRel/libclucene-shared-static.a",
+					"-lpthread",
+					/usr/lib/libz.dylib,
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "cl_test-static";
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode/src/test;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F7941888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+					$SRCROOT/src/test,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = (
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "test-all";
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode/src/test;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F7951888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+					$SRCROOT/src/test,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = (
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "test-ascii";
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode/src/test;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F7961888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+					$SRCROOT/src/test,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = (
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "test-mmap";
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode/src/test;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F7971888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+					$SRCROOT/src/test,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = (
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "test-namespace";
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode/src/test;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F7981888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+					$SRCROOT/src/test,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = (
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "test-pedantic";
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode/src/test;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F7991888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+					$SRCROOT/src/test,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = (
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "test-platform-charfuncs";
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode/src/test;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F79A1888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+					$SRCROOT/src/test,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = (
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "test-refcnt";
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode/src/test;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
+		};
+		C497F79B1888811400D09076 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+					$SRCROOT/src/core,
+					/opt/local/include,
+					$SRCROOT/src/test,
+				);
+				INSTALL_PATH = "";
+				OTHER_CFLAGS = (
+					"-D_REENTRANT",
+					"-D_UCS2",
+					"-D_UNICODE",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "test-singlethreading";
+				SECTORDER_FLAGS = "";
+				SYMROOT = $SRCROOT/xcode/src/test;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = "Ad Hoc";
 		};
 		C54C204F3D2D460DBCF28514 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -8828,7 +10219,7 @@
 			};
 			name = Release;
 		};
-		D0FE60D39B2B4006B5054BFF /* MinSizeRel */ = {
+		D0FE60D39B2B4006B5054BFF /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -8880,7 +10271,7 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
 		D1DC7DC3C3C04B35BC4485BA /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -9005,7 +10396,7 @@
 			};
 			name = Debug;
 		};
-		D7CE76E6768644D7A0B06E72 /* MinSizeRel */ = {
+		D7CE76E6768644D7A0B06E72 /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -9034,9 +10425,9 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
-		D9DFB47CA9C44DF69073A520 /* MinSizeRel */ = {
+		D9DFB47CA9C44DF69073A520 /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -9068,7 +10459,7 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
 		DAD0D80027894884B6612B6C /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -9200,7 +10591,7 @@
 			};
 			name = Debug;
 		};
-		DFF1FD27337342E7ACEFFE24 /* MinSizeRel */ = {
+		DFF1FD27337342E7ACEFFE24 /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -9252,7 +10643,7 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
 		E67953C0C9834B0EAEE7C0AA /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -9432,7 +10823,7 @@
 			};
 			name = Release;
 		};
-		F451F0A9C1DA4CDDBEDF925E /* MinSizeRel */ = {
+		F451F0A9C1DA4CDDBEDF925E /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -9484,7 +10875,7 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
 		F539E1B80C5443E4B7C09D50 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
@@ -9538,7 +10929,7 @@
 			};
 			name = RelWithDebInfo;
 		};
-		F74E0B8A6E0D42FF96CA65DF /* MinSizeRel */ = {
+		F74E0B8A6E0D42FF96CA65DF /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -9572,7 +10963,7 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
 		F8B62F37A82044C7AFC7F621 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -9663,7 +11054,7 @@
 			};
 			name = RelWithDebInfo;
 		};
-		F9F8BFDF0A0240F29F0D3DDE /* MinSizeRel */ = {
+		F9F8BFDF0A0240F29F0D3DDE /* AppStore */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -9697,7 +11088,7 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = MinSizeRel;
+			name = AppStore;
 		};
 		FC9EC152C2E048E695866B21 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
@@ -9743,7 +11134,8 @@
 			buildConfigurations = (
 				951D8FF1C92046FFAA42AE94 /* Debug */,
 				662A2BA89B7F461096D343FF /* Release */,
-				B7A94F613FAD4F5E8A5C03DE /* MinSizeRel */,
+				B7A94F613FAD4F5E8A5C03DE /* AppStore */,
+				C497F7801888811400D09076 /* Ad Hoc */,
 				418C7AF8BFC24E269E7318A7 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9754,7 +11146,8 @@
 			buildConfigurations = (
 				42F79D93CEED462187977531 /* Debug */,
 				73CA41312A0845F4A5D66795 /* Release */,
-				286A5EF5579C44259D07D97B /* MinSizeRel */,
+				286A5EF5579C44259D07D97B /* AppStore */,
+				C497F7931888811400D09076 /* Ad Hoc */,
 				E7E11C333BD341A8A89C2DB9 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9765,7 +11158,8 @@
 			buildConfigurations = (
 				392BEBF8194646268B76428D /* Debug */,
 				658347AC220A41DE985CD684 /* Release */,
-				5F377E35342F4428833E2564 /* MinSizeRel */,
+				5F377E35342F4428833E2564 /* AppStore */,
+				C497F7971888811400D09076 /* Ad Hoc */,
 				AA262BE7F5214350B0A0EE8C /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9776,7 +11170,8 @@
 			buildConfigurations = (
 				DAD0D80027894884B6612B6C /* Debug */,
 				D4847A62275C418E8439542A /* Release */,
-				8C498D1D1EF447B58C88853D /* MinSizeRel */,
+				8C498D1D1EF447B58C88853D /* AppStore */,
+				C497F79B1888811400D09076 /* Ad Hoc */,
 				FC9EC152C2E048E695866B21 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9787,7 +11182,8 @@
 			buildConfigurations = (
 				4BD9E6CCCE1F4A12B2499CDA /* Debug */,
 				48A98ACDFB9F49DB9B18A066 /* Release */,
-				B4102831B505469B80EFAEC9 /* MinSizeRel */,
+				B4102831B505469B80EFAEC9 /* AppStore */,
+				C497F7871888811400D09076 /* Ad Hoc */,
 				C2C93B74434E4FB18B48591E /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9798,7 +11194,8 @@
 			buildConfigurations = (
 				C22E6E0DB73D4147BABBFEB6 /* Debug */,
 				98CC3EF7A1DF483880779E6F /* Release */,
-				B58FD5D10BCF4ABFA03849DE /* MinSizeRel */,
+				B58FD5D10BCF4ABFA03849DE /* AppStore */,
+				C497F77D1888811400D09076 /* Ad Hoc */,
 				772D164F02E04E169CB0B69A /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9809,7 +11206,8 @@
 			buildConfigurations = (
 				21FA33DDC64A4B4CB8A11E60 /* Debug */,
 				069E7721C5A345E8998F85CD /* Release */,
-				718FDF34E37548D8B620A2A4 /* MinSizeRel */,
+				718FDF34E37548D8B620A2A4 /* AppStore */,
+				C497F7851888811400D09076 /* Ad Hoc */,
 				7E45FFABC4DB44B1BFAEF162 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9820,7 +11218,8 @@
 			buildConfigurations = (
 				7CFBC61B154F47C192F1A5B7 /* Debug */,
 				109D7EDD30BF4383B283301A /* Release */,
-				07BE35C3FEC84AB0AE129DA8 /* MinSizeRel */,
+				07BE35C3FEC84AB0AE129DA8 /* AppStore */,
+				C497F7991888811400D09076 /* Ad Hoc */,
 				A18412914C664A5297A4BAB7 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9831,7 +11230,8 @@
 			buildConfigurations = (
 				69185905C05B4E4DB253CD3C /* Debug */,
 				F1ABA5C6818441568BE99F9C /* Release */,
-				F74E0B8A6E0D42FF96CA65DF /* MinSizeRel */,
+				F74E0B8A6E0D42FF96CA65DF /* AppStore */,
+				C497F7951888811400D09076 /* Ad Hoc */,
 				A76D2E8644FF48FCB74053F1 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9842,7 +11242,8 @@
 			buildConfigurations = (
 				C54C204F3D2D460DBCF28514 /* Debug */,
 				7DAF3EA7970D4B2BB86A16A7 /* Release */,
-				DFF1FD27337342E7ACEFFE24 /* MinSizeRel */,
+				DFF1FD27337342E7ACEFFE24 /* AppStore */,
+				C497F7921888811400D09076 /* Ad Hoc */,
 				C243AF8DB39A4A3D820E258E /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9853,7 +11254,8 @@
 			buildConfigurations = (
 				A49B681F2540456B80DCF30D /* Debug */,
 				D020C8EF251146EBBA716F38 /* Release */,
-				D9DFB47CA9C44DF69073A520 /* MinSizeRel */,
+				D9DFB47CA9C44DF69073A520 /* AppStore */,
+				C497F7841888811400D09076 /* Ad Hoc */,
 				F983266BCD974E35AE3C492C /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9864,7 +11266,8 @@
 			buildConfigurations = (
 				4AC0E923A39E4F9194C0BBCB /* Debug */,
 				6A08BBC9287F4A849825FF5B /* Release */,
-				1E7362CA612D4B2EAD4A2AE0 /* MinSizeRel */,
+				1E7362CA612D4B2EAD4A2AE0 /* AppStore */,
+				C497F78E1888811400D09076 /* Ad Hoc */,
 				2260D3BA144C4B0F86AB018E /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9875,7 +11278,8 @@
 			buildConfigurations = (
 				D1DC7DC3C3C04B35BC4485BA /* Debug */,
 				13987CA96AF64DB1A08A972D /* Release */,
-				5B258DF4FC754845AFCC03F0 /* MinSizeRel */,
+				5B258DF4FC754845AFCC03F0 /* AppStore */,
+				C497F7981888811400D09076 /* Ad Hoc */,
 				CA7869BA08234E81B33A28B1 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9886,7 +11290,8 @@
 			buildConfigurations = (
 				DDE964923F944A6EBED865A7 /* Debug */,
 				42837C932A55468CBF58FAB8 /* Release */,
-				82925DED815F4670B94B28FB /* MinSizeRel */,
+				82925DED815F4670B94B28FB /* AppStore */,
+				C497F7891888811400D09076 /* Ad Hoc */,
 				21196B79F72345D9BC0FCEEC /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9897,7 +11302,8 @@
 			buildConfigurations = (
 				AB72AD522B15405CB2824DED /* Debug */,
 				0B6F091672A6411EB0E4449B /* Release */,
-				3B521445EDCD49D6BB7064C7 /* MinSizeRel */,
+				3B521445EDCD49D6BB7064C7 /* AppStore */,
+				C497F7861888811400D09076 /* Ad Hoc */,
 				B3B61D2D37C345A9940B8332 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9908,7 +11314,8 @@
 			buildConfigurations = (
 				E67953C0C9834B0EAEE7C0AA /* Debug */,
 				38851B97DCCB4858AD480050 /* Release */,
-				93A704B8BF014FEDBA7E7E66 /* MinSizeRel */,
+				93A704B8BF014FEDBA7E7E66 /* AppStore */,
+				C497F78C1888811400D09076 /* Ad Hoc */,
 				216682FE5BEA4CD8B19C5E82 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9919,7 +11326,8 @@
 			buildConfigurations = (
 				119728B5354C46C8B8E6F8F1 /* Debug */,
 				103F3336E3344E81B6AADFEE /* Release */,
-				3E1586EB1024464DBF3C24DB /* MinSizeRel */,
+				3E1586EB1024464DBF3C24DB /* AppStore */,
+				C497F7901888811400D09076 /* Ad Hoc */,
 				BDC067ABD3E64A2DAB7A44F9 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9930,7 +11338,8 @@
 			buildConfigurations = (
 				D546CD1AD7864A13AFD2FD4E /* Debug */,
 				07D5490915E14E098EEEDDEF /* Release */,
-				3D1F9AA9F1F44B9E837DA7F8 /* MinSizeRel */,
+				3D1F9AA9F1F44B9E837DA7F8 /* AppStore */,
+				C497F78B1888811400D09076 /* Ad Hoc */,
 				C176F485449B410F80760703 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9941,7 +11350,8 @@
 			buildConfigurations = (
 				1594115B52C54EC7A15C2DAF /* Debug */,
 				F8B62F37A82044C7AFC7F621 /* Release */,
-				7BFEDF8379C44FBCA12375F0 /* MinSizeRel */,
+				7BFEDF8379C44FBCA12375F0 /* AppStore */,
+				C497F77F1888811400D09076 /* Ad Hoc */,
 				8338FA717C1C469E904D138D /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9952,7 +11362,8 @@
 			buildConfigurations = (
 				BB69A275180E181200A23BB9 /* Debug */,
 				BB69A276180E181200A23BB9 /* Release */,
-				BB69A277180E181200A23BB9 /* MinSizeRel */,
+				BB69A277180E181200A23BB9 /* AppStore */,
+				C497F7821888811400D09076 /* Ad Hoc */,
 				BB69A278180E181200A23BB9 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9963,7 +11374,8 @@
 			buildConfigurations = (
 				0B883B3D803744BABECA8396 /* Debug */,
 				57687316A2224F7A9147980E /* Release */,
-				731C44131C0B4737BF96E05C /* MinSizeRel */,
+				731C44131C0B4737BF96E05C /* AppStore */,
+				C497F7941888811400D09076 /* Ad Hoc */,
 				A585F3E10C0A445183AC6B36 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9974,7 +11386,8 @@
 			buildConfigurations = (
 				C424A3D517C6B94E00235FE3 /* Debug */,
 				C424A3D617C6B94E00235FE3 /* Release */,
-				C424A3D717C6B94E00235FE3 /* MinSizeRel */,
+				C424A3D717C6B94E00235FE3 /* AppStore */,
+				C497F7811888811400D09076 /* Ad Hoc */,
 				C424A3D817C6B94E00235FE3 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9985,7 +11398,8 @@
 			buildConfigurations = (
 				C435916717C54639009B87BF /* Debug */,
 				C435916817C54639009B87BF /* Release */,
-				C435916917C54639009B87BF /* MinSizeRel */,
+				C435916917C54639009B87BF /* AppStore */,
+				C497F77E1888811400D09076 /* Ad Hoc */,
 				C435916A17C54639009B87BF /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -9996,7 +11410,8 @@
 			buildConfigurations = (
 				C435916B17C54639009B87BF /* Debug */,
 				C435916C17C54639009B87BF /* Release */,
-				C435916D17C54639009B87BF /* MinSizeRel */,
+				C435916D17C54639009B87BF /* AppStore */,
+				C497F7831888811400D09076 /* Ad Hoc */,
 				C435916E17C54639009B87BF /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10007,7 +11422,8 @@
 			buildConfigurations = (
 				A552F1A55A85413884EE9A85 /* Debug */,
 				4FCC7F8A66494ECC954A7205 /* Release */,
-				F451F0A9C1DA4CDDBEDF925E /* MinSizeRel */,
+				F451F0A9C1DA4CDDBEDF925E /* AppStore */,
+				C497F7911888811400D09076 /* Ad Hoc */,
 				BEE45E67B64E4FCA95EDAA17 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10018,7 +11434,8 @@
 			buildConfigurations = (
 				1FDF51DB6CEA40DA8153A1A7 /* Debug */,
 				165FC24524614B27862C8966 /* Release */,
-				D7CE76E6768644D7A0B06E72 /* MinSizeRel */,
+				D7CE76E6768644D7A0B06E72 /* AppStore */,
+				C497F7881888811400D09076 /* Ad Hoc */,
 				C073F80DC18A4519BA00F9DD /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10029,7 +11446,8 @@
 			buildConfigurations = (
 				79D4D9D8FBEB4B46993B79FE /* Debug */,
 				70110E111704475495357AA8 /* Release */,
-				D0FE60D39B2B4006B5054BFF /* MinSizeRel */,
+				D0FE60D39B2B4006B5054BFF /* AppStore */,
+				C497F78D1888811400D09076 /* Ad Hoc */,
 				48C75852341E4BAB822306B2 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10040,7 +11458,8 @@
 			buildConfigurations = (
 				DF651D1EBF584319B71ED80B /* Debug */,
 				084BC28315D943988D0C04B4 /* Release */,
-				F9F8BFDF0A0240F29F0D3DDE /* MinSizeRel */,
+				F9F8BFDF0A0240F29F0D3DDE /* AppStore */,
+				C497F79A1888811400D09076 /* Ad Hoc */,
 				2D657EB254524A218F41B1A7 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10051,7 +11470,8 @@
 			buildConfigurations = (
 				F05EAB1C4F8F46C29B560161 /* Debug */,
 				A75EB854D45C4D2590510A18 /* Release */,
-				ABB2F3429036432CBADEDEA8 /* MinSizeRel */,
+				ABB2F3429036432CBADEDEA8 /* AppStore */,
+				C497F7961888811400D09076 /* Ad Hoc */,
 				AC90EFC9DCC8461B88B4692C /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10062,7 +11482,8 @@
 			buildConfigurations = (
 				48586C2A6939438982442779 /* Debug */,
 				C76FE0680BA84E33938E9DBA /* Release */,
-				B98829B8F5F0478F96453F36 /* MinSizeRel */,
+				B98829B8F5F0478F96453F36 /* AppStore */,
+				C497F78A1888811400D09076 /* Ad Hoc */,
 				4701C9BFE95B4B10813D92F7 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -10073,7 +11494,8 @@
 			buildConfigurations = (
 				B0815D23234646778324F14B /* Debug */,
 				05E222D69D7E48E8AA3837DF /* Release */,
-				8D650E354ED24427BB4B725D /* MinSizeRel */,
+				8D650E354ED24427BB4B725D /* AppStore */,
+				C497F78F1888811400D09076 /* Ad Hoc */,
 				F539E1B80C5443E4B7C09D50 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;

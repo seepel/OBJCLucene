@@ -47,6 +47,10 @@
 
 - (NSArray *)search:(OCLQuery *)query filter:(OCLFilter *)filter
 {
+    if(indexSearcher_ == nil) {
+        return nil;
+    }
+    
     Hits *hits = NULL;
     if(filter != nil) {
         if([query cppQuery] != NULL && [filter cppFilter] != NULL)
