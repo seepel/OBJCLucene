@@ -52,12 +52,17 @@
     }
     
     Hits *hits = NULL;
-    if(filter != nil) {
-        if([query cppQuery] != NULL && [filter cppFilter] != NULL)
-            hits = indexSearcher_->search([query cppQuery], [filter cppFilter]);
-    } else {
-        if([query cppQuery] != NULL)
-            hits  = indexSearcher_->search([query cppQuery]);
+    @try {
+        if(filter != nil) {
+            if([query cppQuery] != NULL && [filter cppFilter] != NULL)
+                hits = indexSearcher_->search([query cppQuery], [filter cppFilter]);
+        } else {
+            if([query cppQuery] != NULL)
+                hits  = indexSearcher_->search([query cppQuery]);
+        }
+        
+    } @catch (...) {
+        NSLog(@"Error searching");
     }
     
     if(hits != NULL)
