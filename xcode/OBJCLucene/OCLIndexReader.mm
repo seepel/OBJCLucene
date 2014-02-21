@@ -26,14 +26,10 @@
     if((self = [super init])) {
         self.path = inPath;
         
-        if([[NSFileManager defaultManager] fileExistsAtPath:self.path]) {
-            try {
-                _indexReader = IndexReader::open([inPath cStringUsingEncoding:NSASCIIStringEncoding]);
-            } catch (CLuceneError& t) {
-                NSLog(@"Exception: %@", [NSString stringWithCString:t.what() encoding:[NSString defaultCStringEncoding]]);
-                _indexReader = NULL;
-            }
-        } else {
+        try {
+            _indexReader = IndexReader::open([inPath cStringUsingEncoding:NSASCIIStringEncoding]);
+        } catch (CLuceneError& t) {
+            NSLog(@"Exception: %@", [NSString stringWithCString:t.what() encoding:[NSString defaultCStringEncoding]]);
             _indexReader = NULL;
         }
     }
