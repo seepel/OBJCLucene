@@ -48,7 +48,6 @@
         }
         
         if(inOverwrite) {
-            NSString *subpath = [inPath stringByDeletingLastPathComponent];
             if(![[NSFileManager defaultManager] fileExistsAtPath:inPath]) {
                 [[NSFileManager defaultManager] createDirectoryAtPath:inPath withIntermediateDirectories:YES attributes:nil error:nil];
             }
