@@ -83,6 +83,11 @@
     return [OCLField fieldWithKey:[NSString stringFromTCHAR:field->name()] value:[NSString stringFromTCHAR:field->stringValue()] tokenized:field->isTokenized()];
 }
 
+- (void)addField:(OCLField *)field
+{
+    _document->add(*field.cppField);
+}
+
 - (void)clear
 {
     _document->clear();

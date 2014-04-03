@@ -10,9 +10,9 @@
 
 @interface NSString (OCL)
 
-- (const TCHAR *)toTCHAR;
-- (const TCHAR *)copyToTCHAR;
-+ (NSString *)stringFromTCHAR:(const TCHAR *)inTCHAR;
+- (const wchar_t *)toTCHAR;
+- (const wchar_t *)copyToTCHAR;
++ (NSString *)stringFromTCHAR:(const wchar_t *)inTCHAR;
 - (NSString *)escapeForQuery;
 
 @end

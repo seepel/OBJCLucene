@@ -10,6 +10,9 @@
 
 @interface OCLField (Private)
 
+- (void)setCPPField:(Field *)inField;
+- (Field *)cppField;
+
 + (OCLField *)fieldWithKey:(NSString *)inKey value:(NSString *)inValue tokenized:(BOOL)inTokenized;
 
 @end

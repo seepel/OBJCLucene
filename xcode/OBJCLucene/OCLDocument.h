@@ -48,6 +48,8 @@
  */
 - (void)removeFieldForKey:(NSString *)inKey;
 
+- (void)addField:(OCLField *)field;
+
 /**
  @method clear
  @abstract Removes all the fields in a document

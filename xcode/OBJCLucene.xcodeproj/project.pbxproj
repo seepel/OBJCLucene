@@ -513,6 +513,19 @@
 		BF5D1AF3211A44E4BD381623 /* MD5Digester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9783277C1F6440B9A9B2AFC8 /* MD5Digester.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		BFCB87507B644FB8BDBD6CDB /* MMapInput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1203029963E241069EBDAC21 /* MMapInput.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		BFCF663C123C4D95B32D63E5 /* TestSpansAdvanced.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E037EECF473546DE8DB60215 /* TestSpansAdvanced.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		C031774F18ECCA2700827E34 /* BlockFieldSelector.mm in Sources */ = {isa = PBXBuildFile; fileRef = C031774D18ECCA2700827E34 /* BlockFieldSelector.mm */; };
+		C031775218ECCB5100827E34 /* BlockHitCollector.mm in Sources */ = {isa = PBXBuildFile; fileRef = C031775018ECCB5100827E34 /* BlockHitCollector.mm */; };
+		C0A0902218EB5BB40065CDB2 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A0902118EB5BB40065CDB2 /* libc++.dylib */; };
+		C0A4420018E901B60014AF25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C435914917C54638009B87BF /* Foundation.framework */; };
+		C0A4422818E901F90014AF25 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A4422718E901F90014AF25 /* CoreData.framework */; };
+		C0A4422B18E902170014AF25 /* OCLIncrementalStore.h in Headers */ = {isa = PBXBuildFile; fileRef = C0A4422918E902170014AF25 /* OCLIncrementalStore.h */; };
+		C0A4422D18E9021F0014AF25 /* OCLIncrementalStore.mm in Sources */ = {isa = PBXBuildFile; fileRef = C0A4422A18E902170014AF25 /* OCLIncrementalStore.mm */; };
+		C0A4423418E909260014AF25 /* OCLIncrementalStoreTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C0A4423318E909260014AF25 /* OCLIncrementalStoreTests.mm */; };
+		C0A4423718E90A7A0014AF25 /* libOBJCLuceneCoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A441FF18E901B60014AF25 /* libOBJCLuceneCoreData.a */; };
+		C0A4423818E9151E0014AF25 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A4422718E901F90014AF25 /* CoreData.framework */; };
+		C0A4423918E915350014AF25 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A4422718E901F90014AF25 /* CoreData.framework */; };
+		C0A4423C18E9FBB50014AF25 /* OCLManagedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = C0A4423A18E9FBB50014AF25 /* OCLManagedObject.h */; };
+		C0A4423E18E9FBD50014AF25 /* OCLManagedObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = C0A4423B18E9FBB50014AF25 /* OCLManagedObject.mm */; };
 		C0C1AC66CF164EFFAD434CC2 /* TestStore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B73E691729844C2FACF2F629 /* TestStore.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		C0D61FC8288F4543A646FC51 /* IndexFileNameFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F5F65F53338D4D68A6321171 /* IndexFileNameFilter.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		C1E18BEAD134428BB363424D /* WildcardTermEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D35EDAC1B3F4A90945166B9 /* WildcardTermEnum.cpp */; settings = {COMPILER_FLAGS = ""; }; };
@@ -822,19 +835,19 @@
 			remoteGlobalIDString = D0921DEF62F247F58157F2E8;
 			remoteInfo = "clucene-shared";
 		};
+		C0A4422E18E902580014AF25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 92D13B526A2C47E4A7E0314E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C435914617C54638009B87BF;
+			remoteInfo = OBJCLucene;
+		};
 		C311F08CAABE4818800752D7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 92D13B526A2C47E4A7E0314E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C7D4CD42A1FD4FA3A65A2870;
 			remoteInfo = ZERO_CHECK;
-		};
-		C424A3DE17C6B97F00235FE3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 92D13B526A2C47E4A7E0314E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C435914617C54638009B87BF;
-			remoteInfo = OBJCLucene;
 		};
 		C435915C17C54639009B87BF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -850,6 +863,15 @@
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0A441FD18E901B60014AF25 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
 			);
@@ -1199,6 +1221,19 @@
 		BFDD4F5001DF4A738B36945E /* NumberTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NumberTools.h; path = src/core/CLucene/document/NumberTools.h; sourceTree = SOURCE_ROOT; };
 		BFEC6DA5144F412B907DF8BC /* cl_test-refcnt */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "cl_test-refcnt"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF9C511F5E54EA2AC0C39E7 /* SpanFirstQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpanFirstQuery.h; path = src/core/CLucene/search/spans/SpanFirstQuery.h; sourceTree = SOURCE_ROOT; };
+		C031774D18ECCA2700827E34 /* BlockFieldSelector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BlockFieldSelector.mm; sourceTree = "<group>"; };
+		C031774E18ECCA2700827E34 /* BlockFieldSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockFieldSelector.h; sourceTree = "<group>"; };
+		C031775018ECCB5100827E34 /* BlockHitCollector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BlockHitCollector.mm; sourceTree = "<group>"; };
+		C031775118ECCB5100827E34 /* BlockHitCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockHitCollector.h; sourceTree = "<group>"; };
+		C0A0902118EB5BB40065CDB2 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		C0A441FF18E901B60014AF25 /* libOBJCLuceneCoreData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOBJCLuceneCoreData.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0A4420318E901B60014AF25 /* OBJCLuceneCoreData-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OBJCLuceneCoreData-Prefix.pch"; sourceTree = "<group>"; };
+		C0A4422718E901F90014AF25 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C0A4422918E902170014AF25 /* OCLIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLIncrementalStore.h; sourceTree = "<group>"; };
+		C0A4422A18E902170014AF25 /* OCLIncrementalStore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStore.mm; sourceTree = "<group>"; };
+		C0A4423318E909260014AF25 /* OCLIncrementalStoreTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStoreTests.mm; sourceTree = "<group>"; };
+		C0A4423A18E9FBB50014AF25 /* OCLManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLManagedObject.h; sourceTree = "<group>"; };
+		C0A4423B18E9FBB50014AF25 /* OCLManagedObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLManagedObject.mm; sourceTree = "<group>"; };
 		C13B1924E7B841AE96A76E8B /* _IndexFileNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _IndexFileNames.h; path = src/core/CLucene/index/_IndexFileNames.h; sourceTree = SOURCE_ROOT; };
 		C156C927F08D434A843602DA /* TermQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TermQuery.h; path = src/core/CLucene/search/TermQuery.h; sourceTree = SOURCE_ROOT; };
 		C218A93CA71E4D539CA697DC /* MultipleTermPositions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MultipleTermPositions.cpp; path = src/core/CLucene/index/MultipleTermPositions.cpp; sourceTree = SOURCE_ROOT; };
@@ -1349,9 +1384,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0A4423918E915350014AF25 /* CoreData.framework in Frameworks */,
 				BB69A266180E181100A23BB9 /* XCTest.framework in Frameworks */,
 				BB69A268180E181100A23BB9 /* UIKit.framework in Frameworks */,
 				BB69A267180E181100A23BB9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0A441FC18E901B60014AF25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0A4422818E901F90014AF25 /* CoreData.framework in Frameworks */,
+				C0A4420018E901B60014AF25 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1359,6 +1404,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0A0902218EB5BB40065CDB2 /* libc++.dylib in Frameworks */,
+				C0A4423818E9151E0014AF25 /* CoreData.framework in Frameworks */,
+				C0A4423718E90A7A0014AF25 /* libOBJCLuceneCoreData.a in Frameworks */,
 				C424A40B17C6CFCD00235FE3 /* libz.dylib in Frameworks */,
 				C424A3EB17C6C4C200235FE3 /* libOBJCLucene.a in Frameworks */,
 				C424A3A917C6B94E00235FE3 /* CoreGraphics.framework in Frameworks */,
@@ -2185,6 +2233,7 @@
 				C435915617C54638009B87BF /* OBJCLuceneTests.xctest */,
 				C424A3A617C6B94E00235FE3 /* LuceneTest.app */,
 				BB69A265180E181100A23BB9 /* LuceneTests.xctest */,
+				C0A441FF18E901B60014AF25 /* libOBJCLuceneCoreData.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2404,6 +2453,7 @@
 		BB69A269180E181100A23BB9 /* LuceneTests */ = {
 			isa = PBXGroup;
 			children = (
+				C0A4423218E909040014AF25 /* OBCLuceneCoreData */,
 				BB69A26A180E181100A23BB9 /* Supporting Files */,
 				BB3E7394180F142500F2028F /* OCLDocumentTests.mm */,
 				BB69A279180E185A00A23BB9 /* OCLQueryTests.mm */,
@@ -2469,6 +2519,54 @@
 			name = unit_testing;
 			sourceTree = "<group>";
 		};
+		C0A4420118E901B60014AF25 /* OBJCLuceneCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C0A4424718EB44010014AF25 /* CLucene */,
+				C0A4422918E902170014AF25 /* OCLIncrementalStore.h */,
+				C0A4422A18E902170014AF25 /* OCLIncrementalStore.mm */,
+				C0A4423A18E9FBB50014AF25 /* OCLManagedObject.h */,
+				C0A4423B18E9FBB50014AF25 /* OCLManagedObject.mm */,
+				C0A4420218E901B60014AF25 /* Supporting Files */,
+			);
+			name = OBJCLuceneCoreData;
+			path = xcode/OBJCLuceneCoreData;
+			sourceTree = "<group>";
+		};
+		C0A4420218E901B60014AF25 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C0A4420318E901B60014AF25 /* OBJCLuceneCoreData-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C0A4423218E909040014AF25 /* OBCLuceneCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				C0A4423318E909260014AF25 /* OCLIncrementalStoreTests.mm */,
+			);
+			name = OBCLuceneCoreData;
+			sourceTree = "<group>";
+		};
+		C0A4424218EB3C4F0014AF25 /* CLucene */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CLucene;
+			sourceTree = "<group>";
+		};
+		C0A4424718EB44010014AF25 /* CLucene */ = {
+			isa = PBXGroup;
+			children = (
+				C031774E18ECCA2700827E34 /* BlockFieldSelector.h */,
+				C031774D18ECCA2700827E34 /* BlockFieldSelector.mm */,
+				C031775118ECCB5100827E34 /* BlockHitCollector.h */,
+				C031775018ECCB5100827E34 /* BlockHitCollector.mm */,
+			);
+			name = CLucene;
+			sourceTree = "<group>";
+		};
 		C424A3AB17C6B94E00235FE3 /* LuceneTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -2499,6 +2597,8 @@
 		C435914817C54638009B87BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C0A0902118EB5BB40065CDB2 /* libc++.dylib */,
+				C0A4422718E901F90014AF25 /* CoreData.framework */,
 				C424A40A17C6CFCD00235FE3 /* libz.dylib */,
 				C435914917C54638009B87BF /* Foundation.framework */,
 				C435915717C54639009B87BF /* XCTest.framework */,
@@ -2512,6 +2612,7 @@
 		C435914B17C54638009B87BF /* OBJCLucene */ = {
 			isa = PBXGroup;
 			children = (
+				C0A4424218EB3C4F0014AF25 /* CLucene */,
 				C435914E17C54638009B87BF /* OBJCLucene.h */,
 				BB1520C3180DDC910014732C /* OCLFilter */,
 				BBD68737180DBD1A00B1EBD6 /* OCLQueries */,
@@ -2850,6 +2951,7 @@
 			isa = PBXGroup;
 			children = (
 				C435914B17C54638009B87BF /* OBJCLucene */,
+				C0A4420118E901B60014AF25 /* OBJCLuceneCoreData */,
 				53BFEDD9FF494A17965ED896 /* Sources */,
 				A3B3ED577774421EB80F9F14 /* Resources */,
 				C435915F17C54639009B87BF /* OBJCLuceneTests */,
@@ -3023,11 +3125,13 @@
 				BB3AB1C3180DE0490001E94F /* OCLWildcardFilter.h in Headers */,
 				BBD0914217ED00A7004B1776 /* OCLTerm.h in Headers */,
 				C424A3F017C6C65700235FE3 /* OCLField.h in Headers */,
+				C0A4423C18E9FBB50014AF25 /* OCLManagedObject.h in Headers */,
 				C424A3EF17C6C64F00235FE3 /* OCLDocument.h in Headers */,
 				C424A3F217C6C65700235FE3 /* OCLQuery.h in Headers */,
 				BB1520AE180DC9AE0014732C /* OCLBooleanQuery.h in Headers */,
 				BBD6873A180DBD4700B1EBD6 /* OCLTermQuery.h in Headers */,
 				BB1520B7180DCE5A0014732C /* OCLPhraseQuery.h in Headers */,
+				C0A4422B18E902170014AF25 /* OCLIncrementalStore.h in Headers */,
 				BB1520B3180DCCBB0014732C /* OCLMultiPhraseQuery.h in Headers */,
 				BB1520A6180DC0D50014732C /* OCLFuzzyQuery.h in Headers */,
 				BB1520BB180DCF320014732C /* OCLPrefixQuery.h in Headers */,
@@ -3157,6 +3261,24 @@
 			productReference = BB69A265180E181100A23BB9 /* LuceneTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		C0A441FE18E901B60014AF25 /* OBJCLuceneCoreData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C0A4422518E901B70014AF25 /* Build configuration list for PBXNativeTarget "OBJCLuceneCoreData" */;
+			buildPhases = (
+				C0A441FB18E901B60014AF25 /* Sources */,
+				C0A441FC18E901B60014AF25 /* Frameworks */,
+				C0A441FD18E901B60014AF25 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C0A4422F18E902580014AF25 /* PBXTargetDependency */,
+			);
+			name = OBJCLuceneCoreData;
+			productName = OBJCLuceneCoreData;
+			productReference = C0A441FF18E901B60014AF25 /* libOBJCLuceneCoreData.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		C424A3A517C6B94E00235FE3 /* LuceneTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C424A3D417C6B94E00235FE3 /* Build configuration list for PBXNativeTarget "LuceneTest" */;
@@ -3168,7 +3290,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				C424A3DF17C6B97F00235FE3 /* PBXTargetDependency */,
 			);
 			name = LuceneTest;
 			productName = LuceneTest;
@@ -3329,13 +3450,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				TargetAttributes = {
 					BB69A264180E181100A23BB9 = {
 						TestTargetID = C424A3A517C6B94E00235FE3;
 					};
 					C435915517C54638009B87BF = {
-						TestTargetID = D0921DEF62F247F58157F2E8;
+						TestTargetID = C424A3A517C6B94E00235FE3;
 					};
 				};
 			};
@@ -3352,6 +3473,7 @@
 			projectRoot = "";
 			targets = (
 				C435914617C54638009B87BF /* OBJCLucene */,
+				C0A441FE18E901B60014AF25 /* OBJCLuceneCoreData */,
 				F2D9F3663615477AA3B3BAB3 /* clucene-shared-static */,
 				7DA45354B7004AD08820E631 /* clucene-core-static */,
 				C424A3A517C6B94E00235FE3 /* LuceneTest */,
@@ -3870,10 +3992,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB3E738F180F0F1200F2028F /* OCLFilterTests.mm in Sources */,
+				C0A4423418E909260014AF25 /* OCLIncrementalStoreTests.mm in Sources */,
 				BB3E7395180F142500F2028F /* OCLDocumentTests.mm in Sources */,
 				BB3E7391180F130E00F2028F /* OCLIndexReaderTests.mm in Sources */,
 				BB69A27A180E185A00A23BB9 /* OCLQueryTests.mm in Sources */,
 				BBF8276B180F3FC4005350FB /* OCLIndexSearcherTests.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C0A441FB18E901B60014AF25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C031774F18ECCA2700827E34 /* BlockFieldSelector.mm in Sources */,
+				C0A4422D18E9021F0014AF25 /* OCLIncrementalStore.mm in Sources */,
+				C031775218ECCB5100827E34 /* BlockHitCollector.mm in Sources */,
+				C0A4423E18E9FBD50014AF25 /* OCLManagedObject.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4095,10 +4229,10 @@
 			target = 430F592970964167A94FC1ED /* ALL_BUILD */;
 			targetProxy = 15F1725D77484F4FA1A623E0 /* PBXContainerItemProxy */;
 		};
-		C424A3DF17C6B97F00235FE3 /* PBXTargetDependency */ = {
+		C0A4422F18E902580014AF25 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C435914617C54638009B87BF /* OBJCLucene */;
-			targetProxy = C424A3DE17C6B97F00235FE3 /* PBXContainerItemProxy */;
+			targetProxy = C0A4422E18E902580014AF25 /* PBXContainerItemProxy */;
 		};
 		C435915D17C54639009B87BF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -7452,7 +7586,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuceneTest.app/LuceneTest";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -7496,6 +7629,12 @@
 					$SRCROOT/src/core,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-lstdc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -7506,7 +7645,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuceneTest.app/LuceneTest";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -7544,6 +7682,12 @@
 					$SRCROOT/src/core,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-lstdc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALIDATE_PRODUCT = YES;
@@ -7555,7 +7699,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuceneTest.app/LuceneTest";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -7593,6 +7736,12 @@
 					$SRCROOT/src/core,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-lstdc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALIDATE_PRODUCT = YES;
@@ -7604,7 +7753,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuceneTest.app/LuceneTest";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -7642,6 +7790,12 @@
 					$SRCROOT/src/core,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-lstdc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALIDATE_PRODUCT = YES;
@@ -7785,6 +7939,226 @@
 					"-Wno-four-char-constants",
 					"-Wno-unknown-pragmas",
 				);
+			};
+			name = RelWithDebInfo;
+		};
+		C0A4421B18E901B70014AF25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/OBJCLuceneCoreData.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "xcode/OBJCLuceneCoreData/OBJCLuceneCoreData-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					$SRCROOT/src/core,
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C0A4421C18E901B70014AF25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/OBJCLuceneCoreData.dst;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "xcode/OBJCLuceneCoreData/OBJCLuceneCoreData-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					$SRCROOT/src/core,
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C0A4421D18E901B70014AF25 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/OBJCLuceneCoreData.dst;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "xcode/OBJCLuceneCoreData/OBJCLuceneCoreData-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					$SRCROOT/src/core,
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = AppStore;
+		};
+		C0A4421E18E901B70014AF25 /* Ad Hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/OBJCLuceneCoreData.dst;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "xcode/OBJCLuceneCoreData/OBJCLuceneCoreData-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					$SRCROOT/src/core,
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Ad Hoc";
+		};
+		C0A4421F18E901B70014AF25 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DSTROOT = /tmp/OBJCLuceneCoreData.dst;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "xcode/OBJCLuceneCoreData/OBJCLuceneCoreData-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					$SRCROOT/src/core,
+					$SRCROOT/src/shared,
+					$SRCROOT/xcode/src/shared,
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = RelWithDebInfo;
 		};
@@ -8473,7 +8847,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuceneTest.app/LuceneTest";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -8521,7 +8895,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuceneTest.app/LuceneTest";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -8564,7 +8938,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuceneTest.app/LuceneTest";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -8607,7 +8981,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuceneTest.app/LuceneTest";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -8901,7 +9275,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuceneTest.app/LuceneTest";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -8939,6 +9312,12 @@
 					$SRCROOT/src/core,
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-lstdc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				VALIDATE_PRODUCT = YES;
@@ -8950,7 +9329,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LuceneTest.app/LuceneTest";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -11377,6 +11756,18 @@
 				731C44131C0B4737BF96E05C /* AppStore */,
 				C497F7941888811400D09076 /* Ad Hoc */,
 				A585F3E10C0A445183AC6B36 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C0A4422518E901B70014AF25 /* Build configuration list for PBXNativeTarget "OBJCLuceneCoreData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C0A4421B18E901B70014AF25 /* Debug */,
+				C0A4421C18E901B70014AF25 /* Release */,
+				C0A4421D18E901B70014AF25 /* AppStore */,
+				C0A4421E18E901B70014AF25 /* Ad Hoc */,
+				C0A4421F18E901B70014AF25 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
