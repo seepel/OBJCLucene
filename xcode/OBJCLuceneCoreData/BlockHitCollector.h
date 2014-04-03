@@ -14,15 +14,13 @@
 
 
 namespace ocl {
-    typedef void (^HitCollectorBlock)(lucene::document::Document document, float_t score);
+    typedef void (^HitCollectorBlock)(int32_t doc, float_t score);
     class BlockHitCollector : public lucene::search::HitCollector {
     public:
-        BlockHitCollector(FieldSelectorBlock selectorBlock, HitCollectorBlock collectorBlock, lucene::index::IndexReader *indexReader);
+        BlockHitCollector(HitCollectorBlock collectorBlock);
         void collect(const int32_t, const float_t score);
     private:
-        BlockFieldSelector _fieldSelector;
         HitCollectorBlock _block;
-        lucene::index::IndexReader *_indexReader;
     };
 }
 

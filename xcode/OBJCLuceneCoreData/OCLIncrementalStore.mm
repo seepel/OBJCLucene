@@ -114,7 +114,7 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
             selectorBlock = ^(const TCHAR *fieldName) {
                 return FieldSelector::SIZE_AND_BREAK;
             };
-            hitCollectorBlock = ^(Document document, float_t score) {
+            hitCollectorBlock = ^(int32_t doc, float_t score) {
                 ++count;
             };
             parseResults = ^(void) {
@@ -133,7 +133,10 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
                 }
                 return FieldSelector::NO_LOAD;
             };
-            hitCollectorBlock = ^(Document document, float_t score) {
+            hitCollectorBlock = ^(int32_t doc, float_t score) {
+                Document document;
+                BlockFieldSelector selector = BlockFieldSelector(selectorBlock);
+                indexReader->document(doc, document, &selector);
                 const TCHAR *idValue = document.getField(idFieldName)->stringValue();
                 if(idValue == NULL) {
                     return;
@@ -167,7 +170,10 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
                 return FieldSelector::NO_LOAD;
             };
             NSMutableArray *result = [NSMutableArray array];
-            hitCollectorBlock = ^(Document document, float_t score) {
+            hitCollectorBlock = ^(int32_t doc, float_t score) {
+                Document document;
+                BlockFieldSelector selector = BlockFieldSelector(selectorBlock);
+                indexReader->document(doc, document, &selector);
                 NSMutableDictionary *documentResult = [NSMutableDictionary dictionary];
                 for(Field *field: *document.getFields()) {
                     NSString *fieldName = [NSString stringFromTCHAR:field->name()];
@@ -193,7 +199,7 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
             break;
         }
     }
-    BlockHitCollector hitCollector = BlockHitCollector(selectorBlock, hitCollectorBlock, indexReader);
+    BlockHitCollector hitCollector = BlockHitCollector(hitCollectorBlock);
     indexSearcher->_search(query, NULL, &hitCollector);
     _CLVDELETE(query);
     indexReader->close();

@@ -13,16 +13,12 @@ using namespace lucene::index;
 using namespace lucene::document;
 using namespace ocl;
 
-BlockHitCollector::BlockHitCollector(FieldSelectorBlock selectorBlock, HitCollectorBlock collectorBlock, IndexReader *indexReader) :
-_fieldSelector(selectorBlock)
+BlockHitCollector::BlockHitCollector(HitCollectorBlock collectorBlock)
 {
     _block = collectorBlock;
-    _indexReader = indexReader;
 }
 
 void BlockHitCollector::collect(const int32_t doc, const float_t score)
 {
-    Document document;
-    _indexReader->document(doc, document, &_fieldSelector);
-    _block(document, score);
+    _block(doc, score);
 }
