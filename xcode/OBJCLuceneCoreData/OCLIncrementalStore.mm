@@ -362,7 +362,56 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
 
 - (NSIncrementalStoreNode *)newValuesForObjectWithID:(NSManagedObjectID *)objectID withContext:(NSManagedObjectContext *)context error:(NSError *__autoreleasing *)error
 {
-    return nil;
+    Term term = Term([@"_id" toTCHAR], [[self referenceObjectForObjectID:objectID] toTCHAR], true);
+    TermQuery *query = _CLNEW TermQuery(&term);
+    IndexReader *indexReader = [self indexReaderForEntity:objectID.entity];
+    IndexSearcher indexSearcher = IndexSearcher(indexReader);
+    Hits *hits = indexSearcher.search(query);
+    if(hits->length() == 0) {
+        return nil;
+    }
+    Document document = hits->doc(0);
+    NSMutableDictionary *values = [NSMutableDictionary dictionary];
+    for(Field *field: *document.getFields()) {
+        NSString *fieldName = [NSString stringFromTCHAR:field->name()];
+        NSAttributeDescription *attribute = objectID.entity.attributesByName[fieldName];
+        NSRelationshipDescription *relationship = objectID.entity.relationshipsByName[fieldName];
+        id fieldValue = nil;
+        if(attribute != nil) {
+            fieldValue = [self luceneValue:field->stringValue() type:attribute.attributeType];
+        } else {
+            fieldValue = [NSString stringFromTCHAR:field->stringValue()];
+        }
+        if(fieldValue == nil) {
+            continue;
+        }
+        id currentValue = values[fieldName];
+        if(currentValue == nil) {
+            if(relationship != nil) {
+                values[fieldName] = [[NSMutableArray alloc] initWithObjects:fieldValue, nil];
+            } else {
+                values[fieldName] = fieldValue;
+            }
+        } else if([currentValue isKindOfClass:[NSMutableArray class]]) {
+            [(NSMutableArray *)currentValue addObject:fieldValue];
+        } else {
+            values[fieldName] = [[NSMutableArray alloc] initWithObjects:fieldValue, nil];
+        }
+    }
+    [objectID.entity.attributesByName enumerateKeysAndObjectsUsingBlock:^(NSString *attributeName, NSAttributeDescription *attribute, BOOL *stop) {
+        if(values[attributeName] == nil) {
+            values[attributeName] = [NSNull null];
+        }
+    }];
+    [objectID.entity.relationshipsByName enumerateKeysAndObjectsUsingBlock:^(NSString *relationshipName, NSRelationshipDescription *relationship, BOOL *stop) {
+        if(relationship.isToMany) {
+            values[relationshipName] = @[];
+        } else {
+            values[relationshipName] = [NSNull null];
+        }
+    }];
+    NSIncrementalStoreNode *node = [[NSIncrementalStoreNode alloc] initWithObjectID:objectID withValues:values version:0];
+    return node;
 }
 
 - (id)newValueForRelationship:(NSRelationshipDescription *)relationship forObjectWithID:(NSManagedObjectID *)objectID withContext:(NSManagedObjectContext *)context error:(NSError *__autoreleasing *)error

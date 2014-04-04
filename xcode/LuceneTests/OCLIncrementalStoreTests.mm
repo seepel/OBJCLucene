@@ -29,15 +29,23 @@
     NSEntityDescription *entity = [[NSEntityDescription alloc] init];
     entity.managedObjectClassName = NSStringFromClass([OCLManagedObject class]);
     entity.name = @"Entity";
+
     NSAttributeDescription *integerAttribute = [[NSAttributeDescription alloc] init];
     integerAttribute.indexed = YES;
     integerAttribute.name = @"integer";
     integerAttribute.attributeType = NSInteger64AttributeType;
+
     NSAttributeDescription *floatAttribute = [[NSAttributeDescription alloc] init];
     floatAttribute.name = @"float";
     floatAttribute.attributeType = NSFloatAttributeType;
     floatAttribute.indexed = YES;
-    entity.properties = @[ integerAttribute, floatAttribute ];
+
+    NSAttributeDescription *stringAttribute = [[NSAttributeDescription alloc] init];
+    stringAttribute.name = @"string";
+    stringAttribute.attributeType = NSStringAttributeType;
+    stringAttribute.indexed = YES;
+
+    entity.properties = @[ integerAttribute, floatAttribute, stringAttribute ];
     self.model.entities = @[ entity ];
     [OCLIncrementalStore initialize];
     self.coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.model];
@@ -163,6 +171,50 @@
     XCTAssertEqualObjects(result, expected, @"");
 }
 
+- (void)testDoubleInsert
+{
+    NSMutableArray *expected = [NSMutableArray array];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Entity" inManagedObjectContext:self.context];
+    for(int i=0; i!= 5; i++) {
+        OCLManagedObject *object = [[OCLManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:self.context];
+        NSString *_id = [NSString stringWithFormat:@"%02d", i];
+        [object setValue:_id forKeyPath:@"_id"];
+        [object setValue:@(99-i) forKeyPath:@"integer"];
+    }
+    [self.context save:nil];
+    for(int i=0; i!= 5; i++) {
+        OCLManagedObject *object = [[OCLManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:self.context];
+        NSString *_id = [NSString stringWithFormat:@"%02d", i];
+        [object setValue:_id forKeyPath:@"_id"];
+        [object setValue:@(i) forKeyPath:@"integer"];
+        [expected addObject:object];
+    }
+    [self.context save:nil];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Entity"];
+    request.sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"integer" ascending:YES] ];
+    NSArray *result = [self.context executeFetchRequest:request error:nil];
+    XCTAssertEqualObjects(result, expected, @"");
+}
+
+- (void)testDataRetrieval
+{
+    NSNumber *integerValue =  @(1);
+    NSNumber *floatValue = @(1.1);
+    NSString *stringValue = @"test";
+
+    OCLManagedObject *object = [[OCLManagedObject alloc] initWithEntity:[NSEntityDescription entityForName:@"Entity" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
+    [object setValue:@"id" forKeyPath:@"_id"];
+    [object setValue:integerValue forKeyPath:@"integer"];
+    [object setValue:floatValue forKeyPath:@"float"];
+    [object setValue:stringValue forKeyPath:@"string"];
+    [self.context save:nil];
+    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] init];
+    context.persistentStoreCoordinator = self.coordinator;
+    OCLManagedObject *result = [context executeFetchRequest:[[NSFetchRequest alloc] initWithEntityName:@"Entity"] error:nil][0];
+    XCTAssertEqualObjects([result valueForKey:@"integer"], integerValue, @"");
+    XCTAssert(fabs(([[result valueForKey:@"float"] floatValue] - [floatValue floatValue])) < 0.001, @"actual: %@ expected: %@", [result valueForKey:@"float"], floatValue);
+    XCTAssertEqualObjects([result valueForKey:@"string"], stringValue, @"");
+}
 
 
 @end
