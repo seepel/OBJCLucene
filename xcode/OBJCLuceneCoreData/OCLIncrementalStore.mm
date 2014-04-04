@@ -79,8 +79,15 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
     self.writeOperationQueue = [[NSOperationQueue alloc] init];
     self.writeOperationQueue.maxConcurrentOperationCount = 1;
     const TCHAR *stopWords[1] = { NULL };
-    _analyzer = new StandardAnalyzer(stopWords);
+    _analyzer = _CLNEW StandardAnalyzer(stopWords);
     return YES;
+}
+
+- (void)dealloc
+{
+    if(_analyzer != NULL) {
+        _CLVDELETE(_analyzer);
+    }
 }
 
 #pragma mark - Request execution
@@ -268,7 +275,7 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
         delete indexReaders;
         indexReaders = NULL;
 
-        __block Document *document = new Document();
+        __block Document *document = _CLNEW Document();
         __block map<wstring, vector<Field *> > fields;
 
         NSAttributeDescription *idAttribute = [[NSAttributeDescription alloc] init];
@@ -314,7 +321,6 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
                     config = config|Field::INDEX_NO;
                 }
                 if(fieldsForName.size() == 0) {
-#pragma message("FIXME Memory leak")
                     field = _CLNEW Field(fieldName.c_str(), fieldValue, config, true);
                 } else {
                     field = fieldsForName.back();
@@ -341,6 +347,12 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
 
         [request.insertedObjects enumerateObjectsUsingBlock:insertDocuments];
         [request.updatedObjects enumerateObjectsUsingBlock:insertDocuments];
+
+        for(map<wstring, vector<Field *> >::const_iterator it = fields.begin(); it != fields.end(); it++) {
+            for(Field *field: it->second) {
+                _CLVDELETE(field);
+            }
+        }
 
         for(map<string, IndexWriter *>::const_iterator it = indexWriters->begin(); it != indexWriters->end(); it++) {
             IndexWriter *indexWriter = it->second;
@@ -410,6 +422,9 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
             values[relationshipName] = [NSNull null];
         }
     }];
+    indexReader->close();
+    _CLVDELETE(indexReader);
+    _CLVDELETE(query);
     NSIncrementalStoreNode *node = [[NSIncrementalStoreNode alloc] initWithObjectID:objectID withValues:values version:0];
     return node;
 }
@@ -452,7 +467,7 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
         create = true;
     }
     try {
-        return new IndexWriter([path cStringUsingEncoding:NSASCIIStringEncoding], _analyzer, create);
+        return _CLNEW IndexWriter([path cStringUsingEncoding:NSASCIIStringEncoding], _analyzer, create);
     } catch (CLuceneError *error) {
         return NULL;
     }
