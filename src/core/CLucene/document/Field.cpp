@@ -41,6 +41,7 @@ Field::Field(const TCHAR* Name, const TCHAR* Value, int _config, const bool dupl
 	if (_config & INDEX_NO && _config & STORE_NO)
 		_CLTHROWA(CL_ERR_IllegalArgument,"it doesn't make sense to have a field that is neither indexed nor stored");
 	if (_config & INDEX_NO && _config & TERMVECTOR_YES)
+     
 		_CLTHROWA(CL_ERR_IllegalArgument,"cannot store term vector information for a field that is not indexed");
 	*/
 

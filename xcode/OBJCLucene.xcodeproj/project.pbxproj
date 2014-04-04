@@ -526,6 +526,7 @@
 		C0A4423918E915350014AF25 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A4422718E901F90014AF25 /* CoreData.framework */; };
 		C0A4423C18E9FBB50014AF25 /* OCLManagedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = C0A4423A18E9FBB50014AF25 /* OCLManagedObject.h */; };
 		C0A4423E18E9FBD50014AF25 /* OCLManagedObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = C0A4423B18E9FBB50014AF25 /* OCLManagedObject.mm */; };
+		C0B1CA1318EE358400784EB7 /* NumericUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = C0B1CA1118EE358400784EB7 /* NumericUtils.mm */; };
 		C0C1AC66CF164EFFAD434CC2 /* TestStore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B73E691729844C2FACF2F629 /* TestStore.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		C0D61FC8288F4543A646FC51 /* IndexFileNameFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F5F65F53338D4D68A6321171 /* IndexFileNameFilter.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		C1E18BEAD134428BB363424D /* WildcardTermEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D35EDAC1B3F4A90945166B9 /* WildcardTermEnum.cpp */; settings = {COMPILER_FLAGS = ""; }; };
@@ -1234,6 +1235,8 @@
 		C0A4423318E909260014AF25 /* OCLIncrementalStoreTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStoreTests.mm; sourceTree = "<group>"; };
 		C0A4423A18E9FBB50014AF25 /* OCLManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLManagedObject.h; sourceTree = "<group>"; };
 		C0A4423B18E9FBB50014AF25 /* OCLManagedObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLManagedObject.mm; sourceTree = "<group>"; };
+		C0B1CA1118EE358400784EB7 /* NumericUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NumericUtils.mm; sourceTree = "<group>"; };
+		C0B1CA1218EE358400784EB7 /* NumericUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumericUtils.h; sourceTree = "<group>"; };
 		C13B1924E7B841AE96A76E8B /* _IndexFileNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _IndexFileNames.h; path = src/core/CLucene/index/_IndexFileNames.h; sourceTree = SOURCE_ROOT; };
 		C156C927F08D434A843602DA /* TermQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TermQuery.h; path = src/core/CLucene/search/TermQuery.h; sourceTree = SOURCE_ROOT; };
 		C218A93CA71E4D539CA697DC /* MultipleTermPositions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MultipleTermPositions.cpp; path = src/core/CLucene/index/MultipleTermPositions.cpp; sourceTree = SOURCE_ROOT; };
@@ -2563,8 +2566,18 @@
 				C031774D18ECCA2700827E34 /* BlockFieldSelector.mm */,
 				C031775118ECCB5100827E34 /* BlockHitCollector.h */,
 				C031775018ECCB5100827E34 /* BlockHitCollector.mm */,
+				C0B1CA1418EE358A00784EB7 /* util */,
 			);
 			name = CLucene;
+			sourceTree = "<group>";
+		};
+		C0B1CA1418EE358A00784EB7 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				C0B1CA1218EE358400784EB7 /* NumericUtils.h */,
+				C0B1CA1118EE358400784EB7 /* NumericUtils.mm */,
+			);
+			name = util;
 			sourceTree = "<group>";
 		};
 		C424A3AB17C6B94E00235FE3 /* LuceneTest */ = {
@@ -4005,6 +4018,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C031774F18ECCA2700827E34 /* BlockFieldSelector.mm in Sources */,
+				C0B1CA1318EE358400784EB7 /* NumericUtils.mm in Sources */,
 				C0A4422D18E9021F0014AF25 /* OCLIncrementalStore.mm in Sources */,
 				C031775218ECCB5100827E34 /* BlockHitCollector.mm in Sources */,
 				C0A4423E18E9FBD50014AF25 /* OCLManagedObject.mm in Sources */,

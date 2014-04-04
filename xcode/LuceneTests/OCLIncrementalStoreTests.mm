@@ -29,11 +29,15 @@
     NSEntityDescription *entity = [[NSEntityDescription alloc] init];
     entity.managedObjectClassName = NSStringFromClass([OCLManagedObject class]);
     entity.name = @"Entity";
-    NSAttributeDescription *attribute = [[NSAttributeDescription alloc] init];
-    attribute.indexed = YES;
-    attribute.name = @"attribute";
-    attribute.attributeType = NSStringAttributeType;
-    entity.properties = @[ attribute ];
+    NSAttributeDescription *integerAttribute = [[NSAttributeDescription alloc] init];
+    integerAttribute.indexed = YES;
+    integerAttribute.name = @"integer";
+    integerAttribute.attributeType = NSInteger64AttributeType;
+    NSAttributeDescription *floatAttribute = [[NSAttributeDescription alloc] init];
+    floatAttribute.name = @"float";
+    floatAttribute.attributeType = NSFloatAttributeType;
+    floatAttribute.indexed = YES;
+    entity.properties = @[ integerAttribute, floatAttribute ];
     self.model.entities = @[ entity ];
     [OCLIncrementalStore initialize];
     self.coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.model];
@@ -62,7 +66,6 @@
 {
     OCLManagedObject *object = [[OCLManagedObject alloc] initWithEntity:[NSEntityDescription entityForName:@"Entity" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
     [object setValue:@"id" forKeyPath:@"_id"];
-    [object setValue:@"test" forKeyPath:@"attribute"];
     BOOL success = [self.context save:nil];
     XCTAssertTrue(success, @"");
     XCTAssertTrue(!object.objectID.isTemporaryID, @"");
@@ -74,7 +77,7 @@
 {
     OCLManagedObject *object = [[OCLManagedObject alloc] initWithEntity:[NSEntityDescription entityForName:@"Entity" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
     [object setValue:@"id" forKeyPath:@"_id"];
-    [object setValue:@"test" forKeyPath:@"attribute"];
+    [object setValue:@(1) forKeyPath:@"integer"];
     [self.context save:nil];
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Entity"];
     request.resultType = NSManagedObjectIDResultType;
@@ -85,7 +88,7 @@
 {
     OCLManagedObject *object = [[OCLManagedObject alloc] initWithEntity:[NSEntityDescription entityForName:@"Entity" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
     [object setValue:@"id" forKeyPath:@"_id"];
-    [object setValue:@"test" forKeyPath:@"attribute"];
+    [object setValue:@(1) forKeyPath:@"integer"];
     [self.context save:nil];
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Entity"];
     NSManagedObject *result = [self.context executeFetchRequest:request error:nil][0];
@@ -96,13 +99,70 @@
 {
     OCLManagedObject *object = [[OCLManagedObject alloc] initWithEntity:[NSEntityDescription entityForName:@"Entity" inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
     [object setValue:@"id" forKeyPath:@"_id"];
-    [object setValue:@"test" forKeyPath:@"attribute"];
+    [object setValue:@(1) forKeyPath:@"integer"];
     [self.context save:nil];
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Entity"];
     request.resultType = NSDictionaryResultType;
-    request.propertiesToFetch = @[ object.entity.propertiesByName[@"attribute"] ];
+    request.propertiesToFetch = @[ object.entity.propertiesByName[@"integer"] ];
     NSManagedObject *result = [self.context executeFetchRequest:request error:nil][0];
-    XCTAssertEqualObjects(result, @{ @"attribute": @"test" }, @"");
+    NSDictionary *expected = @{ @"_id": @"id", @"integer": @(1) };
+    XCTAssertEqualObjects(result, expected, @"");
 }
+
+- (void)testMultipleAdd
+{
+    NSMutableArray *expected = [NSMutableArray array];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Entity" inManagedObjectContext:self.context];
+    for(int i=0; i!= 100; i++) {
+        OCLManagedObject *object = [[OCLManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:self.context];
+        NSString *_id = [NSString stringWithFormat:@"id%02d", i];
+        [object setValue:_id forKeyPath:@"_id"];
+        [object setValue:@(1) forKeyPath:@"integer"];
+        [expected addObject:[self.store newObjectIDForEntity:entity referenceObject:_id]];
+    }
+    [self.context save:nil];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Entity"];
+    request.resultType = NSManagedObjectIDResultType;
+    NSArray *result = [self.context executeFetchRequest:request error:nil];
+    XCTAssertEqualObjects(result, expected, @"");
+}
+
+- (void)testSortDescriptor
+{
+    NSMutableArray *expected = [NSMutableArray array];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Entity" inManagedObjectContext:self.context];
+    for(int i=0; i!= 100; i++) {
+        OCLManagedObject *object = [[OCLManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:self.context];
+        NSString *_id = [NSString stringWithFormat:@"id%02d", i];
+        [object setValue:_id forKeyPath:@"_id"];
+        [object setValue:@(99-i) forKeyPath:@"integer"];
+        [expected insertObject:object atIndex:0];
+    }
+    [self.context save:nil];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Entity"];
+    request.sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"integer" ascending:YES] ];
+    NSArray *result = [self.context executeFetchRequest:request error:nil];
+    XCTAssertEqualObjects(result, expected, @"");
+}
+
+- (void)testReverseSortDescriptor
+{
+    NSMutableArray *expected = [NSMutableArray array];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Entity" inManagedObjectContext:self.context];
+    for(int i=0; i!= 100; i++) {
+        OCLManagedObject *object = [[OCLManagedObject alloc] initWithEntity:entity insertIntoManagedObjectContext:self.context];
+        NSString *_id = [NSString stringWithFormat:@"%02d", i];
+        [object setValue:_id forKeyPath:@"_id"];
+        [object setValue:@(99-i) forKeyPath:@"integer"];
+        [expected addObject:object];
+    }
+    [self.context save:nil];
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Entity"];
+    request.sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"integer" ascending:NO] ];
+    NSArray *result = [self.context executeFetchRequest:request error:nil];
+    XCTAssertEqualObjects(result, expected, @"");
+}
+
+
 
 @end

@@ -23,6 +23,9 @@
 #include <string>
 #include <set>
 
+#include "NumberTools.h"
+#include "NumericUtils.h"
+
 #include "MatchAllDocsQuery.h"
 
 using namespace ocl;
@@ -109,96 +112,115 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
         return @[];
     };
     __block NSUInteger count = 0;
-    switch (request.resultType) {
-        case NSCountResultType: {
-            selectorBlock = ^(const TCHAR *fieldName) {
-                return FieldSelector::SIZE_AND_BREAK;
-            };
-            hitCollectorBlock = ^(int32_t doc, float_t score) {
-                ++count;
-            };
-            parseResults = ^(void) {
-                return @[ @(count) ];
-            };
-            break;
-        }
-
-        case NSManagedObjectResultType:
-        case NSManagedObjectIDResultType: {
-            NSMutableArray *result = [NSMutableArray array];
-            const TCHAR *idFieldName = [@"_id" toTCHAR];
-            selectorBlock = ^(const TCHAR *fieldName) {
-                if(wcscmp(idFieldName, fieldName) == 0) {
-                    return FieldSelector::LOAD_AND_BREAK;
-                }
-                return FieldSelector::NO_LOAD;
-            };
-            hitCollectorBlock = ^(int32_t doc, float_t score) {
-                Document document;
-                BlockFieldSelector selector = BlockFieldSelector(selectorBlock);
-                indexReader->document(doc, document, &selector);
-                const TCHAR *idValue = document.getField(idFieldName)->stringValue();
-                if(idValue == NULL) {
-                    return;
-                }
-                NSString *_id = [NSString stringFromTCHAR:idValue];
-                NSManagedObjectID *objectID = [self newObjectIDForEntity:request.entity referenceObject:_id];
-                if(request.resultType == NSManagedObjectIDResultType) {
-                    [result addObject:objectID];
-                } else {
-                    [result addObject:[context objectWithID:objectID]];
-                }
-            };
-            parseResults = ^(void) {
-                return result;
-            };
-            break;
-        }
-
-        case NSDictionaryResultType: {
-            __block set<wstring> fields;
+    if(request.resultType == NSCountResultType) {
+        selectorBlock = ^(const TCHAR *fieldName) {
+            return FieldSelector::SIZE_AND_BREAK;
+        };
+        hitCollectorBlock = ^(int32_t doc, float_t score) {
+            ++count;
+        };
+        parseResults = ^(void) {
+            return @[ @(count) ];
+        };
+    } else {
+        NSMutableArray *documentResults = [[NSMutableArray alloc] init];
+        NSMutableArray *results = [[NSMutableArray alloc] init];
+        __block set<wstring> fields;
+        __block map<wstring, NSAttributeType> fieldTypes;
+        wstring idString = [@"_id" toTCHAR];
+        fields.insert(idString);
+        fieldTypes[idString] = NSStringAttributeType;
+        [request.sortDescriptors enumerateObjectsUsingBlock:^(NSSortDescriptor *sortDescriptor, NSUInteger index, BOOL *stop) {
+            wstring fieldName = [sortDescriptor.key toTCHAR];
+            fields.insert(wstring(fieldName));
+            NSAttributeDescription *attribute = request.entity.attributesByName[sortDescriptor.key];
+            if(attribute != nil) {
+                fieldTypes[fieldName] = attribute.attributeType;
+            } else {
+                fieldTypes[fieldName] = NSStringAttributeType;
+            }
+        }];
+        if(request.resultType == NSDictionaryResultType) {
             [request.propertiesToFetch enumerateObjectsUsingBlock:^(id property, NSUInteger index, BOOL *stop) {
                 if([property isKindOfClass:[NSAttributeDescription class]]) {
                     NSAttributeDescription *attribute = property;
-                    fields.insert([attribute.name toTCHAR]);
+                    wstring fieldName = [attribute.name toTCHAR];
+                    fields.insert(fieldName);
+                    fieldTypes[fieldName] = attribute.attributeType;
                 }
             }];
-            selectorBlock = ^(const TCHAR *fieldName) {
-                if(fields.find(fieldName) != fields.end()) {
+        }
+        selectorBlock = ^(const TCHAR *fieldName) {
+            if(fields.find(fieldName) != fields.end()) {
+                if(fields.size() == 1) {
+                    return FieldSelector::LOAD_AND_BREAK;
+                } else {
                     return FieldSelector::LOAD;
                 }
-                return FieldSelector::NO_LOAD;
-            };
-            NSMutableArray *result = [NSMutableArray array];
-            hitCollectorBlock = ^(int32_t doc, float_t score) {
-                Document document;
-                BlockFieldSelector selector = BlockFieldSelector(selectorBlock);
-                indexReader->document(doc, document, &selector);
-                NSMutableDictionary *documentResult = [NSMutableDictionary dictionary];
-                for(Field *field: *document.getFields()) {
-                    NSString *fieldName = [NSString stringFromTCHAR:field->name()];
-                    id fieldResult = documentResult[fieldName];
-                    id fieldValue = [self luceneValue:[NSString stringFromTCHAR:field->stringValue()]];
-                    if(fieldResult == nil) {
-                        documentResult[fieldName] = fieldValue;
+            }
+            return FieldSelector::NO_LOAD;
+        };
+        BlockFieldSelector selector = BlockFieldSelector(selectorBlock);
+        hitCollectorBlock = ^(int32_t doc, float_t score) {
+            Document document;
+            indexReader->document(doc, document, &selector);
+            NSMutableDictionary *documentResult = [NSMutableDictionary dictionary];
+            for(Field *field: *document.getFields()) {
+                NSString *fieldName = [NSString stringFromTCHAR:field->name()];
+                id fieldResult = documentResult[fieldName];
+                id fieldValue = [self luceneValue:field->stringValue() type:fieldTypes[field->name()]];
+                if(fieldResult == nil) {
+                    documentResult[fieldName] = fieldValue;
+                } else {
+                    if([fieldResult isKindOfClass:[NSMutableArray class]]) {
+                        [(NSMutableArray *)fieldResult addObject:fieldValue];
                     } else {
-                        if([fieldResult isKindOfClass:[NSMutableArray class]]) {
-                            [(NSMutableArray *)fieldResult addObject:fieldValue];
-                        } else {
-                            NSMutableArray *newFieldResult = [NSMutableArray arrayWithObject:fieldResult];
-                            [newFieldResult addObject:fieldValue];
-                            documentResult[fieldName] = newFieldResult;
-                        }
+                        NSMutableArray *newFieldResult = [NSMutableArray arrayWithObject:fieldResult];
+                        [newFieldResult addObject:fieldValue];
+                        documentResult[fieldName] = newFieldResult;
                     }
-                    [result addObject:documentResult];
                 }
-            };
-            parseResults = ^(void) {
-                return result;
-            };
-            break;
-        }
+            }
+            NSUInteger index = [documentResults indexOfObject:documentResult inSortedRange:NSMakeRange(0, documentResults.count) options:NSBinarySearchingInsertionIndex usingComparator:^(NSDictionary *obj1, NSDictionary *obj2) {
+                for(NSSortDescriptor *sortDescriptor in request.sortDescriptors) {
+                    NSComparisonResult  result = NSOrderedSame;
+                    NSString *keyPath = sortDescriptor.key;
+                    id key1 = [obj1 valueForKeyPath:keyPath];
+                    id key2 = [obj2 valueForKeyPath:keyPath];
+                    if(!sortDescriptor.ascending) {
+                        id tmp = key1;
+                        key1 = key2;
+                        key2 = tmp;
+                    }
+                    result = [key1 compare:key2];
+                    if(result != NSOrderedSame) {
+                        return result;
+                    }
+                }
+                id _id1 = obj1[@"_id"];
+                id _id2 = obj2[@"_id"];
+                return [_id1 compare:_id2];
+            }];
+            [documentResults insertObject:documentResult atIndex:index];
+            switch (request.resultType) {
+                case NSManagedObjectIDResultType:
+                    [results insertObject:[self newObjectIDForEntity:request.entity referenceObject:documentResult[@"_id"]] atIndex:index];
+                    break;
+                    
+                case NSManagedObjectResultType:
+                    [results insertObject:[context objectWithID:[self newObjectIDForEntity:request.entity referenceObject:documentResult[@"_id"]]] atIndex:index];
+                    break;
+                    
+                default:
+                    [results insertObject:documentResult atIndex:index];
+                    break;
+            }
+        };
+        parseResults = ^(void) {
+            return results;
+        };
     }
+
     BlockHitCollector hitCollector = BlockHitCollector(hitCollectorBlock);
     indexSearcher->_search(query, NULL, &hitCollector);
     _CLVDELETE(query);
@@ -273,7 +295,7 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
                     return;
                 }
                 wstring fieldName = wstring([attributeName toTCHAR]);
-                const TCHAR *fieldValue = [[self luceneValue:value] toTCHAR];
+                const TCHAR *fieldValue = [self tcharFromValue:value type:attribute.attributeType];
                 vector<Field *> fieldsForName = fields[fieldName];
                 Field *field = NULL;
                 int config = 0;
@@ -401,9 +423,59 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
     }
 }
 
-- (NSString *)luceneValue:(id)value
+- (id)luceneValue:(const TCHAR *)value type:(NSAttributeType)attributeType
 {
-    return value;
+    switch (attributeType) {
+        case NSInteger16AttributeType:
+        case NSInteger32AttributeType:
+        case NSInteger64AttributeType:
+        case NSBooleanAttributeType:
+            return @(NumberTools::stringToLong(value));
+            break;
+
+        case NSDecimalAttributeType:
+        case NSDoubleAttributeType:
+        case NSFloatAttributeType:
+            return @(NumericUtils::sortableLongToDouble(NumberTools::stringToLong(value)));
+            break;
+
+        case NSDateAttributeType:
+            return [NSDate dateWithTimeIntervalSince1970:NumericUtils::sortableLongToDouble(NumberTools::stringToLong(value))];
+            break;
+
+        case NSStringAttributeType:
+            return [NSString stringFromTCHAR:value];
+            break;
+
+        default:
+            break;
+    }
+    return nil;
+}
+
+- (const TCHAR *)tcharFromValue:(id)value type:(NSAttributeType)attributeType
+{
+    switch (attributeType) {
+        case NSInteger16AttributeType:
+        case NSInteger32AttributeType:
+        case NSInteger64AttributeType:
+            return NumberTools::longToString([value longValue]);
+            break;
+
+        case NSDecimalAttributeType:
+        case NSDoubleAttributeType:
+        case NSFloatAttributeType:
+            return NumberTools::longToString(NumericUtils::doubleToSortableLong([value doubleValue]));
+            break;
+
+        case NSStringAttributeType:
+            return [value toTCHAR];
+            break;
+
+        default:
+            break;
+    }
+    return nil;
 }
 
 @end
