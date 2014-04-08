@@ -513,6 +513,7 @@
 		BF5D1AF3211A44E4BD381623 /* MD5Digester.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9783277C1F6440B9A9B2AFC8 /* MD5Digester.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		BFCB87507B644FB8BDBD6CDB /* MMapInput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1203029963E241069EBDAC21 /* MMapInput.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		BFCF663C123C4D95B32D63E5 /* TestSpansAdvanced.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E037EECF473546DE8DB60215 /* TestSpansAdvanced.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		C025C11918F1F530005F3E2C /* OCLIncrementalStoreRelationshipTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C025C11818F1F530005F3E2C /* OCLIncrementalStoreRelationshipTests.mm */; };
 		C031774F18ECCA2700827E34 /* BlockFieldSelector.mm in Sources */ = {isa = PBXBuildFile; fileRef = C031774D18ECCA2700827E34 /* BlockFieldSelector.mm */; };
 		C031775218ECCB5100827E34 /* BlockHitCollector.mm in Sources */ = {isa = PBXBuildFile; fileRef = C031775018ECCB5100827E34 /* BlockHitCollector.mm */; };
 		C0A0902218EB5BB40065CDB2 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A0902118EB5BB40065CDB2 /* libc++.dylib */; };
@@ -1222,6 +1223,8 @@
 		BFDD4F5001DF4A738B36945E /* NumberTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NumberTools.h; path = src/core/CLucene/document/NumberTools.h; sourceTree = SOURCE_ROOT; };
 		BFEC6DA5144F412B907DF8BC /* cl_test-refcnt */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = "cl_test-refcnt"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF9C511F5E54EA2AC0C39E7 /* SpanFirstQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SpanFirstQuery.h; path = src/core/CLucene/search/spans/SpanFirstQuery.h; sourceTree = SOURCE_ROOT; };
+		C025C11818F1F530005F3E2C /* OCLIncrementalStoreRelationshipTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStoreRelationshipTests.mm; sourceTree = "<group>"; };
+		C025C11A18F1F550005F3E2C /* OCLIncrementalStoreTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCLIncrementalStoreTests.h; sourceTree = "<group>"; };
 		C031774D18ECCA2700827E34 /* BlockFieldSelector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BlockFieldSelector.mm; sourceTree = "<group>"; };
 		C031774E18ECCA2700827E34 /* BlockFieldSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockFieldSelector.h; sourceTree = "<group>"; };
 		C031775018ECCB5100827E34 /* BlockHitCollector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BlockHitCollector.mm; sourceTree = "<group>"; };
@@ -2547,7 +2550,9 @@
 		C0A4423218E909040014AF25 /* OBCLuceneCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				C025C11A18F1F550005F3E2C /* OCLIncrementalStoreTests.h */,
 				C0A4423318E909260014AF25 /* OCLIncrementalStoreTests.mm */,
+				C025C11818F1F530005F3E2C /* OCLIncrementalStoreRelationshipTests.mm */,
 			);
 			name = OBCLuceneCoreData;
 			sourceTree = "<group>";
@@ -4005,6 +4010,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB3E738F180F0F1200F2028F /* OCLFilterTests.mm in Sources */,
+				C025C11918F1F530005F3E2C /* OCLIncrementalStoreRelationshipTests.mm in Sources */,
 				C0A4423418E909260014AF25 /* OCLIncrementalStoreTests.mm in Sources */,
 				BB3E7395180F142500F2028F /* OCLDocumentTests.mm in Sources */,
 				BB3E7391180F130E00F2028F /* OCLIndexReaderTests.mm in Sources */,

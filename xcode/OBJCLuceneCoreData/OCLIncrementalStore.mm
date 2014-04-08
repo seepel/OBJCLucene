@@ -43,6 +43,7 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
 }
 
 @property (nonatomic, strong) NSOperationQueue *writeOperationQueue;
+@property (nonatomic, strong) NSCache *valuesCache;
 
 @end
 
@@ -80,6 +81,7 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
     self.writeOperationQueue.maxConcurrentOperationCount = 1;
     const TCHAR *stopWords[1] = { NULL };
     _analyzer = _CLNEW StandardAnalyzer(stopWords);
+    self.valuesCache = [[NSCache alloc] init];
     return YES;
 }
 
@@ -176,6 +178,10 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
                 NSString *fieldName = [NSString stringFromTCHAR:field->name()];
                 id fieldResult = documentResult[fieldName];
                 id fieldValue = [self luceneValue:field->stringValue() type:fieldTypes[field->name()]];
+                NSRelationshipDescription *relationship = request.entity.relationshipsByName[fieldName];
+                if(relationship != nil) {
+                    fieldValue = [self newObjectIDForEntity:relationship.entity referenceObject:fieldValue];
+                }
                 if(fieldResult == nil) {
                     documentResult[fieldName] = fieldValue;
                 } else {
@@ -313,7 +319,7 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
                 }
                 if(attribute.isIndexed) {
                     if([attribute.userInfo[@"isTokenized"] boolValue]) {
-                    config = config|Field::INDEX_TOKENIZED;
+                        config = config|Field::INDEX_TOKENIZED;
                     } else {
                         config = config|Field::INDEX_UNTOKENIZED;
                     }
@@ -327,13 +333,45 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
                     fieldsForName.pop_back();
                     TCHAR *valueToSet;
                     wcpcpy(valueToSet, fieldValue);
-                    field->setValue(valueToSet);
+                    field->setValue(valueToSet, true);
+                    free(valueToSet);
                 }
                 document->add(*field);
             };
+
             BOOL idStop = NO;
             parseAttribute(@"_id", idAttribute, &idStop);
             [object.entity.attributesByName enumerateKeysAndObjectsUsingBlock:parseAttribute];
+
+            [object.entity.relationshipsByName enumerateKeysAndObjectsUsingBlock:^(NSString *relationshipName, NSRelationshipDescription *relationship, BOOL *stop) {
+                id value = [object valueForKey:relationshipName];
+                if(value == nil) {
+                    return;
+                }
+                wstring fieldName = [relationshipName toTCHAR];
+                __block vector<Field *> fieldsForName = fields[fieldName];
+                void (^parseRelatedObject)(OCLManagedObject *, BOOL *) =  ^(OCLManagedObject *object, BOOL *stop) {
+                    const TCHAR *fieldValue = [[self referenceObjectForObjectID:object.objectID] toTCHAR];
+                    Field *field = NULL;
+                    if(fieldsForName.size() == 0) {
+                        field = _CLNEW Field(fieldName.c_str(), fieldValue, Field::STORE_YES|Field::INDEX_UNTOKENIZED, true);
+                    } else {
+                        field = fieldsForName.back();
+                        TCHAR *valueToSet;
+                        wcpcpy(valueToSet, fieldValue);
+                        field->setValue(valueToSet, true);
+                        free(valueToSet);
+                    }
+                    document->add(*field);
+                };
+                if([value isKindOfClass:[NSSet class]]) {
+                    [(NSSet *)value enumerateObjectsUsingBlock:parseRelatedObject];
+                } else {
+                    BOOL stop = NO;
+                    parseRelatedObject(value, &stop);
+                }
+            }];
+
             for(Field *field: *document->getFields()) {
                 vector<Field *> fieldsForName = fields[wstring(field->name())];
                 fieldsForName.push_back(field);
@@ -397,9 +435,12 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
         if(fieldValue == nil) {
             continue;
         }
+        if(relationship != nil) {
+            fieldValue = [self newObjectIDForEntity:relationship.destinationEntity referenceObject:fieldValue];
+        }
         id currentValue = values[fieldName];
         if(currentValue == nil) {
-            if(relationship != nil) {
+            if(relationship != nil && relationship.isToMany) {
                 values[fieldName] = [[NSMutableArray alloc] initWithObjects:fieldValue, nil];
             } else {
                 values[fieldName] = fieldValue;
@@ -410,18 +451,23 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
             values[fieldName] = [[NSMutableArray alloc] initWithObjects:fieldValue, nil];
         }
     }
-    [objectID.entity.attributesByName enumerateKeysAndObjectsUsingBlock:^(NSString *attributeName, NSAttributeDescription *attribute, BOOL *stop) {
-        if(values[attributeName] == nil) {
-            values[attributeName] = [NSNull null];
-        }
-    }];
+//    [objectID.entity.attributesByName enumerateKeysAndObjectsUsingBlock:^(NSString *attributeName, NSAttributeDescription *attribute, BOOL *stop) {
+//        if(values[attributeName] == nil) {
+//            values[attributeName] = [NSNull null];
+//        }
+//    }];
     [objectID.entity.relationshipsByName enumerateKeysAndObjectsUsingBlock:^(NSString *relationshipName, NSRelationshipDescription *relationship, BOOL *stop) {
-        if(relationship.isToMany) {
-            values[relationshipName] = @[];
+        if(values[relationshipName] != nil) {
+            return;
         } else {
-            values[relationshipName] = [NSNull null];
+            if(relationship.isToMany) {
+                values[relationshipName] = @[];
+            } else {
+                values[relationshipName] = [NSNull null];
+            }
         }
     }];
+    [self.valuesCache setObject:values forKey:objectID];
     indexReader->close();
     _CLVDELETE(indexReader);
     _CLVDELETE(query);
@@ -431,7 +477,7 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
 
 - (id)newValueForRelationship:(NSRelationshipDescription *)relationship forObjectWithID:(NSManagedObjectID *)objectID withContext:(NSManagedObjectContext *)context error:(NSError *__autoreleasing *)error
 {
-    return nil;
+    return [[self.valuesCache objectForKey:objectID] objectForKey:relationship.name];
 }
 
 - (NSArray *)obtainPermanentIDsForObjects:(NSArray *)array error:(NSError *__autoreleasing *)error
@@ -507,6 +553,7 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
             return [NSDate dateWithTimeIntervalSince1970:NumericUtils::sortableLongToDouble(NumberTools::stringToLong(value))];
             break;
 
+        case NSManagedObjectIDResultType:
         case NSStringAttributeType:
             return [NSString stringFromTCHAR:value];
             break;
@@ -532,6 +579,7 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
             return NumberTools::longToString(NumericUtils::doubleToSortableLong([value doubleValue]));
             break;
 
+        case NSManagedObjectIDResultType:
         case NSStringAttributeType:
             return [value toTCHAR];
             break;
