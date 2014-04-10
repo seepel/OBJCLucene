@@ -35,6 +35,8 @@
 - (instancetype)initWithKey:(NSString *)key value:(NSString *)value config:(OCLFieldConfig)config duplicateValue:(BOOL)duplicateValue
 {
     if((self = [super init])) {
+        _key = key;
+        _value = value;
         Field *field = _CLNEW Field([key toTCHAR], [value toTCHAR], config, duplicateValue);
         [self setCPPField:field];
     }
