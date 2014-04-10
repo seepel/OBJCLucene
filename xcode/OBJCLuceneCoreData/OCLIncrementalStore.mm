@@ -28,6 +28,8 @@
 
 #include "MatchAllDocsQuery.h"
 
+#include "NSEntityDescription+OCLIncrementalStore.h"
+
 using namespace ocl;
 using namespace lucene::index;
 using namespace lucene::search;
@@ -114,7 +116,7 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
         return @[];
     }
     IndexSearcher *indexSearcher = _CLNEW IndexSearcher(indexReader);
-    MatchAllDocsQuery *query = _CLNEW MatchAllDocsQuery();
+    Query *query = [self queryForRequest:request indexReader:indexReader];
     FieldSelectorBlock selectorBlock = nil;
     HitCollectorBlock hitCollectorBlock = nil;
     NSArray *(^parseResults)(void) = ^(void) {
@@ -524,12 +526,12 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
     return [[self.URL URLByAppendingPathComponent:entity.name] path];
 }
 
-- (OCLQuery *)queryForRequest:(NSFetchRequest *)fetchRequest
+- (Query *)queryForRequest:(NSFetchRequest *)fetchRequest indexReader:(IndexReader *)indexReader
 {
     if(fetchRequest.predicate == nil) {
-        return [OCLQuery allDocsQuery];
+        return _CLNEW MatchAllDocsQuery();
     } else {
-        return nil;
+        return [fetchRequest.entity queryForPredicate:fetchRequest.predicate indexReader:indexReader];
     }
 }
 
@@ -570,8 +572,11 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
         case NSInteger16AttributeType:
         case NSInteger32AttributeType:
         case NSInteger64AttributeType:
-            return NumberTools::longToString([value longValue]);
+            return NumberTools::longToString([value longLongValue]);
             break;
+
+        case NSDateAttributeType:
+            value = @([value timeIntervalSince1970]);
 
         case NSDecimalAttributeType:
         case NSDoubleAttributeType:

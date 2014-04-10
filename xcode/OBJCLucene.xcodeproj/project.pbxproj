@@ -516,6 +516,12 @@
 		C025C11918F1F530005F3E2C /* OCLIncrementalStoreRelationshipTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C025C11818F1F530005F3E2C /* OCLIncrementalStoreRelationshipTests.mm */; };
 		C031774F18ECCA2700827E34 /* BlockFieldSelector.mm in Sources */ = {isa = PBXBuildFile; fileRef = C031774D18ECCA2700827E34 /* BlockFieldSelector.mm */; };
 		C031775218ECCB5100827E34 /* BlockHitCollector.mm in Sources */ = {isa = PBXBuildFile; fileRef = C031775018ECCB5100827E34 /* BlockHitCollector.mm */; };
+		C08590C618F5F28D009928F7 /* OCLIncrementalStoreIntegerPredicateTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C08590C518F5F28D009928F7 /* OCLIncrementalStoreIntegerPredicateTests.mm */; };
+		C08590C818F60448009928F7 /* OCLIncrementalStoreFloatPredicateTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C08590C718F60448009928F7 /* OCLIncrementalStoreFloatPredicateTests.mm */; };
+		C08590CA18F607CE009928F7 /* NumericUtilsTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C08590C918F607CE009928F7 /* NumericUtilsTests.mm */; };
+		C08590CC18F60E5C009928F7 /* OCLIncrementalStoreStringPredicateTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C08590CB18F60E5C009928F7 /* OCLIncrementalStoreStringPredicateTests.mm */; };
+		C093E11C18F4CDEA00B10CAF /* NSEntityDescription+OCLIncrementalStore.mm in Sources */ = {isa = PBXBuildFile; fileRef = C093E11B18F4CDEA00B10CAF /* NSEntityDescription+OCLIncrementalStore.mm */; };
+		C093E13F18F5E80200B10CAF /* OCLIncrementalStorePredicateTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C093E13E18F5E80200B10CAF /* OCLIncrementalStorePredicateTests.mm */; };
 		C0A0902218EB5BB40065CDB2 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A0902118EB5BB40065CDB2 /* libc++.dylib */; };
 		C0A4420018E901B60014AF25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C435914917C54638009B87BF /* Foundation.framework */; };
 		C0A4422818E901F90014AF25 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A4422718E901F90014AF25 /* CoreData.framework */; };
@@ -530,6 +536,8 @@
 		C0B1CA1318EE358400784EB7 /* NumericUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = C0B1CA1118EE358400784EB7 /* NumericUtils.mm */; };
 		C0C1AC66CF164EFFAD434CC2 /* TestStore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B73E691729844C2FACF2F629 /* TestStore.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		C0D61FC8288F4543A646FC51 /* IndexFileNameFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F5F65F53338D4D68A6321171 /* IndexFileNameFilter.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		C0DAEADD18F62823001B0890 /* OCLIncrementalStoreBaseTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C0DAEADC18F62823001B0890 /* OCLIncrementalStoreBaseTests.mm */; };
+		C0DAEADF18F63008001B0890 /* OCLIncrementalStoreDatePredicateTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C0DAEADE18F63008001B0890 /* OCLIncrementalStoreDatePredicateTests.mm */; };
 		C1E18BEAD134428BB363424D /* WildcardTermEnum.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6D35EDAC1B3F4A90945166B9 /* WildcardTermEnum.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		C2D0B249E2894B1B823AC290 /* SpanNearQuery.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8563B383AC724D0AB4AB274B /* SpanNearQuery.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		C403A189A50D400293460977 /* MultiReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933549452A21472BBF33BE30 /* MultiReader.cpp */; settings = {COMPILER_FLAGS = ""; }; };
@@ -1229,6 +1237,14 @@
 		C031774E18ECCA2700827E34 /* BlockFieldSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockFieldSelector.h; sourceTree = "<group>"; };
 		C031775018ECCB5100827E34 /* BlockHitCollector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BlockHitCollector.mm; sourceTree = "<group>"; };
 		C031775118ECCB5100827E34 /* BlockHitCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockHitCollector.h; sourceTree = "<group>"; };
+		C08590C418F5F24F009928F7 /* OCLIncrementalStorePredicateTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCLIncrementalStorePredicateTests.h; sourceTree = "<group>"; };
+		C08590C518F5F28D009928F7 /* OCLIncrementalStoreIntegerPredicateTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStoreIntegerPredicateTests.mm; sourceTree = "<group>"; };
+		C08590C718F60448009928F7 /* OCLIncrementalStoreFloatPredicateTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStoreFloatPredicateTests.mm; sourceTree = "<group>"; };
+		C08590C918F607CE009928F7 /* NumericUtilsTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NumericUtilsTests.mm; sourceTree = "<group>"; };
+		C08590CB18F60E5C009928F7 /* OCLIncrementalStoreStringPredicateTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStoreStringPredicateTests.mm; sourceTree = "<group>"; };
+		C093E11A18F4CDEA00B10CAF /* NSEntityDescription+OCLIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEntityDescription+OCLIncrementalStore.h"; sourceTree = "<group>"; };
+		C093E11B18F4CDEA00B10CAF /* NSEntityDescription+OCLIncrementalStore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSEntityDescription+OCLIncrementalStore.mm"; sourceTree = "<group>"; };
+		C093E13E18F5E80200B10CAF /* OCLIncrementalStorePredicateTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStorePredicateTests.mm; sourceTree = "<group>"; };
 		C0A0902118EB5BB40065CDB2 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		C0A441FF18E901B60014AF25 /* libOBJCLuceneCoreData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOBJCLuceneCoreData.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A4420318E901B60014AF25 /* OBJCLuceneCoreData-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OBJCLuceneCoreData-Prefix.pch"; sourceTree = "<group>"; };
@@ -1240,6 +1256,8 @@
 		C0A4423B18E9FBB50014AF25 /* OCLManagedObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLManagedObject.mm; sourceTree = "<group>"; };
 		C0B1CA1118EE358400784EB7 /* NumericUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NumericUtils.mm; sourceTree = "<group>"; };
 		C0B1CA1218EE358400784EB7 /* NumericUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumericUtils.h; sourceTree = "<group>"; };
+		C0DAEADC18F62823001B0890 /* OCLIncrementalStoreBaseTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStoreBaseTests.mm; sourceTree = "<group>"; };
+		C0DAEADE18F63008001B0890 /* OCLIncrementalStoreDatePredicateTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStoreDatePredicateTests.mm; sourceTree = "<group>"; };
 		C13B1924E7B841AE96A76E8B /* _IndexFileNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = _IndexFileNames.h; path = src/core/CLucene/index/_IndexFileNames.h; sourceTree = SOURCE_ROOT; };
 		C156C927F08D434A843602DA /* TermQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TermQuery.h; path = src/core/CLucene/search/TermQuery.h; sourceTree = SOURCE_ROOT; };
 		C218A93CA71E4D539CA697DC /* MultipleTermPositions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MultipleTermPositions.cpp; path = src/core/CLucene/index/MultipleTermPositions.cpp; sourceTree = SOURCE_ROOT; };
@@ -2525,9 +2543,19 @@
 			name = unit_testing;
 			sourceTree = "<group>";
 		};
+		C093E11018F4B15600B10CAF /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				C093E11A18F4CDEA00B10CAF /* NSEntityDescription+OCLIncrementalStore.h */,
+				C093E11B18F4CDEA00B10CAF /* NSEntityDescription+OCLIncrementalStore.mm */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		C0A4420118E901B60014AF25 /* OBJCLuceneCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				C093E11018F4B15600B10CAF /* Categories */,
 				C0A4424718EB44010014AF25 /* CLucene */,
 				C0A4422918E902170014AF25 /* OCLIncrementalStore.h */,
 				C0A4422A18E902170014AF25 /* OCLIncrementalStore.mm */,
@@ -2550,9 +2578,17 @@
 		C0A4423218E909040014AF25 /* OBCLuceneCoreData */ = {
 			isa = PBXGroup;
 			children = (
+				C08590C918F607CE009928F7 /* NumericUtilsTests.mm */,
 				C025C11A18F1F550005F3E2C /* OCLIncrementalStoreTests.h */,
 				C0A4423318E909260014AF25 /* OCLIncrementalStoreTests.mm */,
 				C025C11818F1F530005F3E2C /* OCLIncrementalStoreRelationshipTests.mm */,
+				C08590C418F5F24F009928F7 /* OCLIncrementalStorePredicateTests.h */,
+				C093E13E18F5E80200B10CAF /* OCLIncrementalStorePredicateTests.mm */,
+				C08590C518F5F28D009928F7 /* OCLIncrementalStoreIntegerPredicateTests.mm */,
+				C08590C718F60448009928F7 /* OCLIncrementalStoreFloatPredicateTests.mm */,
+				C08590CB18F60E5C009928F7 /* OCLIncrementalStoreStringPredicateTests.mm */,
+				C0DAEADC18F62823001B0890 /* OCLIncrementalStoreBaseTests.mm */,
+				C0DAEADE18F63008001B0890 /* OCLIncrementalStoreDatePredicateTests.mm */,
 			);
 			name = OBCLuceneCoreData;
 			sourceTree = "<group>";
@@ -4009,13 +4045,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C08590CC18F60E5C009928F7 /* OCLIncrementalStoreStringPredicateTests.mm in Sources */,
 				BB3E738F180F0F1200F2028F /* OCLFilterTests.mm in Sources */,
 				C025C11918F1F530005F3E2C /* OCLIncrementalStoreRelationshipTests.mm in Sources */,
 				C0A4423418E909260014AF25 /* OCLIncrementalStoreTests.mm in Sources */,
+				C08590C618F5F28D009928F7 /* OCLIncrementalStoreIntegerPredicateTests.mm in Sources */,
+				C08590C818F60448009928F7 /* OCLIncrementalStoreFloatPredicateTests.mm in Sources */,
+				C0DAEADD18F62823001B0890 /* OCLIncrementalStoreBaseTests.mm in Sources */,
 				BB3E7395180F142500F2028F /* OCLDocumentTests.mm in Sources */,
 				BB3E7391180F130E00F2028F /* OCLIndexReaderTests.mm in Sources */,
 				BB69A27A180E185A00A23BB9 /* OCLQueryTests.mm in Sources */,
 				BBF8276B180F3FC4005350FB /* OCLIndexSearcherTests.mm in Sources */,
+				C093E13F18F5E80200B10CAF /* OCLIncrementalStorePredicateTests.mm in Sources */,
+				C08590CA18F607CE009928F7 /* NumericUtilsTests.mm in Sources */,
+				C0DAEADF18F63008001B0890 /* OCLIncrementalStoreDatePredicateTests.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4025,6 +4068,7 @@
 			files = (
 				C031774F18ECCA2700827E34 /* BlockFieldSelector.mm in Sources */,
 				C0B1CA1318EE358400784EB7 /* NumericUtils.mm in Sources */,
+				C093E11C18F4CDEA00B10CAF /* NSEntityDescription+OCLIncrementalStore.mm in Sources */,
 				C0A4422D18E9021F0014AF25 /* OCLIncrementalStore.mm in Sources */,
 				C031775218ECCB5100827E34 /* BlockHitCollector.mm in Sources */,
 				C0A4423E18E9FBD50014AF25 /* OCLManagedObject.mm in Sources */,
