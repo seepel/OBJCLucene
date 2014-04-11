@@ -23,7 +23,7 @@
 - (id)initWithQueryString:(NSString *)inString forFieldKey:(NSString *)inField
 {
     if((self = [super init])) {
-        _queryParser = _CLNEW QueryParser([inField toTCHAR], &_analyzer);
+        _queryParser = _CLNEW QueryParser([inField toTCHAR], NULL);
         self.queryString = inString;
     }
     

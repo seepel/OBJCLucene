@@ -237,5 +237,4 @@ struct compareScore {
     return [[OCLWildcardQuery alloc] initWithTerm:term];
 }
 
-
 @end

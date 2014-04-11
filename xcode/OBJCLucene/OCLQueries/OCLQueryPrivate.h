@@ -12,7 +12,7 @@
 
 @interface OCLQuery (Private)
 
-- (void)setCPPQuery:(Query *)inQuery;
-- (Query *)cppQuery;
+- (void)setCPPQuery:(lucene::search::Query *)inQuery;
+- (lucene::search::Query *)cppQuery;
 
 @end
