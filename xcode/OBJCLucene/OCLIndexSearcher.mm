@@ -19,6 +19,8 @@
 }
 
 @property (nonatomic, strong) OCLIndexReader *indexReader;
+@property (nonatomic, strong) OCLFilter *filter;
+@property (nonatomic, strong) OCLQuery *query;
 
 @end
 
@@ -50,6 +52,9 @@
     if(indexSearcher_ == nil) {
         return nil;
     }
+    
+    self.query = query;
+    self.filter = filter;
     
     Hits *hits = NULL;
     @try {
