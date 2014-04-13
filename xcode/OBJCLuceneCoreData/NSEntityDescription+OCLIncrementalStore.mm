@@ -170,7 +170,6 @@ using namespace ocl;
         }
 
         case NSGreaterThanPredicateOperatorType: {
-            Term *upperTerm = _CLNEW Term(fieldKey, NumberTools::MAX_STRING_VALUE);
             query = _CLNEW RangeQuery(term, NULL, false);
             break;
         }
