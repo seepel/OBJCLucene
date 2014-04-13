@@ -33,15 +33,20 @@
 using namespace ocl;
 using namespace lucene::index;
 using namespace lucene::search;
-using namespace lucene::analysis::standard;
+using namespace lucene::analysis;
 using namespace lucene::document;
 using namespace std;
 
 static NSString *OCLIncrementalStoreMetadataFileName = @"metadata";
 NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
 
+NSString * const OCLIncrementalStoreAnalyzerKey = @"analyzer";
+NSString * const OCLIncrementalStoreStandardAnalyzer = @"standard";
+NSString * const OCLIncrementalStoreNoStopStandardAnalyzer = @"nostop";
+NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
+
 @interface OCLIncrementalStore () {
-    StandardAnalyzer *_analyzer;
+    map<NSString *, Analyzer *> _analyzersByEntityName;
 }
 
 @property (nonatomic, strong) NSOperationQueue *writeOperationQueue;
@@ -81,16 +86,33 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
     [self setMetadata:dictionary];
     self.writeOperationQueue = [[NSOperationQueue alloc] init];
     self.writeOperationQueue.maxConcurrentOperationCount = 1;
-    const TCHAR *stopWords[1] = { NULL };
-    _analyzer = _CLNEW StandardAnalyzer(stopWords);
+    __block map<NSString *, Analyzer *> analyzersByEntityName;
     self.valuesCache = [[NSCache alloc] init];
+    [self.persistentStoreCoordinator.managedObjectModel.entities enumerateObjectsUsingBlock:^(NSEntityDescription *entity, NSUInteger index, BOOL *stop) {
+        PerFieldAnalyzerWrapper *analyzer = _CLNEW PerFieldAnalyzerWrapper(_CLNEW KeywordAnalyzer());
+        [entity.attributesByName enumerateKeysAndObjectsUsingBlock:^(NSString *attributeName, NSAttributeDescription *attribute, BOOL *stop) {
+            NSString *analyzerType = attribute.userInfo[OCLIncrementalStoreAnalyzerKey];
+            if(analyzerType == nil || [analyzerType isEqualToString:OCLIncrementalStoreStandardAnalyzer]) {
+                if(attribute.attributeType == NSStringAttributeType) {
+                    analyzer->addAnalyzer([attribute.name toTCHAR], _CLNEW standard::StandardAnalyzer());
+                }
+            } else if([analyzerType isEqualToString:OCLIncrementalStoreNoStopStandardAnalyzer]) {
+                const TCHAR *emptyStopWords[1] = { NULL };
+                analyzer->addAnalyzer([attribute.name toTCHAR], _CLNEW standard::StandardAnalyzer(emptyStopWords));
+            } else {
+                analyzer->addAnalyzer([attribute.name toTCHAR], _CLNEW KeywordAnalyzer());
+            }
+        }];
+        analyzersByEntityName[entity.name] = analyzer;
+    }];
+    _analyzersByEntityName = analyzersByEntityName;
     return YES;
 }
 
 - (void)dealloc
 {
-    if(_analyzer != NULL) {
-        _CLVDELETE(_analyzer);
+    for(auto itr = _analyzersByEntityName.begin(); itr != _analyzersByEntityName.end(); ++itr) {
+        _CLVDELETE(itr->second);
     }
 }
 
@@ -515,7 +537,11 @@ NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
         create = true;
     }
     try {
-        return _CLNEW IndexWriter([path cStringUsingEncoding:NSASCIIStringEncoding], _analyzer, create);
+        Analyzer *analyzer = _analyzersByEntityName[entity.name];
+        if(analyzer == NULL) {
+            return NULL;
+        }
+        return _CLNEW IndexWriter([path cStringUsingEncoding:NSASCIIStringEncoding], analyzer, create);
     } catch (CLuceneError *error) {
         return NULL;
     }

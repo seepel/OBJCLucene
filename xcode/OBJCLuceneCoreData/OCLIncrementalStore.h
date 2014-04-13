@@ -10,6 +10,11 @@
 
 extern NSString * const OCLIncrementalStoreType;
 
+extern NSString * const OCLIncrementalStoreAnalyzerKey;
+extern NSString * const OCLIncrementalStoreStandardAnalyzer;
+extern NSString * const OCLIncrementalStoreNoStopStandardAnalyzer;
+extern NSString * const OCLIncrementalStoreKeywordAnalyzer;
+
 @interface OCLIncrementalStore : NSIncrementalStore
 
 @end
