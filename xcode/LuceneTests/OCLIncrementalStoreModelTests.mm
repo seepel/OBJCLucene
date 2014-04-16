@@ -138,7 +138,6 @@
 
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:@"Entity"];
     NSString *path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"lucene"];
-    NSURL *url = [NSURL fileURLWithPath:path isDirectory:NO];
     request.affectedStores = @[ self.luceneStore ];
     request.predicate = [NSPredicate predicateWithFormat:@"%K = %@", @"_id", @"id"];
     NSError *error = nil;
