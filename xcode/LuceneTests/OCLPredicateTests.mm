@@ -69,6 +69,28 @@ using namespace lucene::analysis::standard;
     XCTAssertEqualObjects(predicate.query, expected, @"");
 }
 
+- (void)testFormatWithInt
+{
+    NSString *keyPath = @"test";
+    int value = 2;
+    OCLPredicate *predicate = (OCLPredicate *)[OCLPredicate predicateWithFormat:@"%K: %d", keyPath, value];
+    OCLQuery *expected = [OCLQuery termQueryWithTerm:[[OCLTerm alloc] initWithField:keyPath text:[NSString stringFromTCHAR:NumberTools::longToString((int64_t)value)] internField:YES]];
+    KeywordAnalyzer analyzer = KeywordAnalyzer();
+    [predicate materializeWithAnalyzer:&analyzer];
+    XCTAssertEqualObjects(predicate.query, expected, @"");
+}
+
+- (void)testFormatWithUnsignedInt
+{
+    NSString *keyPath = @"test";
+    unsigned int value = 1;
+    OCLPredicate *predicate = (OCLPredicate *)[OCLPredicate predicateWithFormat:@"%K: %d", keyPath, value];
+    OCLQuery *expected = [OCLQuery termQueryWithTerm:[[OCLTerm alloc] initWithField:keyPath text:[NSString stringFromTCHAR:NumberTools::longToString((int64_t)value)] internField:YES]];
+    KeywordAnalyzer analyzer = KeywordAnalyzer();
+    [predicate materializeWithAnalyzer:&analyzer];
+    XCTAssertEqualObjects(predicate.query, expected, @"");
+}
+
 - (void)testFormatWithFloat
 {
     NSString *keyPath = @"test";
@@ -202,6 +224,8 @@ using namespace lucene::analysis::standard;
 
 - (void)testFormatWithDoubleNumberFailAsFloat
 {
+    NSPredicate *falsePredicate = [NSPredicate predicateWithFormat:@"FALSEPREDICATE"];
+    NSLog(@"predicate: %@", falsePredicate);
     NSString *keyPath = @"test";
     double doubleValue = 1.1;
     float floatValue = 1.1;

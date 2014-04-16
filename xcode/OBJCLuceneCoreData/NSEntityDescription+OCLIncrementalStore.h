@@ -9,8 +9,11 @@
 #import <CoreData/CoreData.h>
 #import "CLucene.h"
 
+extern NSString * const OCLAttributeForObjectId;
+
 @interface NSEntityDescription (OCLIncrementalStore)
 
-- (lucene::search::Query *)queryForPredicate:(NSPredicate *)predicate indexReader:(lucene::index::IndexReader *)inIndexReader;
+- (NSString *)attributeNameForObjectId;
+- (lucene::search::Query *)queryForPredicate:(NSPredicate *)predicate indexReader:(lucene::index::IndexReader *)indexReader analyzer:(lucene::analysis::Analyzer *)analyzer;
 
 @end

@@ -28,7 +28,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"%K < %@", StringAttributeName, self.upperTestValue];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -55,7 +55,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"%K <= %@", StringAttributeName, self.upperTestValue];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -71,7 +71,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"%K <= %@", StringAttributeName, self.equalTestValue];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -81,7 +81,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"%K > %@", StringAttributeName, self.lowerTestValue];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -107,7 +107,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"%K >= %@", StringAttributeName, self.lowerTestValue];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -123,7 +123,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"%K >= %@", StringAttributeName, self.equalTestValue];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -133,7 +133,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"%K = %@", StringAttributeName,  self.equalTestValue];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -151,7 +151,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"%K != %@", StringAttributeName, self.upperTestValue];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -169,7 +169,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"%K between { %@, %@ }", StringAttributeName, self.lowerTestValue, self.upperTestValue];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -177,7 +177,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"%K between { %@, %@ }", StringAttributeName, self.equalTestValue, self.upperTestValue];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -185,7 +185,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"%K between { %@, %@ }", StringAttributeName, self.lowerTestValue, self.equalTestValue];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -204,8 +204,8 @@
     NSMutableSet *expected = [NSMutableSet setWithObject:self.expectedObjectID];
     NSArray *values = @[ self.lowerTestValue, self.equalTestValue, self.upperTestValue, @"Tesy", @"Tesz" ];
     for(NSUInteger i = 0; i != 5; i++) {
-        OCLManagedObject *object = [[OCLManagedObject alloc] initWithEntity:[NSEntityDescription entityForName:RootEntityName inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
-        object._id = [NSString stringWithFormat:@"%d", i];
+        NSManagedObject *object = [[NSManagedObject alloc] initWithEntity:[NSEntityDescription entityForName:RootEntityName inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
+        [object setValue:[NSString stringWithFormat:@"%d", i] forKey:ObjectIdAttributeName];
         [object setValue:values[i] forKey:StringAttributeName];
         if(i == 1 || i == 2) {
             NSManagedObjectID *objectID = [self.store obtainPermanentIDsForObjects:@[ object ] error:nil][0];

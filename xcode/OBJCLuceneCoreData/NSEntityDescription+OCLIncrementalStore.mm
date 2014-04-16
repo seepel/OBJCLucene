@@ -8,44 +8,60 @@
 
 #import "NSEntityDescription+OCLIncrementalStore.h"
 #import "NSString+OCL.h"
+#import "OCLPredicate.h"
+
+#include "OCLQueryPrivate.h"
+
 #import "NumericUtils.h"
 #import "NumberTools.h"
+
 #include "MatchAllDocsQuery.h"
 #include <vector>
 
 using namespace lucene::search;
 using namespace lucene::document;
 using namespace lucene::index;
+using namespace lucene::analysis;
 using namespace std;
 using namespace ocl;
 
+NSString * const OCLAttributeForObjectId = @"attributeForObjectId";
+
 @implementation NSEntityDescription (OCLIncrementalStore)
 
-- (Query *)queryForPredicate:(NSPredicate *)predicate indexReader:(IndexReader *)inIndexReader
+- (NSString *)attributeNameForObjectId
 {
-    if([predicate isKindOfClass:[NSCompoundPredicate class]]) {
-        return [self queryForCompoundPredicate:(NSCompoundPredicate *)predicate indexReader:inIndexReader];
-    } else if([predicate isKindOfClass:[NSComparisonPredicate class]]) {
-        return [self queryForComparisonPredicate:(NSComparisonPredicate *)predicate indexReader:inIndexReader];
+    return self.userInfo[OCLAttributeForObjectId];
+}
+
+- (Query *)queryForPredicate:(NSPredicate *)inPredicate indexReader:(IndexReader *)inIndexReader analyzer:(Analyzer *)inAnalyzer
+{
+    if([inPredicate isKindOfClass:[OCLPredicate class]]) {
+        [(OCLPredicate *)inPredicate materializeWithAnalyzer:inAnalyzer];
+        return [[(OCLPredicate *)inPredicate query] cppQuery]->clone();
+    } else if([inPredicate isKindOfClass:[NSCompoundPredicate class]]) {
+        return [self queryForCompoundPredicate:(NSCompoundPredicate *)inPredicate indexReader:inIndexReader analyzer:inAnalyzer];
+    } else if([inPredicate isKindOfClass:[NSComparisonPredicate class]]) {
+        return [self queryForComparisonPredicate:(NSComparisonPredicate *)inPredicate indexReader:inIndexReader analyzer:inAnalyzer];
     }
     return NULL;
 }
 
-- (Query *)queryForCompoundPredicate:(NSCompoundPredicate *)predicate indexReader:(IndexReader *)inIndexReader
+- (Query *)queryForCompoundPredicate:(NSCompoundPredicate *)inPredicate indexReader:(IndexReader *)inIndexReader analyzer:(Analyzer *)inAnalyzer
 {
     BooleanQuery *query = _CLNEW BooleanQuery(true);
-    [predicate.subpredicates enumerateObjectsUsingBlock:^(NSPredicate *subPredicate, NSUInteger index, BOOL *stop) {
-        switch (predicate.compoundPredicateType) {
+    [inPredicate.subpredicates enumerateObjectsUsingBlock:^(NSPredicate *subPredicate, NSUInteger index, BOOL *stop) {
+        switch (inPredicate.compoundPredicateType) {
             case NSNotPredicateType:
-                query->add([self queryForPredicate:predicate indexReader:inIndexReader], true, BooleanClause::MUST_NOT);
+                query->add([self queryForPredicate:inPredicate indexReader:inIndexReader analyzer:inAnalyzer], true, BooleanClause::MUST_NOT);
                 break;
                 
             case NSAndPredicateType:
-                query->add([self queryForPredicate:predicate indexReader:inIndexReader], true, BooleanClause::MUST);
+                query->add([self queryForPredicate:inPredicate indexReader:inIndexReader analyzer:inAnalyzer], true, BooleanClause::MUST);
                 break;
                 
             case NSOrPredicateType:
-                query->add([self queryForPredicate:predicate indexReader:inIndexReader], true, BooleanClause::SHOULD);
+                query->add([self queryForPredicate:inPredicate indexReader:inIndexReader analyzer:inAnalyzer], true, BooleanClause::SHOULD);
                 break;
                 
             default:
@@ -55,17 +71,17 @@ using namespace ocl;
     return query;
 }
 
-- (Query *)queryForComparisonPredicate:(NSComparisonPredicate *)predicate indexReader:(IndexReader *)inIndexReader
+- (Query *)queryForComparisonPredicate:(NSComparisonPredicate *)inPredicate indexReader:(IndexReader *)inIndexReader analyzer:(Analyzer *)inAnalyzer
 {
     NSString *keyPath = nil;
     id value = nil;
-    [self parseExpression:predicate.leftExpression intoKeyPath:&keyPath value:&value];
-    [self parseExpression:predicate.rightExpression intoKeyPath:&keyPath value:&value];
+    [self parseExpression:inPredicate.leftExpression intoKeyPath:&keyPath value:&value analyzer:inAnalyzer];
+    [self parseExpression:inPredicate.rightExpression intoKeyPath:&keyPath value:&value analyzer:inAnalyzer];
 
     const TCHAR *fieldKey = NULL;
 
     if([keyPath caseInsensitiveCompare:@"self"] == NSOrderedSame) {
-        keyPath = @"_id";
+        keyPath = self.attributeNameForObjectId;
     } else if([keyPath hasPrefix:@"self."]) {
         keyPath = [keyPath stringByReplacingOccurrencesOfString:@"self." withString:@""];
     } else if([keyPath hasPrefix:@"SELF."]) {
@@ -92,9 +108,9 @@ using namespace ocl;
                 break;
                 
             case NSStringAttributeType:
-                if(predicate.predicateOperatorType == NSEndsWithPredicateOperatorType) {
+                if(inPredicate.predicateOperatorType == NSEndsWithPredicateOperatorType) {
                     result = [[NSString stringWithFormat:@"*%@", localValue] toTCHAR];
-                } else if(predicate.predicateOperatorType == NSContainsPredicateOperatorType) {
+                } else if(inPredicate.predicateOperatorType == NSContainsPredicateOperatorType) {
                     result = [[NSString stringWithFormat:@"*%@*", localValue] toTCHAR];
                 } else {
                     result = [localValue toTCHAR];
@@ -138,7 +154,7 @@ using namespace ocl;
             Term *term = _CLNEW Term(fieldKey, parseFieldValue(value));
             terms.push_back(term);
         }
-    } else if(relationship != nil || [keyPath isEqualToString:@"_id"]) {
+    } else if(relationship != nil || [keyPath isEqualToString:self.attributeNameForObjectId]) {
         if([value conformsToProtocol:@protocol(NSFastEnumeration)]) {
             for(id singleValue in value) {
                 Term *term = _CLNEW Term(fieldKey, parseManagedObjectType(singleValue));
@@ -158,7 +174,7 @@ using namespace ocl;
 
     Query *query = NULL;
 
-    switch (predicate.predicateOperatorType) {
+    switch (inPredicate.predicateOperatorType) {
         case NSLessThanPredicateOperatorType: {
             query = _CLNEW RangeQuery(NULL, term, false);
             break;
@@ -240,7 +256,7 @@ using namespace ocl;
     return query;
 }
 
-- (void)parseExpression:(NSExpression *)expression intoKeyPath:(NSString **)inOutKeyPath value:(id*)inOutValue
+- (void)parseExpression:(NSExpression *)expression intoKeyPath:(NSString **)inOutKeyPath value:(id*)inOutValue analyzer:(Analyzer *)inAnalyzer
 {
     switch (expression.expressionType) {
         case NSKeyPathExpressionType: {
@@ -262,7 +278,7 @@ using namespace ocl;
             NSMutableArray *values = [NSMutableArray array];
             for(NSExpression *subExpression in expression.collection) {
                 id tmpValue = nil;
-                [self parseExpression:subExpression intoKeyPath:inOutKeyPath value:&tmpValue];
+                [self parseExpression:subExpression intoKeyPath:inOutKeyPath value:&tmpValue analyzer:inAnalyzer];
                 if(tmpValue != nil) {
                     [values addObject:tmpValue];
                 }

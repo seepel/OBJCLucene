@@ -7,6 +7,7 @@
 //
 
 #import "OCLIncrementalStoreTests.h"
+#import "NSEntityDescription+OCLIncrementalStore.h"
 
 NSString *RootEntityName = @"Root";
 NSString *OneToOneEntityName = @"OneToOne";
@@ -22,11 +23,18 @@ NSString *ManyToManyRelationshipName = @"manyToMany";
 NSString *InverseToOneRelationshipName = @"root";
 NSString *InverseToManyRelationshipName = @"roots";
 
+NSString *ObjectIdAttributeName = @"_id";
 NSString *IntegerAttributeName = @"integer";
 NSString *FloatAttributeName = @"float";
 NSString *StringAttributeName = @"string";
 NSString *DateAttributeName = @"date";
 
+
+@interface OCLIncrementalStoreTests ()
+
+@property (nonatomic, strong) NSURL *storeURL;
+
+@end
 
 @implementation OCLIncrementalStoreTests
 
@@ -36,10 +44,15 @@ NSString *DateAttributeName = @"date";
     self.model = [[NSManagedObjectModel alloc] init];
 
     NSEntityDescription *rootEntity = [self entityNamed:RootEntityName];
+    rootEntity.userInfo = @{ OCLAttributeForObjectId: ObjectIdAttributeName };
     NSEntityDescription *oneToOneEntity = [self entityNamed:OneToOneEntityName];
+    oneToOneEntity.userInfo = @{ OCLAttributeForObjectId: ObjectIdAttributeName };
     NSEntityDescription *oneToManyEntity = [self entityNamed:OneToManyEntityName];
+    oneToManyEntity.userInfo = @{ OCLAttributeForObjectId: ObjectIdAttributeName };
     NSEntityDescription *manyToOneEntity = [self entityNamed:ManyToOneEntityName];
+    manyToOneEntity.userInfo = @{ OCLAttributeForObjectId: ObjectIdAttributeName };
     NSEntityDescription *manyToManyEntity = [self entityNamed:ManyToManyEntityName];
+    manyToManyEntity.userInfo = @{ OCLAttributeForObjectId: ObjectIdAttributeName };
 
     // One To One
     NSRelationshipDescription *oneToOneRelationship = [[NSRelationshipDescription alloc] init];
@@ -95,10 +108,10 @@ NSString *DateAttributeName = @"date";
     self.model.entities = @[ rootEntity, oneToOneEntity, oneToManyEntity, manyToOneEntity, manyToManyEntity ];
     [OCLIncrementalStore initialize];
     self.coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.model];
-    NSURL *URL = [NSURL fileURLWithPath:[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"store"]];
-    [[NSFileManager defaultManager] removeItemAtPath:URL.path error:nil];
+    self.storeURL = [NSURL fileURLWithPath:[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:[[NSProcessInfo processInfo] globallyUniqueString]]];
+    [[NSFileManager defaultManager] removeItemAtPath:self.storeURL.path error:nil];
     NSError *error = nil;
-    self.store = (OCLIncrementalStore *)[self.coordinator addPersistentStoreWithType:OCLIncrementalStoreType configuration:nil URL:URL options:nil error:&error];
+    self.store = (OCLIncrementalStore *)[self.coordinator addPersistentStoreWithType:OCLIncrementalStoreType configuration:nil URL:self.storeURL options:nil error:&error];
     if(self.store == nil) {
         NSLog(@"Error adding store: %@, %@", error, error.userInfo);
     }
@@ -106,11 +119,22 @@ NSString *DateAttributeName = @"date";
     self.context.persistentStoreCoordinator = self.coordinator;
 }
 
+- (void)tearDown
+{
+    [super tearDown];
+    [[NSFileManager defaultManager] removeItemAtPath:self.storeURL.path error:nil];
+}
+
 - (NSEntityDescription *)entityNamed:(NSString *)entityName
 {
     NSEntityDescription *rootEntity = [[NSEntityDescription alloc] init];
-    rootEntity.managedObjectClassName = NSStringFromClass([OCLManagedObject class]);
+    rootEntity.managedObjectClassName = NSStringFromClass([NSManagedObject class]);
     rootEntity.name = entityName;
+
+    NSAttributeDescription *objectIDAttribute = [[NSAttributeDescription alloc] init];
+    objectIDAttribute.indexed = YES;
+    objectIDAttribute.name = ObjectIdAttributeName;
+    objectIDAttribute.attributeType = NSStringAttributeType;
     
     NSAttributeDescription *integerAttribute = [[NSAttributeDescription alloc] init];
     integerAttribute.indexed = YES;
@@ -132,7 +156,7 @@ NSString *DateAttributeName = @"date";
     dateAttribute.attributeType = NSDateAttributeType;
     dateAttribute.indexed = YES;
     
-    rootEntity.properties = @[ integerAttribute, floatAttribute, stringAttribute, dateAttribute ];
+    rootEntity.properties = @[ objectIDAttribute, integerAttribute, floatAttribute, stringAttribute, dateAttribute ];
     
     return rootEntity;
 }

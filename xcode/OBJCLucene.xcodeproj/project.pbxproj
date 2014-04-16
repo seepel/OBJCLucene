@@ -516,6 +516,9 @@
 		C025C11918F1F530005F3E2C /* OCLIncrementalStoreRelationshipTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C025C11818F1F530005F3E2C /* OCLIncrementalStoreRelationshipTests.mm */; };
 		C031774F18ECCA2700827E34 /* BlockFieldSelector.mm in Sources */ = {isa = PBXBuildFile; fileRef = C031774D18ECCA2700827E34 /* BlockFieldSelector.mm */; };
 		C031775218ECCB5100827E34 /* BlockHitCollector.mm in Sources */ = {isa = PBXBuildFile; fileRef = C031775018ECCB5100827E34 /* BlockHitCollector.mm */; };
+		C06D8EFC18FDBB4100979F64 /* NSManagedObject+OCLIncrementalStore.mm in Sources */ = {isa = PBXBuildFile; fileRef = C06D8EFB18FDBB4100979F64 /* NSManagedObject+OCLIncrementalStore.mm */; };
+		C07E155C18FB5E8E00765E18 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C07E155A18FB5E8E00765E18 /* Model.xcdatamodeld */; };
+		C07E155F18FB61DB00765E18 /* NSPropertyDescription+OCLIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C07E155E18FB61DB00765E18 /* NSPropertyDescription+OCLIncrementalStore.m */; };
 		C08590C618F5F28D009928F7 /* OCLIncrementalStoreIntegerPredicateTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C08590C518F5F28D009928F7 /* OCLIncrementalStoreIntegerPredicateTests.mm */; };
 		C08590C818F60448009928F7 /* OCLIncrementalStoreFloatPredicateTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C08590C718F60448009928F7 /* OCLIncrementalStoreFloatPredicateTests.mm */; };
 		C08590CA18F607CE009928F7 /* NumericUtilsTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C08590C918F607CE009928F7 /* NumericUtilsTests.mm */; };
@@ -531,10 +534,10 @@
 		C0A4423718E90A7A0014AF25 /* libOBJCLuceneCoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A441FF18E901B60014AF25 /* libOBJCLuceneCoreData.a */; };
 		C0A4423818E9151E0014AF25 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A4422718E901F90014AF25 /* CoreData.framework */; };
 		C0A4423918E915350014AF25 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A4422718E901F90014AF25 /* CoreData.framework */; };
-		C0A4423C18E9FBB50014AF25 /* OCLManagedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = C0A4423A18E9FBB50014AF25 /* OCLManagedObject.h */; };
-		C0A4423E18E9FBD50014AF25 /* OCLManagedObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = C0A4423B18E9FBB50014AF25 /* OCLManagedObject.mm */; };
+		C0B0475918FB55F000CD3D25 /* OCLIncrementalStoreModelTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C0B0475818FB55F000CD3D25 /* OCLIncrementalStoreModelTests.mm */; };
 		C0B1CA1318EE358400784EB7 /* NumericUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = C0B1CA1118EE358400784EB7 /* NumericUtils.mm */; };
 		C0C1AC66CF164EFFAD434CC2 /* TestStore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B73E691729844C2FACF2F629 /* TestStore.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		C0CD34ED18FF294A0026E038 /* OCLIncrementalStoreQueryPredicateTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C0CD34EC18FF294A0026E038 /* OCLIncrementalStoreQueryPredicateTests.mm */; };
 		C0D61FC8288F4543A646FC51 /* IndexFileNameFilter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F5F65F53338D4D68A6321171 /* IndexFileNameFilter.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 		C0DAEADD18F62823001B0890 /* OCLIncrementalStoreBaseTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C0DAEADC18F62823001B0890 /* OCLIncrementalStoreBaseTests.mm */; };
 		C0DAEADF18F63008001B0890 /* OCLIncrementalStoreDatePredicateTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C0DAEADE18F63008001B0890 /* OCLIncrementalStoreDatePredicateTests.mm */; };
@@ -1239,6 +1242,11 @@
 		C031774E18ECCA2700827E34 /* BlockFieldSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockFieldSelector.h; sourceTree = "<group>"; };
 		C031775018ECCB5100827E34 /* BlockHitCollector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BlockHitCollector.mm; sourceTree = "<group>"; };
 		C031775118ECCB5100827E34 /* BlockHitCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockHitCollector.h; sourceTree = "<group>"; };
+		C06D8EFA18FDBB4100979F64 /* NSManagedObject+OCLIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+OCLIncrementalStore.h"; sourceTree = "<group>"; };
+		C06D8EFB18FDBB4100979F64 /* NSManagedObject+OCLIncrementalStore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSManagedObject+OCLIncrementalStore.mm"; sourceTree = "<group>"; };
+		C07E155B18FB5E8E00765E18 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		C07E155D18FB61DB00765E18 /* NSPropertyDescription+OCLIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPropertyDescription+OCLIncrementalStore.h"; sourceTree = "<group>"; };
+		C07E155E18FB61DB00765E18 /* NSPropertyDescription+OCLIncrementalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPropertyDescription+OCLIncrementalStore.m"; sourceTree = "<group>"; };
 		C08590C418F5F24F009928F7 /* OCLIncrementalStorePredicateTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCLIncrementalStorePredicateTests.h; sourceTree = "<group>"; };
 		C08590C518F5F28D009928F7 /* OCLIncrementalStoreIntegerPredicateTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStoreIntegerPredicateTests.mm; sourceTree = "<group>"; };
 		C08590C718F60448009928F7 /* OCLIncrementalStoreFloatPredicateTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStoreFloatPredicateTests.mm; sourceTree = "<group>"; };
@@ -1254,10 +1262,10 @@
 		C0A4422918E902170014AF25 /* OCLIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLIncrementalStore.h; sourceTree = "<group>"; };
 		C0A4422A18E902170014AF25 /* OCLIncrementalStore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStore.mm; sourceTree = "<group>"; };
 		C0A4423318E909260014AF25 /* OCLIncrementalStoreTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStoreTests.mm; sourceTree = "<group>"; };
-		C0A4423A18E9FBB50014AF25 /* OCLManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLManagedObject.h; sourceTree = "<group>"; };
-		C0A4423B18E9FBB50014AF25 /* OCLManagedObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLManagedObject.mm; sourceTree = "<group>"; };
+		C0B0475818FB55F000CD3D25 /* OCLIncrementalStoreModelTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStoreModelTests.mm; sourceTree = "<group>"; };
 		C0B1CA1118EE358400784EB7 /* NumericUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NumericUtils.mm; sourceTree = "<group>"; };
 		C0B1CA1218EE358400784EB7 /* NumericUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumericUtils.h; sourceTree = "<group>"; };
+		C0CD34EC18FF294A0026E038 /* OCLIncrementalStoreQueryPredicateTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStoreQueryPredicateTests.mm; sourceTree = "<group>"; };
 		C0DAEADC18F62823001B0890 /* OCLIncrementalStoreBaseTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStoreBaseTests.mm; sourceTree = "<group>"; };
 		C0DAEADE18F63008001B0890 /* OCLIncrementalStoreDatePredicateTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStoreDatePredicateTests.mm; sourceTree = "<group>"; };
 		C0DAEAE018F71A23001B0890 /* OCLPredicate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLPredicate.h; sourceTree = "<group>"; };
@@ -2553,6 +2561,10 @@
 			children = (
 				C093E11A18F4CDEA00B10CAF /* NSEntityDescription+OCLIncrementalStore.h */,
 				C093E11B18F4CDEA00B10CAF /* NSEntityDescription+OCLIncrementalStore.mm */,
+				C07E155D18FB61DB00765E18 /* NSPropertyDescription+OCLIncrementalStore.h */,
+				C07E155E18FB61DB00765E18 /* NSPropertyDescription+OCLIncrementalStore.m */,
+				C06D8EFA18FDBB4100979F64 /* NSManagedObject+OCLIncrementalStore.h */,
+				C06D8EFB18FDBB4100979F64 /* NSManagedObject+OCLIncrementalStore.mm */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -2564,8 +2576,6 @@
 				C0A4424718EB44010014AF25 /* CLucene */,
 				C0A4422918E902170014AF25 /* OCLIncrementalStore.h */,
 				C0A4422A18E902170014AF25 /* OCLIncrementalStore.mm */,
-				C0A4423A18E9FBB50014AF25 /* OCLManagedObject.h */,
-				C0A4423B18E9FBB50014AF25 /* OCLManagedObject.mm */,
 				C0DAEAE018F71A23001B0890 /* OCLPredicate.h */,
 				C0DAEAE118F71A23001B0890 /* OCLPredicate.mm */,
 				C0A4420218E901B60014AF25 /* Supporting Files */,
@@ -2588,15 +2598,17 @@
 				C08590C918F607CE009928F7 /* NumericUtilsTests.mm */,
 				C025C11A18F1F550005F3E2C /* OCLIncrementalStoreTests.h */,
 				C0A4423318E909260014AF25 /* OCLIncrementalStoreTests.mm */,
+				C0DAEADC18F62823001B0890 /* OCLIncrementalStoreBaseTests.mm */,
 				C025C11818F1F530005F3E2C /* OCLIncrementalStoreRelationshipTests.mm */,
 				C08590C418F5F24F009928F7 /* OCLIncrementalStorePredicateTests.h */,
 				C093E13E18F5E80200B10CAF /* OCLIncrementalStorePredicateTests.mm */,
 				C08590C518F5F28D009928F7 /* OCLIncrementalStoreIntegerPredicateTests.mm */,
 				C08590C718F60448009928F7 /* OCLIncrementalStoreFloatPredicateTests.mm */,
 				C08590CB18F60E5C009928F7 /* OCLIncrementalStoreStringPredicateTests.mm */,
-				C0DAEADC18F62823001B0890 /* OCLIncrementalStoreBaseTests.mm */,
+				C0CD34EC18FF294A0026E038 /* OCLIncrementalStoreQueryPredicateTests.mm */,
 				C0DAEADE18F63008001B0890 /* OCLIncrementalStoreDatePredicateTests.mm */,
 				C0DAEAE318F71AE1001B0890 /* OCLPredicateTests.mm */,
+				C0B0475818FB55F000CD3D25 /* OCLIncrementalStoreModelTests.mm */,
 			);
 			name = OBCLuceneCoreData;
 			sourceTree = "<group>";
@@ -2632,6 +2644,7 @@
 		C424A3AB17C6B94E00235FE3 /* LuceneTest */ = {
 			isa = PBXGroup;
 			children = (
+				C07E155A18FB5E8E00765E18 /* Model.xcdatamodeld */,
 				C424A3B417C6B94E00235FE3 /* LTAppDelegate.h */,
 				C424A3B517C6B94E00235FE3 /* LTAppDelegate.m */,
 				C424A3B717C6B94E00235FE3 /* Main_iPhone.storyboard */,
@@ -3187,7 +3200,6 @@
 				BB3AB1C3180DE0490001E94F /* OCLWildcardFilter.h in Headers */,
 				BBD0914217ED00A7004B1776 /* OCLTerm.h in Headers */,
 				C424A3F017C6C65700235FE3 /* OCLField.h in Headers */,
-				C0A4423C18E9FBB50014AF25 /* OCLManagedObject.h in Headers */,
 				C424A3EF17C6C64F00235FE3 /* OCLDocument.h in Headers */,
 				C424A3F217C6C65700235FE3 /* OCLQuery.h in Headers */,
 				BB1520AE180DC9AE0014732C /* OCLBooleanQuery.h in Headers */,
@@ -4056,6 +4068,7 @@
 				C08590CC18F60E5C009928F7 /* OCLIncrementalStoreStringPredicateTests.mm in Sources */,
 				BB3E738F180F0F1200F2028F /* OCLFilterTests.mm in Sources */,
 				C025C11918F1F530005F3E2C /* OCLIncrementalStoreRelationshipTests.mm in Sources */,
+				C0CD34ED18FF294A0026E038 /* OCLIncrementalStoreQueryPredicateTests.mm in Sources */,
 				C0A4423418E909260014AF25 /* OCLIncrementalStoreTests.mm in Sources */,
 				C08590C618F5F28D009928F7 /* OCLIncrementalStoreIntegerPredicateTests.mm in Sources */,
 				C08590C818F60448009928F7 /* OCLIncrementalStoreFloatPredicateTests.mm in Sources */,
@@ -4064,6 +4077,7 @@
 				BB3E7395180F142500F2028F /* OCLDocumentTests.mm in Sources */,
 				BB3E7391180F130E00F2028F /* OCLIndexReaderTests.mm in Sources */,
 				BB69A27A180E185A00A23BB9 /* OCLQueryTests.mm in Sources */,
+				C0B0475918FB55F000CD3D25 /* OCLIncrementalStoreModelTests.mm in Sources */,
 				BBF8276B180F3FC4005350FB /* OCLIndexSearcherTests.mm in Sources */,
 				C093E13F18F5E80200B10CAF /* OCLIncrementalStorePredicateTests.mm in Sources */,
 				C08590CA18F607CE009928F7 /* NumericUtilsTests.mm in Sources */,
@@ -4075,13 +4089,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C07E155F18FB61DB00765E18 /* NSPropertyDescription+OCLIncrementalStore.m in Sources */,
 				C031774F18ECCA2700827E34 /* BlockFieldSelector.mm in Sources */,
 				C0B1CA1318EE358400784EB7 /* NumericUtils.mm in Sources */,
 				C093E11C18F4CDEA00B10CAF /* NSEntityDescription+OCLIncrementalStore.mm in Sources */,
 				C0A4422D18E9021F0014AF25 /* OCLIncrementalStore.mm in Sources */,
 				C031775218ECCB5100827E34 /* BlockHitCollector.mm in Sources */,
-				C0A4423E18E9FBD50014AF25 /* OCLManagedObject.mm in Sources */,
 				C0DAEAE218F71A23001B0890 /* OCLPredicate.mm in Sources */,
+				C06D8EFC18FDBB4100979F64 /* NSManagedObject+OCLIncrementalStore.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4152,6 +4167,7 @@
 				C424A3B617C6B94E00235FE3 /* LTAppDelegate.m in Sources */,
 				C424A3B217C6B94E00235FE3 /* main.m in Sources */,
 				C424A3BF17C6B94E00235FE3 /* LTViewController.m in Sources */,
+				C07E155C18FB5E8E00765E18 /* Model.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -11967,6 +11983,19 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C07E155A18FB5E8E00765E18 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C07E155B18FB5E8E00765E18 /* Model.xcdatamodel */,
+			);
+			currentVersion = C07E155B18FB5E8E00765E18 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 92D13B526A2C47E4A7E0314E /* Project object */;
 }

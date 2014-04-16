@@ -11,7 +11,6 @@
 #import "OBJCLucene.h"
 #include "CLucene.h"
 
-#import "OCLManagedObject.h"
 #import "NSString+OCL.h"
 
 #include "BlockFieldSelector.h"
@@ -29,6 +28,8 @@
 #include "MatchAllDocsQuery.h"
 
 #include "NSEntityDescription+OCLIncrementalStore.h"
+#include "NSPropertyDescription+OCLIncrementalStore.h"
+#include "NSManagedObject+OCLIncrementalStore.h"
 
 using namespace ocl;
 using namespace lucene::index;
@@ -48,6 +49,8 @@ NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
 @interface OCLIncrementalStore () {
     map<NSString *, Analyzer *> _analyzersByEntityName;
 }
+
+@property (nonatomic, strong) NSDictionary *entitiesByName;
 
 @property (nonatomic, strong) NSOperationQueue *writeOperationQueue;
 @property (nonatomic, strong) NSCache *valuesCache;
@@ -72,7 +75,11 @@ NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
     if(![[NSFileManager defaultManager] fileExistsAtPath:self.URL.path]) {
         [[NSFileManager defaultManager] createDirectoryAtURL:self.URL withIntermediateDirectories:YES attributes:nil error:nil];
     }
-    NSDictionary *dictionary = [NSKeyedUnarchiver unarchiveObjectWithData:[NSData dataWithContentsOfURL:url]];
+    NSData *metadataData = [NSData dataWithContentsOfURL:url];
+    NSDictionary *dictionary = nil;
+    if(metadataData != nil) {
+        dictionary = [NSKeyedUnarchiver unarchiveObjectWithData:metadataData];
+    }
     if(dictionary == nil) {
         dictionary = @{ NSStoreTypeKey: OCLIncrementalStoreType, NSStoreUUIDKey: [[NSProcessInfo processInfo] globallyUniqueString] };
         NSError *writeError = nil;
@@ -88,8 +95,10 @@ NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
     self.writeOperationQueue.maxConcurrentOperationCount = 1;
     __block map<NSString *, Analyzer *> analyzersByEntityName;
     self.valuesCache = [[NSCache alloc] init];
-    [self.persistentStoreCoordinator.managedObjectModel.entities enumerateObjectsUsingBlock:^(NSEntityDescription *entity, NSUInteger index, BOOL *stop) {
+    NSMutableDictionary *entitiesByName = [[NSMutableDictionary alloc] init];
+    [[self.persistentStoreCoordinator.managedObjectModel entitiesForConfiguration:self.configurationName] enumerateObjectsUsingBlock:^(NSEntityDescription *entity, NSUInteger index, BOOL *stop) {
         PerFieldAnalyzerWrapper *analyzer = _CLNEW PerFieldAnalyzerWrapper(_CLNEW KeywordAnalyzer());
+        [entitiesByName setObject:entity forKey:entity.name];
         [entity.attributesByName enumerateKeysAndObjectsUsingBlock:^(NSString *attributeName, NSAttributeDescription *attribute, BOOL *stop) {
             NSString *analyzerType = attribute.userInfo[OCLIncrementalStoreAnalyzerKey];
             if(analyzerType == nil || [analyzerType isEqualToString:OCLIncrementalStoreStandardAnalyzer]) {
@@ -106,6 +115,8 @@ NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
         analyzersByEntityName[entity.name] = analyzer;
     }];
     _analyzersByEntityName = analyzersByEntityName;
+    self.entitiesByName = entitiesByName;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(managedObjectContextDidSave:) name:NSManagedObjectContextDidSaveNotification object:nil];
     return YES;
 }
 
@@ -139,6 +150,12 @@ NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
     }
     IndexSearcher *indexSearcher = _CLNEW IndexSearcher(indexReader);
     Query *query = [self queryForRequest:request indexReader:indexReader];
+    if(query == NULL) {
+        indexReader->close();
+        _CLVDELETE(indexSearcher);
+        _CLVDELETE(indexReader);
+        return @[];
+    }
     FieldSelectorBlock selectorBlock = nil;
     HitCollectorBlock hitCollectorBlock = nil;
     NSArray *(^parseResults)(void) = ^(void) {
@@ -160,7 +177,7 @@ NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
         NSMutableArray *results = [[NSMutableArray alloc] init];
         __block set<wstring> fields;
         __block map<wstring, NSAttributeType> fieldTypes;
-        wstring idString = [@"_id" toTCHAR];
+        wstring idString = [request.entity.attributeNameForObjectId toTCHAR];
         fields.insert(idString);
         fieldTypes[idString] = NSStringAttributeType;
         [request.sortDescriptors enumerateObjectsUsingBlock:^(NSSortDescriptor *sortDescriptor, NSUInteger index, BOOL *stop) {
@@ -234,18 +251,18 @@ NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
                         return result;
                     }
                 }
-                id _id1 = obj1[@"_id"];
-                id _id2 = obj2[@"_id"];
+                id _id1 = obj1[request.entity.attributeNameForObjectId];
+                id _id2 = obj2[request.entity.attributeNameForObjectId];
                 return [_id1 compare:_id2];
             }];
             [documentResults insertObject:documentResult atIndex:index];
             switch (request.resultType) {
                 case NSManagedObjectIDResultType:
-                    [results insertObject:[self newObjectIDForEntity:request.entity referenceObject:documentResult[@"_id"]] atIndex:index];
+                    [results insertObject:[self newObjectIDForEntity:request.entity referenceObject:documentResult[request.entity.attributeNameForObjectId]] atIndex:index];
                     break;
                     
                 case NSManagedObjectResultType:
-                    [results insertObject:[context objectWithID:[self newObjectIDForEntity:request.entity referenceObject:documentResult[@"_id"]]] atIndex:index];
+                    [results insertObject:[context objectWithID:[self newObjectIDForEntity:request.entity referenceObject:documentResult[request.entity.attributeNameForObjectId]]] atIndex:index];
                     break;
                     
                 default:
@@ -267,6 +284,54 @@ NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
     return parseResults();
 }
 
+- (void)managedObjectContextDidSave:(NSNotification *)notification
+{
+    NSMutableSet *insertedObjects = [NSMutableSet set];
+    NSMutableSet *updateObjects = [NSMutableSet set];
+    NSMutableSet *deletedObjects = [NSMutableSet set];
+    NSManagedObjectContext *managedObjectContext = notification.object;
+    NSManagedObject *(^copyManagedObject)(NSManagedObject *) = ^(NSManagedObject *object) {
+        if(object.objectID.persistentStore == self || object.managedObjectContext.persistentStoreCoordinator != self.persistentStoreCoordinator) {
+            return (NSManagedObject *)nil;
+        }
+        if(self.entitiesByName[object.entity.name] == nil) {
+            return (NSManagedObject *)nil;
+        }
+        NSManagedObject *copiedObject = [[NSManagedObject alloc] initWithEntity:object.entity insertIntoManagedObjectContext:managedObjectContext];
+        [object.entity.attributesByName enumerateKeysAndObjectsUsingBlock:^(NSString *attributeName, NSAttributeDescription *attribute, BOOL *stop) {
+            id value = [object valueForKey:attributeName];
+            if(value != nil) {
+                [copiedObject setValue:value forKey:attributeName];
+            }
+        }];
+        [managedObjectContext assignObject:copiedObject toPersistentStore:self];
+        return copiedObject;
+    };
+    [(NSSet *)notification.userInfo[NSInsertedObjectsKey] enumerateObjectsUsingBlock:^(NSManagedObject *object, BOOL *stop) {
+        NSManagedObject *copiedObject = copyManagedObject(object);
+        if(copiedObject != nil) {
+            [insertedObjects addObject:copiedObject];
+        }
+    }];
+
+   [(NSSet *)notification.userInfo[NSUpdatedObjectsKey] enumerateObjectsUsingBlock:^(NSManagedObject *object, BOOL *stop) {
+        NSManagedObject *copiedObject = copyManagedObject(object);
+        if(copiedObject != nil) {
+            [insertedObjects addObject:copiedObject];
+        }
+    }];
+
+   [(NSSet *)notification.userInfo[NSDeletedObjectsKey] enumerateObjectsUsingBlock:^(NSManagedObject *object, BOOL *stop) {
+        NSManagedObject *copiedObject = copyManagedObject(object);
+        if(copiedObject != nil) {
+            [insertedObjects addObject:copiedObject];
+        }
+    }];
+    if(insertedObjects.count > 0 || updateObjects.count > 0 || deletedObjects.count > 0) {
+        [self executeSaveRequest:[[NSSaveChangesRequest alloc] initWithInsertedObjects:insertedObjects updatedObjects:updateObjects deletedObjects:deletedObjects lockedObjects:nil] withContext:notification.object error:nil];
+    }
+}
+
 - (NSArray *)executeSaveRequest:(NSSaveChangesRequest *)request withContext:(NSManagedObjectContext *)context error:(NSError *__autoreleasing *)error
 {
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
@@ -275,7 +340,7 @@ NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
         map<string, IndexWriter *> *indexWriters = new map<string, IndexWriter *>();
 
 //        NSMutableDictionary *indexReaders = [NSMutableDictionary dictionary];
-        void (^removeDocumentsBlock)(OCLManagedObject *, BOOL *stop) = ^(OCLManagedObject *object, BOOL *stop) {
+        void (^removeDocumentsBlock)(NSManagedObject *, BOOL *stop) = ^(NSManagedObject *object, BOOL *stop) {
             const string entityString = string([object.entity.name cStringUsingEncoding:NSUTF8StringEncoding]);
             map<string, IndexReader *>::const_iterator it = indexReaders->find(entityString);
             IndexReader *indexReader = NULL;
@@ -288,7 +353,7 @@ NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
             if(indexReader == NULL) {
                 return;
             }
-            indexReader->deleteDocuments(new Term([@"_id" toTCHAR], [object._id toTCHAR], true));
+            indexReader->deleteDocuments(new Term([object.entity.attributeNameForObjectId toTCHAR], [object.oclId toTCHAR], true));
             if(it == indexReaders->end()) {
                 indexReaders->insert(pair<string, IndexReader *>(entityString, indexReader));
             }
@@ -308,12 +373,7 @@ NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
         __block Document *document = _CLNEW Document();
         __block map<wstring, vector<Field *> > fields;
 
-        NSAttributeDescription *idAttribute = [[NSAttributeDescription alloc] init];
-        idAttribute.name = @"_id";
-        idAttribute.attributeType = NSStringAttributeType;
-        idAttribute.indexed = YES;
-
-        void (^insertDocuments)(OCLManagedObject *, BOOL *) = ^(OCLManagedObject *object, BOOL *stop) {
+        void (^insertDocuments)(NSManagedObject *, BOOL *) = ^(NSManagedObject *object, BOOL *stop) {
             string entityString = string([object.entity.name cStringUsingEncoding:NSUTF8StringEncoding]);
             IndexWriter *indexWriter = NULL;
             map<string, IndexWriter *>::iterator it = indexWriters->find(entityString);
@@ -327,6 +387,9 @@ NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
                 return;
             }
             void (^parseAttribute)(NSString *, NSAttributeDescription *, BOOL *) = ^(NSString *attributeName, NSAttributeDescription *attribute, BOOL * stop) {
+                if(attribute.isLuceneIgnored) {
+                    return;
+                }
                 id value = [object valueForKey:attributeName];
                 if(value == nil) {
                     return;
@@ -341,7 +404,7 @@ NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
                 } else {
                     config = config|Field::STORE_YES;
                 }
-                if(attribute.isIndexed) {
+                if(attribute.isLuceneIndexed) {
                     if([attribute.userInfo[@"isTokenized"] boolValue]) {
                         config = config|Field::INDEX_TOKENIZED;
                     } else {
@@ -363,8 +426,6 @@ NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
                 document->add(*field);
             };
 
-            BOOL idStop = NO;
-            parseAttribute(@"_id", idAttribute, &idStop);
             [object.entity.attributesByName enumerateKeysAndObjectsUsingBlock:parseAttribute];
 
             [object.entity.relationshipsByName enumerateKeysAndObjectsUsingBlock:^(NSString *relationshipName, NSRelationshipDescription *relationship, BOOL *stop) {
@@ -372,10 +433,14 @@ NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
                 if(value == nil) {
                     return;
                 }
+                NSString *attributeForObjectID = relationship.destinationEntity.userInfo[OCLAttributeForObjectId];
+                if(attributeForObjectID == nil) {
+                    return;
+                }
                 wstring fieldName = [relationshipName toTCHAR];
                 __block vector<Field *> fieldsForName = fields[fieldName];
-                void (^parseRelatedObject)(OCLManagedObject *, BOOL *) =  ^(OCLManagedObject *object, BOOL *stop) {
-                    const TCHAR *fieldValue = [[self referenceObjectForObjectID:object.objectID] toTCHAR];
+                void (^parseRelatedObject)(NSManagedObject *, BOOL *) =  ^(NSManagedObject *object, BOOL *stop) {
+                    const TCHAR *fieldValue = [[object valueForKey:attributeForObjectID] toTCHAR];
                     Field *field = NULL;
                     if(fieldsForName.size() == 0) {
                         field = _CLNEW Field(fieldName.c_str(), fieldValue, Field::STORE_YES|Field::INDEX_UNTOKENIZED, true);
@@ -436,7 +501,7 @@ NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
 
 - (NSIncrementalStoreNode *)newValuesForObjectWithID:(NSManagedObjectID *)objectID withContext:(NSManagedObjectContext *)context error:(NSError *__autoreleasing *)error
 {
-    Term term = Term([@"_id" toTCHAR], [[self referenceObjectForObjectID:objectID] toTCHAR], true);
+    Term term = Term([objectID.entity.attributeNameForObjectId toTCHAR], [[self referenceObjectForObjectID:objectID] toTCHAR], true);
     TermQuery *query = _CLNEW TermQuery(&term);
     IndexReader *indexReader = [self indexReaderForEntity:objectID.entity];
     IndexSearcher indexSearcher = IndexSearcher(indexReader);
@@ -508,7 +573,8 @@ NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
 {
     NSMutableArray *permanentIDs = [NSMutableArray array];
     [array enumerateObjectsUsingBlock:^(NSManagedObject *object, NSUInteger index, BOOL *stop) {
-        [permanentIDs addObject:[self newObjectIDForEntity:object.entity referenceObject:[object valueForKey:@"_id"]]];
+        NSManagedObjectID *objectID = [self newObjectIDForEntity:object.entity referenceObject:[object oclId]];
+        [permanentIDs addObject:objectID];
     }];
     return permanentIDs;
 }
@@ -557,7 +623,8 @@ NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
     if(fetchRequest.predicate == nil) {
         return _CLNEW MatchAllDocsQuery();
     } else {
-        return [fetchRequest.entity queryForPredicate:fetchRequest.predicate indexReader:indexReader];
+        Analyzer *analyzer = _analyzersByEntityName[fetchRequest.entity.name];
+        return [fetchRequest.entity queryForPredicate:fetchRequest.predicate indexReader:indexReader analyzer:analyzer];
     }
 }
 

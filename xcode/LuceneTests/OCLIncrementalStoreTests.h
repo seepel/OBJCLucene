@@ -9,7 +9,6 @@
 #import <XCTest/XCTest.h>
 #import <CoreData/CoreData.h>
 #import "OCLIncrementalStore.h"
-#import "OCLManagedObject.h"
 
 extern NSString *RootEntityName;
 extern NSString *OneToOneEntityName;
@@ -25,6 +24,7 @@ extern NSString *ManyToManyRelationshipName;
 extern NSString *InverseToOneRelationshipName;
 extern NSString *InverseToManyRelationshipName;
 
+extern NSString *ObjectIdAttributeName;
 extern NSString *IntegerAttributeName;
 extern NSString *FloatAttributeName;
 extern NSString *StringAttributeName;

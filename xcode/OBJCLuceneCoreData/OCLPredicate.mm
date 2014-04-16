@@ -67,8 +67,10 @@ NSString * const OCLPredicateCanNotParse = @"OCLPredicateCanNotParse";
             double value = va_arg(argList, double);
             [queryString appendString:[NSString stringFromTCHAR:NumberTools::longToString(NumericUtils::doubleToSortableLong(value))]];
         } else if([tmp isEqualToString:@"d"] || [tmp isEqualToString:@"D"]) {
-            int64_t value = va_arg(argList, int64_t);
+            int64_t value = va_arg(argList, int);
+            [queryString appendString:@"\""];
             [queryString appendString:[NSString stringFromTCHAR:NumberTools::longToString(value)]];
+            [queryString appendString:@"\""];
         } else if([tmp isEqualToString:@"k"] || [tmp isEqualToString:@"K"]) {
             NSString *value = va_arg(argList, NSString *);
             if(![value isKindOfClass:[NSString class]]) {
@@ -133,6 +135,11 @@ NSString * const OCLPredicateCanNotParse = @"OCLPredicateCanNotParse";
     }
 
     return self;
+}
+
+- (NSString *)description
+{
+    return self.queryString;
 }
 
 @end

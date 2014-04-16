@@ -20,7 +20,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"%K < 2", IntegerAttributeName];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -47,7 +47,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"%K <= 2", IntegerAttributeName];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -63,7 +63,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"%K <= 1", IntegerAttributeName];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -73,7 +73,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"%K > 0", IntegerAttributeName];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -99,7 +99,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"%K >= 0", IntegerAttributeName];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -115,7 +115,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"%K >= 1", IntegerAttributeName];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -125,7 +125,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"integer = 1"];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -143,7 +143,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"integer != 2"];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -161,7 +161,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"integer between { 0, 2 }"];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -169,7 +169,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"integer between { 1, 2 }"];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -177,7 +177,7 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
     request.predicate = [NSPredicate predicateWithFormat:@"integer between { 0, 1 }"];
-    OCLManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
+    NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
@@ -196,8 +196,8 @@
     NSMutableSet *expected = [NSMutableSet setWithObject:self.expectedObjectID];
     for(NSUInteger i = 0; i != 5; i++) {
         NSUInteger value = i;
-        OCLManagedObject *object = [[OCLManagedObject alloc] initWithEntity:[NSEntityDescription entityForName:RootEntityName inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
-        object._id = [NSString stringWithFormat:@"%d", i];
+        NSManagedObject *object = [[NSManagedObject alloc] initWithEntity:[NSEntityDescription entityForName:RootEntityName inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
+        [object setValue:[NSString stringWithFormat:@"%d", i] forKey:ObjectIdAttributeName];
         [object setValue:@(value) forKey:IntegerAttributeName];
         [object setValue:@(value+0.1) forKey:IntegerAttributeName];
         if(i == 1 || i == 2) {

@@ -13,8 +13,8 @@
 - (void)setUp
 {
     [super setUp];
-    OCLManagedObject *object = [[OCLManagedObject alloc] initWithEntity:[NSEntityDescription entityForName:RootEntityName inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
-    object._id = @"id";
+    NSManagedObject *object = [[NSManagedObject alloc] initWithEntity:[NSEntityDescription entityForName:RootEntityName inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
+    [object setValue:@"_id" forKey:ObjectIdAttributeName];
     [object setValue:@(1) forKeyPath:IntegerAttributeName];
     [object setValue:@(1.1f) forKeyPath:FloatAttributeName];
     [object setValue:@"Test" forKeyPath:StringAttributeName];
