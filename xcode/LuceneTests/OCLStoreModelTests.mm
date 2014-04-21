@@ -9,7 +9,7 @@
 #import <XCTest/XCTest.h>
 #import <CoreData/CoreData.h>
 #import "OCLStore.h"
-#import "NSEntityDescription+OCLStore.h"
+#import "NSEntityDescription+OCL.h"
 
 @interface OCLStoreModelTests : XCTestCase
 

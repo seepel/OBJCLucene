@@ -7,7 +7,7 @@
 //
 
 #import "OCLStoreTests.h"
-#import "NSEntityDescription+OCLStore.h"
+#import "NSEntityDescription+OCL.h"
 
 NSString *RootEntityName = @"Root";
 NSString *OneToOneEntityName = @"OneToOne";
