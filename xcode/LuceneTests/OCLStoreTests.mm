@@ -1,13 +1,13 @@
 //
-//  OCLIncrementalStoreTests.m
+//  OCLStoreTests.m
 //  OBJCLucene
 //
 //  Created by Sean Lynch on 3/30/14.
 //
 //
 
-#import "OCLIncrementalStoreTests.h"
-#import "NSEntityDescription+OCLIncrementalStore.h"
+#import "OCLStoreTests.h"
+#import "NSEntityDescription+OCLStore.h"
 
 NSString *RootEntityName = @"Root";
 NSString *OneToOneEntityName = @"OneToOne";
@@ -30,13 +30,13 @@ NSString *StringAttributeName = @"string";
 NSString *DateAttributeName = @"date";
 
 
-@interface OCLIncrementalStoreTests ()
+@interface OCLStoreTests ()
 
 @property (nonatomic, strong) NSURL *storeURL;
 
 @end
 
-@implementation OCLIncrementalStoreTests
+@implementation OCLStoreTests
 
 - (void)setUp
 {
@@ -106,12 +106,12 @@ NSString *DateAttributeName = @"date";
 
 
     self.model.entities = @[ rootEntity, oneToOneEntity, oneToManyEntity, manyToOneEntity, manyToManyEntity ];
-    [OCLIncrementalStore initialize];
+    [OCLStore initialize];
     self.coordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.model];
     self.storeURL = [NSURL fileURLWithPath:[NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:[[NSProcessInfo processInfo] globallyUniqueString]]];
     [[NSFileManager defaultManager] removeItemAtPath:self.storeURL.path error:nil];
     NSError *error = nil;
-    self.store = (OCLIncrementalStore *)[self.coordinator addPersistentStoreWithType:OCLIncrementalStoreType configuration:nil URL:self.storeURL options:nil error:&error];
+    self.store = (OCLStore *)[self.coordinator addPersistentStoreWithType:OCLStoreType configuration:nil URL:self.storeURL options:nil error:&error];
     if(self.store == nil) {
         NSLog(@"Error adding store: %@, %@", error, error.userInfo);
     }

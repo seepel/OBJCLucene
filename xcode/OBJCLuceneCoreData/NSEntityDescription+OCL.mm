@@ -1,12 +1,12 @@
 //
-//  NSEntityDescription+OCLIncrementalStore.m
+//  NSEntityDescription+OCLStore.m
 //  OBJCLucene
 //
 //  Created by Sean Lynch on 4/8/14.
 //
 //
 
-#import "NSEntityDescription+OCLIncrementalStore.h"
+#import "NSEntityDescription+OCL.h"
 #import "NSString+OCL.h"
 #import "OCLPredicate.h"
 
@@ -27,7 +27,7 @@ using namespace ocl;
 
 NSString * const OCLAttributeForObjectId = @"attributeForObjectId";
 
-@implementation NSEntityDescription (OCLIncrementalStore)
+@implementation NSEntityDescription (OCLStore)
 
 - (NSString *)attributeNameForObjectId
 {

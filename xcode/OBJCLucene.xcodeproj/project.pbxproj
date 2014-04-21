@@ -516,20 +516,20 @@
 		C025C11918F1F530005F3E2C /* OCLIncrementalStoreRelationshipTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C025C11818F1F530005F3E2C /* OCLIncrementalStoreRelationshipTests.mm */; };
 		C031774F18ECCA2700827E34 /* BlockFieldSelector.mm in Sources */ = {isa = PBXBuildFile; fileRef = C031774D18ECCA2700827E34 /* BlockFieldSelector.mm */; };
 		C031775218ECCB5100827E34 /* BlockHitCollector.mm in Sources */ = {isa = PBXBuildFile; fileRef = C031775018ECCB5100827E34 /* BlockHitCollector.mm */; };
-		C06D8EFC18FDBB4100979F64 /* NSManagedObject+OCLIncrementalStore.mm in Sources */ = {isa = PBXBuildFile; fileRef = C06D8EFB18FDBB4100979F64 /* NSManagedObject+OCLIncrementalStore.mm */; };
+		C06D8EFC18FDBB4100979F64 /* NSManagedObject+OCL.mm in Sources */ = {isa = PBXBuildFile; fileRef = C06D8EFB18FDBB4100979F64 /* NSManagedObject+OCL.mm */; };
 		C07E155C18FB5E8E00765E18 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C07E155A18FB5E8E00765E18 /* Model.xcdatamodeld */; };
-		C07E155F18FB61DB00765E18 /* NSPropertyDescription+OCLIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C07E155E18FB61DB00765E18 /* NSPropertyDescription+OCLIncrementalStore.m */; };
+		C07E155F18FB61DB00765E18 /* NSPropertyDescription+OCL.m in Sources */ = {isa = PBXBuildFile; fileRef = C07E155E18FB61DB00765E18 /* NSPropertyDescription+OCL.m */; };
 		C08590C618F5F28D009928F7 /* OCLIncrementalStoreIntegerPredicateTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C08590C518F5F28D009928F7 /* OCLIncrementalStoreIntegerPredicateTests.mm */; };
 		C08590C818F60448009928F7 /* OCLIncrementalStoreFloatPredicateTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C08590C718F60448009928F7 /* OCLIncrementalStoreFloatPredicateTests.mm */; };
 		C08590CA18F607CE009928F7 /* NumericUtilsTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C08590C918F607CE009928F7 /* NumericUtilsTests.mm */; };
 		C08590CC18F60E5C009928F7 /* OCLIncrementalStoreStringPredicateTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C08590CB18F60E5C009928F7 /* OCLIncrementalStoreStringPredicateTests.mm */; };
-		C093E11C18F4CDEA00B10CAF /* NSEntityDescription+OCLIncrementalStore.mm in Sources */ = {isa = PBXBuildFile; fileRef = C093E11B18F4CDEA00B10CAF /* NSEntityDescription+OCLIncrementalStore.mm */; };
+		C093E11C18F4CDEA00B10CAF /* NSEntityDescription+OCL.mm in Sources */ = {isa = PBXBuildFile; fileRef = C093E11B18F4CDEA00B10CAF /* NSEntityDescription+OCL.mm */; };
 		C093E13F18F5E80200B10CAF /* OCLIncrementalStorePredicateTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C093E13E18F5E80200B10CAF /* OCLIncrementalStorePredicateTests.mm */; };
 		C0A0902218EB5BB40065CDB2 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A0902118EB5BB40065CDB2 /* libc++.dylib */; };
 		C0A4420018E901B60014AF25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C435914917C54638009B87BF /* Foundation.framework */; };
 		C0A4422818E901F90014AF25 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A4422718E901F90014AF25 /* CoreData.framework */; };
-		C0A4422B18E902170014AF25 /* OCLIncrementalStore.h in Headers */ = {isa = PBXBuildFile; fileRef = C0A4422918E902170014AF25 /* OCLIncrementalStore.h */; };
-		C0A4422D18E9021F0014AF25 /* OCLIncrementalStore.mm in Sources */ = {isa = PBXBuildFile; fileRef = C0A4422A18E902170014AF25 /* OCLIncrementalStore.mm */; };
+		C0A4422B18E902170014AF25 /* OCLStore.h in Headers */ = {isa = PBXBuildFile; fileRef = C0A4422918E902170014AF25 /* OCLStore.h */; };
+		C0A4422D18E9021F0014AF25 /* OCLStore.mm in Sources */ = {isa = PBXBuildFile; fileRef = C0A4422A18E902170014AF25 /* OCLStore.mm */; };
 		C0A4423418E909260014AF25 /* OCLIncrementalStoreTests.mm in Sources */ = {isa = PBXBuildFile; fileRef = C0A4423318E909260014AF25 /* OCLIncrementalStoreTests.mm */; };
 		C0A4423718E90A7A0014AF25 /* libOBJCLuceneCoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A441FF18E901B60014AF25 /* libOBJCLuceneCoreData.a */; };
 		C0A4423818E9151E0014AF25 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A4422718E901F90014AF25 /* CoreData.framework */; };
@@ -1242,25 +1242,25 @@
 		C031774E18ECCA2700827E34 /* BlockFieldSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockFieldSelector.h; sourceTree = "<group>"; };
 		C031775018ECCB5100827E34 /* BlockHitCollector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BlockHitCollector.mm; sourceTree = "<group>"; };
 		C031775118ECCB5100827E34 /* BlockHitCollector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockHitCollector.h; sourceTree = "<group>"; };
-		C06D8EFA18FDBB4100979F64 /* NSManagedObject+OCLIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+OCLIncrementalStore.h"; sourceTree = "<group>"; };
-		C06D8EFB18FDBB4100979F64 /* NSManagedObject+OCLIncrementalStore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSManagedObject+OCLIncrementalStore.mm"; sourceTree = "<group>"; };
+		C06D8EFA18FDBB4100979F64 /* NSManagedObject+OCL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+OCL.h"; sourceTree = "<group>"; };
+		C06D8EFB18FDBB4100979F64 /* NSManagedObject+OCL.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSManagedObject+OCL.mm"; sourceTree = "<group>"; };
 		C07E155B18FB5E8E00765E18 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		C07E155D18FB61DB00765E18 /* NSPropertyDescription+OCLIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPropertyDescription+OCLIncrementalStore.h"; sourceTree = "<group>"; };
-		C07E155E18FB61DB00765E18 /* NSPropertyDescription+OCLIncrementalStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPropertyDescription+OCLIncrementalStore.m"; sourceTree = "<group>"; };
+		C07E155D18FB61DB00765E18 /* NSPropertyDescription+OCL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPropertyDescription+OCL.h"; sourceTree = "<group>"; };
+		C07E155E18FB61DB00765E18 /* NSPropertyDescription+OCL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPropertyDescription+OCL.m"; sourceTree = "<group>"; };
 		C08590C418F5F24F009928F7 /* OCLIncrementalStorePredicateTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCLIncrementalStorePredicateTests.h; sourceTree = "<group>"; };
 		C08590C518F5F28D009928F7 /* OCLIncrementalStoreIntegerPredicateTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStoreIntegerPredicateTests.mm; sourceTree = "<group>"; };
 		C08590C718F60448009928F7 /* OCLIncrementalStoreFloatPredicateTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStoreFloatPredicateTests.mm; sourceTree = "<group>"; };
 		C08590C918F607CE009928F7 /* NumericUtilsTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NumericUtilsTests.mm; sourceTree = "<group>"; };
 		C08590CB18F60E5C009928F7 /* OCLIncrementalStoreStringPredicateTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStoreStringPredicateTests.mm; sourceTree = "<group>"; };
-		C093E11A18F4CDEA00B10CAF /* NSEntityDescription+OCLIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEntityDescription+OCLIncrementalStore.h"; sourceTree = "<group>"; };
-		C093E11B18F4CDEA00B10CAF /* NSEntityDescription+OCLIncrementalStore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSEntityDescription+OCLIncrementalStore.mm"; sourceTree = "<group>"; };
+		C093E11A18F4CDEA00B10CAF /* NSEntityDescription+OCL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEntityDescription+OCL.h"; sourceTree = "<group>"; };
+		C093E11B18F4CDEA00B10CAF /* NSEntityDescription+OCL.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "NSEntityDescription+OCL.mm"; sourceTree = "<group>"; };
 		C093E13E18F5E80200B10CAF /* OCLIncrementalStorePredicateTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStorePredicateTests.mm; sourceTree = "<group>"; };
 		C0A0902118EB5BB40065CDB2 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		C0A441FF18E901B60014AF25 /* libOBJCLuceneCoreData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOBJCLuceneCoreData.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0A4420318E901B60014AF25 /* OBJCLuceneCoreData-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OBJCLuceneCoreData-Prefix.pch"; sourceTree = "<group>"; };
 		C0A4422718E901F90014AF25 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		C0A4422918E902170014AF25 /* OCLIncrementalStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLIncrementalStore.h; sourceTree = "<group>"; };
-		C0A4422A18E902170014AF25 /* OCLIncrementalStore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStore.mm; sourceTree = "<group>"; };
+		C0A4422918E902170014AF25 /* OCLStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCLStore.h; sourceTree = "<group>"; };
+		C0A4422A18E902170014AF25 /* OCLStore.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLStore.mm; sourceTree = "<group>"; };
 		C0A4423318E909260014AF25 /* OCLIncrementalStoreTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStoreTests.mm; sourceTree = "<group>"; };
 		C0B0475818FB55F000CD3D25 /* OCLIncrementalStoreModelTests.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OCLIncrementalStoreModelTests.mm; sourceTree = "<group>"; };
 		C0B1CA1118EE358400784EB7 /* NumericUtils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NumericUtils.mm; sourceTree = "<group>"; };
@@ -2559,12 +2559,12 @@
 		C093E11018F4B15600B10CAF /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				C093E11A18F4CDEA00B10CAF /* NSEntityDescription+OCLIncrementalStore.h */,
-				C093E11B18F4CDEA00B10CAF /* NSEntityDescription+OCLIncrementalStore.mm */,
-				C07E155D18FB61DB00765E18 /* NSPropertyDescription+OCLIncrementalStore.h */,
-				C07E155E18FB61DB00765E18 /* NSPropertyDescription+OCLIncrementalStore.m */,
-				C06D8EFA18FDBB4100979F64 /* NSManagedObject+OCLIncrementalStore.h */,
-				C06D8EFB18FDBB4100979F64 /* NSManagedObject+OCLIncrementalStore.mm */,
+				C093E11A18F4CDEA00B10CAF /* NSEntityDescription+OCL.h */,
+				C093E11B18F4CDEA00B10CAF /* NSEntityDescription+OCL.mm */,
+				C07E155D18FB61DB00765E18 /* NSPropertyDescription+OCL.h */,
+				C07E155E18FB61DB00765E18 /* NSPropertyDescription+OCL.m */,
+				C06D8EFA18FDBB4100979F64 /* NSManagedObject+OCL.h */,
+				C06D8EFB18FDBB4100979F64 /* NSManagedObject+OCL.mm */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -2574,8 +2574,8 @@
 			children = (
 				C093E11018F4B15600B10CAF /* Categories */,
 				C0A4424718EB44010014AF25 /* CLucene */,
-				C0A4422918E902170014AF25 /* OCLIncrementalStore.h */,
-				C0A4422A18E902170014AF25 /* OCLIncrementalStore.mm */,
+				C0A4422918E902170014AF25 /* OCLStore.h */,
+				C0A4422A18E902170014AF25 /* OCLStore.mm */,
 				C0DAEAE018F71A23001B0890 /* OCLPredicate.h */,
 				C0DAEAE118F71A23001B0890 /* OCLPredicate.mm */,
 				C0A4420218E901B60014AF25 /* Supporting Files */,
@@ -3205,7 +3205,7 @@
 				BB1520AE180DC9AE0014732C /* OCLBooleanQuery.h in Headers */,
 				BBD6873A180DBD4700B1EBD6 /* OCLTermQuery.h in Headers */,
 				BB1520B7180DCE5A0014732C /* OCLPhraseQuery.h in Headers */,
-				C0A4422B18E902170014AF25 /* OCLIncrementalStore.h in Headers */,
+				C0A4422B18E902170014AF25 /* OCLStore.h in Headers */,
 				BB1520B3180DCCBB0014732C /* OCLMultiPhraseQuery.h in Headers */,
 				BB1520A6180DC0D50014732C /* OCLFuzzyQuery.h in Headers */,
 				BB1520BB180DCF320014732C /* OCLPrefixQuery.h in Headers */,
@@ -4089,14 +4089,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C07E155F18FB61DB00765E18 /* NSPropertyDescription+OCLIncrementalStore.m in Sources */,
+				C07E155F18FB61DB00765E18 /* NSPropertyDescription+OCL.m in Sources */,
 				C031774F18ECCA2700827E34 /* BlockFieldSelector.mm in Sources */,
 				C0B1CA1318EE358400784EB7 /* NumericUtils.mm in Sources */,
-				C093E11C18F4CDEA00B10CAF /* NSEntityDescription+OCLIncrementalStore.mm in Sources */,
-				C0A4422D18E9021F0014AF25 /* OCLIncrementalStore.mm in Sources */,
+				C093E11C18F4CDEA00B10CAF /* NSEntityDescription+OCL.mm in Sources */,
+				C0A4422D18E9021F0014AF25 /* OCLStore.mm in Sources */,
 				C031775218ECCB5100827E34 /* BlockHitCollector.mm in Sources */,
 				C0DAEAE218F71A23001B0890 /* OCLPredicate.mm in Sources */,
-				C06D8EFC18FDBB4100979F64 /* NSManagedObject+OCLIncrementalStore.mm in Sources */,
+				C06D8EFC18FDBB4100979F64 /* NSManagedObject+OCL.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

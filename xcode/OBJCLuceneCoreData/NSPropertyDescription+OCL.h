@@ -1,5 +1,5 @@
 //
-//  NSPropertyDescription+OCLIncrementalStore.h
+//  NSPropertyDescription+OCLStore.h
 //  OBJCLucene
 //
 //  Created by Sean Lynch on 4/13/14.
@@ -11,7 +11,7 @@
 extern NSString * const LuceneIndexed;
 extern NSString * const LuceneIngnored;
 
-@interface NSPropertyDescription (OCLIncrementalStore)
+@interface NSPropertyDescription (OCL)
 
 @property (nonatomic, getter = isLuceneIndexed) BOOL luceneIndexed;
 @property (nonatomic, getter = isLuceneIgnored) BOOL luceneIgnored;

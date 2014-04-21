@@ -1,5 +1,5 @@
 //
-//  OCLIncrementalStoreTests.h
+//  OCLStoreTests.h
 //  OBJCLucene
 //
 //  Created by Sean Lynch on 4/6/14.
@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import <CoreData/CoreData.h>
-#import "OCLIncrementalStore.h"
+#import "OCLStore.h"
 
 extern NSString *RootEntityName;
 extern NSString *OneToOneEntityName;
@@ -30,10 +30,10 @@ extern NSString *FloatAttributeName;
 extern NSString *StringAttributeName;
 extern NSString *DateAttributeName;
 
-@interface OCLIncrementalStoreTests : XCTestCase
+@interface OCLStoreTests : XCTestCase
 
 @property (nonatomic, strong) NSManagedObjectModel *model;
-@property (nonatomic, strong) OCLIncrementalStore *store;
+@property (nonatomic, strong) OCLStore *store;
 @property (nonatomic, strong) NSPersistentStoreCoordinator *coordinator;
 @property (nonatomic, strong) NSManagedObjectContext *context;
 

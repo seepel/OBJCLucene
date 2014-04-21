@@ -1,12 +1,12 @@
 //
-//  OCLIncrementalStore.m
+//  OCLStore.m
 //  OBJCLucene
 //
 //  Created by Sean Lynch on 3/30/14.
 //
 //
 
-#import "OCLIncrementalStore.h"
+#import "OCLStore.h"
 
 #import "OBJCLucene.h"
 #include "CLucene.h"
@@ -27,9 +27,9 @@
 
 #include "MatchAllDocsQuery.h"
 
-#include "NSEntityDescription+OCLIncrementalStore.h"
-#include "NSPropertyDescription+OCLIncrementalStore.h"
-#include "NSManagedObject+OCLIncrementalStore.h"
+#include "NSEntityDescription+OCL.h"
+#include "NSPropertyDescription+OCL.h"
+#include "NSManagedObject+OCL.h"
 
 using namespace ocl;
 using namespace lucene::index;
@@ -38,15 +38,15 @@ using namespace lucene::analysis;
 using namespace lucene::document;
 using namespace std;
 
-static NSString *OCLIncrementalStoreMetadataFileName = @"metadata";
-NSString * const OCLIncrementalStoreType = @"OCLIncrementalStore";
+static NSString *OCLStoreMetadataFileName = @"metadata";
+NSString * const OCLStoreType = @"OCLStore";
 
-NSString * const OCLIncrementalStoreAnalyzerKey = @"analyzer";
-NSString * const OCLIncrementalStoreStandardAnalyzer = @"standard";
-NSString * const OCLIncrementalStoreNoStopStandardAnalyzer = @"nostop";
-NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
+NSString * const OCLStoreAnalyzerKey = @"analyzer";
+NSString * const OCLStoreStandardAnalyzer = @"standard";
+NSString * const OCLStoreNoStopStandardAnalyzer = @"nostop";
+NSString * const OCLStoreKeywordAnalyzer = @"keyword";
 
-@interface OCLIncrementalStore () {
+@interface OCLStore () {
     map<NSString *, Analyzer *> _analyzersByEntityName;
 }
 
@@ -57,21 +57,21 @@ NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
 
 @end
 
-@implementation OCLIncrementalStore
+@implementation OCLStore
 
 #pragma mark - Initialization
 
 + (void)initialize {
-    [NSPersistentStoreCoordinator registerStoreClass:self forStoreType:OCLIncrementalStoreType];
+    [NSPersistentStoreCoordinator registerStoreClass:self forStoreType:OCLStoreType];
 }
 
 + (NSString *)type {
-    return OCLIncrementalStoreType;
+    return OCLStoreType;
 }
 
 - (BOOL)loadMetadata:(NSError *__autoreleasing *)error
 {
-    NSURL *url = [self.URL URLByAppendingPathComponent:OCLIncrementalStoreMetadataFileName];
+    NSURL *url = [self.URL URLByAppendingPathComponent:OCLStoreMetadataFileName];
     if(![[NSFileManager defaultManager] fileExistsAtPath:self.URL.path]) {
         [[NSFileManager defaultManager] createDirectoryAtURL:self.URL withIntermediateDirectories:YES attributes:nil error:nil];
     }
@@ -81,7 +81,7 @@ NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
         dictionary = [NSKeyedUnarchiver unarchiveObjectWithData:metadataData];
     }
     if(dictionary == nil) {
-        dictionary = @{ NSStoreTypeKey: OCLIncrementalStoreType, NSStoreUUIDKey: [[NSProcessInfo processInfo] globallyUniqueString] };
+        dictionary = @{ NSStoreTypeKey: OCLStoreType, NSStoreUUIDKey: [[NSProcessInfo processInfo] globallyUniqueString] };
         NSError *writeError = nil;
         if(![[NSKeyedArchiver archivedDataWithRootObject:dictionary] writeToURL:url options:NSDataWritingFileProtectionComplete error:&writeError]) {
             if(error != NULL) {
@@ -100,12 +100,12 @@ NSString * const OCLIncrementalStoreKeywordAnalyzer = @"keyword";
         PerFieldAnalyzerWrapper *analyzer = _CLNEW PerFieldAnalyzerWrapper(_CLNEW KeywordAnalyzer());
         [entitiesByName setObject:entity forKey:entity.name];
         [entity.attributesByName enumerateKeysAndObjectsUsingBlock:^(NSString *attributeName, NSAttributeDescription *attribute, BOOL *stop) {
-            NSString *analyzerType = attribute.userInfo[OCLIncrementalStoreAnalyzerKey];
-            if(analyzerType == nil || [analyzerType isEqualToString:OCLIncrementalStoreStandardAnalyzer]) {
+            NSString *analyzerType = attribute.userInfo[OCLStoreAnalyzerKey];
+            if(analyzerType == nil || [analyzerType isEqualToString:OCLStoreStandardAnalyzer]) {
                 if(attribute.attributeType == NSStringAttributeType) {
                     analyzer->addAnalyzer([attribute.name toTCHAR], _CLNEW standard::StandardAnalyzer());
                 }
-            } else if([analyzerType isEqualToString:OCLIncrementalStoreNoStopStandardAnalyzer]) {
+            } else if([analyzerType isEqualToString:OCLStoreNoStopStandardAnalyzer]) {
                 const TCHAR *emptyStopWords[1] = { NULL };
                 analyzer->addAnalyzer([attribute.name toTCHAR], _CLNEW standard::StandardAnalyzer(emptyStopWords));
             } else {

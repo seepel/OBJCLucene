@@ -1,5 +1,5 @@
 //
-//  NSEntityDescription+OCLIncrementalStore.h
+//  NSEntityDescription+OCLStore.h
 //  OBJCLucene
 //
 //  Created by Sean Lynch on 4/8/14.
@@ -11,7 +11,7 @@
 
 extern NSString * const OCLAttributeForObjectId;
 
-@interface NSEntityDescription (OCLIncrementalStore)
+@interface NSEntityDescription (OCL)
 
 - (NSString *)attributeNameForObjectId;
 - (lucene::search::Query *)queryForPredicate:(NSPredicate *)predicate indexReader:(lucene::index::IndexReader *)indexReader analyzer:(lucene::analysis::Analyzer *)analyzer;

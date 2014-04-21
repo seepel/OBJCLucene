@@ -1,14 +1,14 @@
 //
-//  OCLIncrementalStorePredicateTests.h
+//  OCLStorePredicateTests.h
 //  OBJCLucene
 //
 //  Created by Sean Lynch on 4/9/14.
 //
 //
 
-#import "OCLIncrementalStoreTests.h"
+#import "OCLStoreTests.h"
 
-@interface OCLIncrementalStorePredicateTests : OCLIncrementalStoreTests
+@interface OCLStorePredicateTests : OCLStoreTests
 
 @property (nonatomic, strong) NSManagedObjectID *expectedObjectID;
 @property (nonatomic, strong) id lowerTestValue;

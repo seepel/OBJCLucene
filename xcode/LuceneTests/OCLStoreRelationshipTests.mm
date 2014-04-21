@@ -1,18 +1,18 @@
 //
-//  OCLIncrementalStoreRelationshipTests.m
+//  OCLStoreRelationshipTests.m
 //  OBJCLucene
 //
 //  Created by Sean Lynch on 4/6/14.
 //
 //
 
-#import "OCLIncrementalStoreTests.h"
+#import "OCLStoreTests.h"
 
-@interface OCLIncrementalStoreRelationshipTests : OCLIncrementalStoreTests
+@interface OCLStoreRelationshipTests : OCLStoreTests
 
 @end
 
-@implementation OCLIncrementalStoreRelationshipTests
+@implementation OCLStoreRelationshipTests
 
 - (void)testNilOneToOne
 {

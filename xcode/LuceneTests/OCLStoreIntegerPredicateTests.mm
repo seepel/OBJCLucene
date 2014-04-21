@@ -1,41 +1,41 @@
 //
-//  OCLIncrementalStoreFloatPredicateTests.m
+//  OCLStoreIntegerPredicateTests.m
 //  OBJCLucene
 //
 //  Created by Sean Lynch on 4/9/14.
 //
 //
 
-#import "OCLIncrementalStorePredicateTests.h"
+#import "OCLStorePredicateTests.h"
 
-@interface OCLIncrementalStoreFloatPredicateTests : OCLIncrementalStorePredicateTests
+@interface OCLStoreIntegerPredicateTests : OCLStorePredicateTests
 
 @end
 
-@implementation OCLIncrementalStoreFloatPredicateTests
+@implementation OCLStoreIntegerPredicateTests
 
 #pragma mark - Less Then Predicates
 
-- (void)testLessThenFloatPredicate
+- (void)testLessThenIntegerPredicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K < %@", FloatAttributeName, @(2.f)];
+    request.predicate = [NSPredicate predicateWithFormat:@"%K < 2", IntegerAttributeName];
     NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
-- (void)testFailingLessThenFloatPredicate
+- (void)testFailingLessThenIntegerPredicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K < %@", FloatAttributeName, @(0.f)];
+    request.predicate = [NSPredicate predicateWithFormat:@"%K < 0", IntegerAttributeName];
     NSUInteger numberOfResults = [[self.context executeFetchRequest:request error:nil] count];
     XCTAssertEqual(numberOfResults, 0, @"");
 }
 
-- (void)testFailingLessThenFloatBoundaryPredicate
+- (void)testFailingLessThenIntegerBoundaryPredicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K < %@", FloatAttributeName, @(1.1f)];
+    request.predicate = [NSPredicate predicateWithFormat:@"%K < 1", IntegerAttributeName];
     NSUInteger numberOfResults = [[self.context executeFetchRequest:request error:nil] count];
     XCTAssertEqual(numberOfResults, 0, @"");
 }
@@ -43,78 +43,78 @@
 #pragma mark - Less Then Or Equal To Predicates
 
 
-- (void)testLessThenOrEqualToFloatPredicate
+- (void)testLessThenOrEqualToIntegerPredicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K <= %@", FloatAttributeName, @(2.f)];
+    request.predicate = [NSPredicate predicateWithFormat:@"%K <= 2", IntegerAttributeName];
     NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
-- (void)testFailingLessThenOrEqualToFloatPredicate
+- (void)testFailingLessThenOrEqualToIntegerPredicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K <= %@", FloatAttributeName, @(0.f)];
+    request.predicate = [NSPredicate predicateWithFormat:@"%K <= 0", IntegerAttributeName];
     NSUInteger numberOfResults = [[self.context executeFetchRequest:request error:nil] count];
     XCTAssertEqual(numberOfResults, 0, @"");
 }
 
-- (void)testLessThenOrEqualToFloatBoundaryPredicate
+- (void)testLessThenOrEqualToIntegerBoundaryPredicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K <= %@", FloatAttributeName, @(1.1f)];
+    request.predicate = [NSPredicate predicateWithFormat:@"%K <= 1", IntegerAttributeName];
     NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
 #pragma mark - Greater Then Predicates
 
-- (void)testGreaterThenFloatPredicate
+- (void)testGreaterThenIntegerPredicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K > %@", FloatAttributeName, @(0.f)];
+    request.predicate = [NSPredicate predicateWithFormat:@"%K > 0", IntegerAttributeName];
     NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
-- (void)testFailingGreaterThenFloatPredicate
+- (void)testFailingGreaterThenIntegerPredicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K > %@", FloatAttributeName, @(2.f)];
+    request.predicate = [NSPredicate predicateWithFormat:@"%K > 2", IntegerAttributeName];
     NSUInteger numberOfResults = [[self.context executeFetchRequest:request error:nil] count];
     XCTAssertEqual(numberOfResults, 0, @"");
 }
 
-- (void)testFailingGreaterThenFloatBoundaryPredicate
+- (void)testFailingGreaterThenIntegerBoundaryPredicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K > %@", FloatAttributeName, @(1.1f)];
+    request.predicate = [NSPredicate predicateWithFormat:@"%K > 1", IntegerAttributeName];
     NSUInteger numberOfResults = [[self.context executeFetchRequest:request error:nil] count];
     XCTAssertEqual(numberOfResults, 0, @"");
 }
 
 #pragma mark - Greather Then Or Equal To Predicates
 
-- (void)testGreaterThenOrEqualToFloatPredicate
+- (void)testGreaterThenOrEqualToIntegerPredicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K >= %@", FloatAttributeName, @(0.f)];
+    request.predicate = [NSPredicate predicateWithFormat:@"%K >= 0", IntegerAttributeName];
     NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
 
-- (void)testFailingGreaterThenOrEqualToFloatPredicate
+- (void)testFailingGreaterThenOrEqualToIntegerPredicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K >= %@", FloatAttributeName, @(2.f)];
+    request.predicate = [NSPredicate predicateWithFormat:@"%K >= 2", IntegerAttributeName];
     NSUInteger numberOfResults = [[self.context executeFetchRequest:request error:nil] count];
     XCTAssertEqual(numberOfResults, 0, @"");
 }
 
-- (void)testGreaterThenOrEqualToFloatBoundaryPredicate
+- (void)testGreaterThenOrEqualToIntegerBoundaryPredicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K >= %@", FloatAttributeName, @(1.1f)];
+    request.predicate = [NSPredicate predicateWithFormat:@"%K >= 1", IntegerAttributeName];
     NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
@@ -124,7 +124,7 @@
 - (void)testEqualToPredicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K = %@", FloatAttributeName,  @(1.1f)];
+    request.predicate = [NSPredicate predicateWithFormat:@"integer = 1"];
     NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
@@ -132,7 +132,7 @@
 - (void)testFailingEqualToObjectIDPredicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K = %@", FloatAttributeName, @(1.11f)];
+    request.predicate = [NSPredicate predicateWithFormat:@"integer = 2"];
     NSUInteger numberOfResults = [[self.context executeFetchRequest:request error:nil] count];
     XCTAssertEqual(numberOfResults, 0, @"");
 }
@@ -142,7 +142,7 @@
 - (void)testNotEqualToPredicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K != %@", FloatAttributeName, @(2.f)];
+    request.predicate = [NSPredicate predicateWithFormat:@"integer != 2"];
     NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
@@ -150,7 +150,7 @@
 - (void)testFailingNotEqualToObjectIDPredicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K != %@", FloatAttributeName, @(1.1f)];
+    request.predicate = [NSPredicate predicateWithFormat:@"integer != 1"];
     NSUInteger numberOfResults = [[self.context executeFetchRequest:request error:nil] count];
     XCTAssertEqual(numberOfResults, 0, @"");
 }
@@ -160,7 +160,7 @@
 - (void)testBetweenPredicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K between { %@, %@ }", FloatAttributeName, @(0.f), @(2.f)];
+    request.predicate = [NSPredicate predicateWithFormat:@"integer between { 0, 2 }"];
     NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
@@ -168,7 +168,7 @@
 - (void)testBetweenPredicateLowerBoundaryPredicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K between { %@, %@ }", FloatAttributeName, @(1.1f), @(2.f)];
+    request.predicate = [NSPredicate predicateWithFormat:@"integer between { 1, 2 }"];
     NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
@@ -176,7 +176,7 @@
 - (void)testBetweenPredicateUpperBoundaryPredicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K between { %@, %@ }", FloatAttributeName, @(0.f), @(1.11f)];
+    request.predicate = [NSPredicate predicateWithFormat:@"integer between { 0, 1 }"];
     NSManagedObject *object = [self.context executeFetchRequest:request error:nil][0];
     XCTAssertEqualObjects(object.objectID, self.expectedObjectID, @"");
 }
@@ -184,7 +184,7 @@
 - (void)testFaildingBetweenPredicate
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K between { %@, %@ }", FloatAttributeName, @(2.f), @(500.f)];
+    request.predicate = [NSPredicate predicateWithFormat:@"integer between { 2, 500 }"];
     NSUInteger resultCount = [[self.context executeFetchRequest:request error:nil] count];
     XCTAssertEqual(resultCount, 0, @"");
 }
@@ -198,8 +198,8 @@
         NSUInteger value = i;
         NSManagedObject *object = [[NSManagedObject alloc] initWithEntity:[NSEntityDescription entityForName:RootEntityName inManagedObjectContext:self.context] insertIntoManagedObjectContext:self.context];
         [object setValue:[NSString stringWithFormat:@"%d", i] forKey:ObjectIdAttributeName];
-        [object setValue:@(value) forKey:FloatAttributeName];
-        [object setValue:@(value+0.1) forKey:FloatAttributeName];
+        [object setValue:@(value) forKey:IntegerAttributeName];
+        [object setValue:@(value+0.1) forKey:IntegerAttributeName];
         if(i == 1 || i == 2) {
             NSManagedObjectID *objectID = [self.store obtainPermanentIDsForObjects:@[ object ] error:nil][0];
             [expected addObject:objectID];
@@ -208,7 +208,7 @@
     [self.context save:nil];
     [self.context reset];
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName:RootEntityName];
-    request.predicate = [NSPredicate predicateWithFormat:@"%K in { %@, %@ }", FloatAttributeName, @(1.1f), @(2.1f)];
+    request.predicate = [NSPredicate predicateWithFormat:@"integer in { 1, 2 }"];
     request.resultType = NSManagedObjectIDResultType;
     NSSet *result = [NSSet setWithArray:[self.context executeFetchRequest:request error:nil]];
     XCTAssertEqualObjects(result, expected, @"");

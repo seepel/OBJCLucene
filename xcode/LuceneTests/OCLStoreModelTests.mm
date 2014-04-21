@@ -1,5 +1,5 @@
 //
-//  OCLIncrementalStoreModelTests.m
+//  OCLStoreModelTests.m
 //  OBJCLucene
 //
 //  Created by Sean Lynch on 4/13/14.
@@ -8,10 +8,10 @@
 
 #import <XCTest/XCTest.h>
 #import <CoreData/CoreData.h>
-#import "OCLIncrementalStore.h"
-#import "NSEntityDescription+OCLIncrementalStore.h"
+#import "OCLStore.h"
+#import "NSEntityDescription+OCLStore.h"
 
-@interface OCLIncrementalStoreModelTests : XCTestCase
+@interface OCLStoreModelTests : XCTestCase
 
 @property (nonatomic, strong) NSPersistentStoreCoordinator *coordinator;
 @property (nonatomic, strong) NSManagedObjectContext *context;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation OCLIncrementalStoreModelTests
+@implementation OCLStoreModelTests
 
 - (void)setUp
 {
@@ -96,11 +96,11 @@
         NSLog(@"Error adding store: %@", sqliteError);
     }
 
-    [OCLIncrementalStore initialize];
+    [OCLStore initialize];
     NSURL *URL = [NSURL fileURLWithPath:[cacheDirectory stringByAppendingPathComponent:@"lucene"]];
     [[NSFileManager defaultManager] removeItemAtPath:URL.path error:nil];
     NSError *error = nil;
-    NSPersistentStore *luceneStore = (OCLIncrementalStore *)[self.coordinator addPersistentStoreWithType:OCLIncrementalStoreType configuration:@"lucene" URL:URL options:nil error:&error];
+    NSPersistentStore *luceneStore = (OCLStore *)[self.coordinator addPersistentStoreWithType:OCLStoreType configuration:@"lucene" URL:URL options:nil error:&error];
     if(luceneStore == nil) {
         NSLog(@"Error adding store: %@, %@", error, error.userInfo);
     }

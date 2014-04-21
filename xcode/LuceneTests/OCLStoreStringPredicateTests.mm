@@ -1,18 +1,18 @@
 //
-//  OCLIncrementalStoreStringPredicateTests.m
+//  OCLStoreStringPredicateTests.m
 //  OBJCLucene
 //
 //  Created by Sean Lynch on 4/9/14.
 //
 //
 
-#import "OCLIncrementalStorePredicateTests.h"
+#import "OCLStorePredicateTests.h"
 
-@interface OCLIncrementalStoreStringPredicateTests : OCLIncrementalStorePredicateTests
+@interface OCLStoreStringPredicateTests : OCLStorePredicateTests
 
 @end
 
-@implementation OCLIncrementalStoreStringPredicateTests
+@implementation OCLStoreStringPredicateTests
 
 - (void)setUp
 {

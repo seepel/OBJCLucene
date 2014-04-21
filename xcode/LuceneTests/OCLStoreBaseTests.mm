@@ -1,18 +1,18 @@
 //
-//  OCLIncrementalStoreBaseTests.m
+//  OCLStoreBaseTests.m
 //  OBJCLucene
 //
 //  Created by Sean Lynch on 4/9/14.
 //
 //
 
-#import "OCLIncrementalStoreTests.h"
+#import "OCLStoreTests.h"
 
-@interface OCLIncrementalStoreBaseTests : OCLIncrementalStoreTests
+@interface OCLStoreBaseTests : OCLStoreTests
 
 @end
 
-@implementation OCLIncrementalStoreBaseTests
+@implementation OCLStoreBaseTests
 
 - (void)tearDown
 {

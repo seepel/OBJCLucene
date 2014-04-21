@@ -1,17 +1,17 @@
 //
-//  NSPropertyDescription+OCLIncrementalStore.m
+//  NSPropertyDescription+OCLStore.m
 //  OBJCLucene
 //
 //  Created by Sean Lynch on 4/13/14.
 //
 //
 
-#import "NSPropertyDescription+OCLIncrementalStore.h"
+#import "NSPropertyDescription+OCL.h"
 
 NSString * const LuceneIndexed = @"LuceneIndexed";
 NSString * const LuceneIgnored = @"LuceneIgnored";
 
-@implementation NSPropertyDescription (OCLIncrementalStore)
+@implementation NSPropertyDescription (OCLStore)
 
 - (void)setLuceneIndexed:(BOOL)inLuceneIndexed
 {
