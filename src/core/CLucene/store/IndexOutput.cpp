@@ -30,8 +30,6 @@ CL_NS_DEF(store)
   }
 
   BufferedIndexOutput::~BufferedIndexOutput(){
-  	if ( buffer != NULL )
-  		close();
   }
 
   void BufferedIndexOutput::close(){
