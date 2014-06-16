@@ -30,8 +30,10 @@ CL_NS_DEF(store)
   }
 
   BufferedIndexOutput::~BufferedIndexOutput(){
-  	if ( buffer != NULL )
-  		close();
+      if ( buffer != NULL ) {
+          _CLDELETE_ARRAY(buffer);
+          _CLTHROWA(CL_ERR_UNKNOWN, "Buffer was not flushed");
+      }
   }
 
   void BufferedIndexOutput::close(){
